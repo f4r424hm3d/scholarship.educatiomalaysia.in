@@ -42,45 +42,6 @@
   </section>
 
   <!-- Modal -->
-  <div class="modal courses-modal  fade" id="courseListModaldfdf" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> what is offered by the participating universities.?</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <footer class="dark-footer skin-dark-footer pt-3 rounded">
-            <div class="container-fluid">
-              <div class="row">
-
-                @foreach ($result as $data)
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-4">
-                    <div class="footer-widget">
-                      <span class="widget-title">{{ $data['category_name'] }}</span>
-                      <ul class="footer-menu">
-                        @foreach ($data['specializations'] as $specialization_name)
-                          <li> <i class="ti-arrow-right"></i> {{ $specialization_name }}</li>
-                        @endforeach
-                      </ul>
-                    </div>
-                  </div>
-                @endforeach
-
-              </div>
-            </div>
-
-          </footer>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
   <div class="modal coursemodal  fade" id="courseListModal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -92,250 +53,156 @@
           </button>
         </div>
         <div class="modal-body">
-        <div class="container-fluid">
-              <div class="row">
-               
-            
-                <div class="col-md-6 col-sm-12 col-12 mb-4">
-  <h5>Diploma / Master / Phd </h5>
-  <ul>
-    <li>Applied and Pure Sciences</li>
-    <li>Architecture and Construction</li>
-    <li>Business and Management</li>
-    <li>Computer Science and IT</li>
-    <li>Creative Arts and Design</li>
-    <li>Education and Training</li>
-    <li>Engineering</li>
-    <li>Health and Medicine</li>
-    <li>Humanities</li>
-    <li>Law</li>
-    <li>Personal Care and Fitness</li>
-    <li>Social Studies and Media</li>
-    <li>Travel and Hospitality</li>
-  </ul>
-</div>
-<div class="col-md-6 col-sm-12 col-12 mb-4">
-    <h5>Engineering</h5>
-    <ul>
-        <li>ROBOTIC</li>
-        <li>Aeronautical Engineering</li>
-        <li>Aeronautics and Astronautics</li>
-        <li>Air Conditioning and Refrigeration</li>
-        <li>Aircraft Engineering</li>
-        <li>Automation Engineering</li>
-        <li>Automotive</li>
-        <li>Aviation and Aircraft Maintenance</li>
-        <li>Aviation Management</li>
-        <li>Biomedical Engineering</li>
-        <li>Bioprocess Engineering</li>
-        <li>Chemical Engineering</li>
-        <li>Civil Engineering</li>
-        <li>Computer Engineering</li>
-        <li>Computer Systems</li>
-        <li>Data Engineering</li>
-        <li>Electrical and Electronics Engineering</li>
-        <li>Electrical Engineering</li>
-        <li>Electronic Engineering</li>
-        <li>Energy</li>
-        <li>Engineering</li>
-        <li>Environmental Engineering</li>
-        <li>Financial Engineering</li>
-        <li>Forensic Engineering</li>
-        <li>General Engineering and Technology</li>
-        <li>Geomatic</li>
-        <li>Industrial Automation And Robotics</li>
-        <li>Industrial Engineering</li>
-        <li>Industrial Logistic</li>
-        <li>Industrial Management</li>
-        <li>Industrial Power</li>
-        <li>Informatics Engineering</li>
-        <li>Infrastructure Management</li>
-        <li>Instrumentation and Control Engineering</li>
-        <li>Manufacturing and Production</li>
-        <li>Marine Engineering</li>
-        <li>Materials</li>
-        <li>Materials Engineering</li>
-        <li>Mechanical Engineering</li>
-        <li>Mechatronics Engineering</li>
-        <li>Medical Engineering</li>
-        <li>Metallurgy</li>
-        <li>Nanotechnology</li>
-        <li>Nautical Engineering</li>
-        <li>Nuclear Engineering</li>
-        <li>Petroleum Engineering</li>
-        <li>Petroleum Geoscience</li>
-        <li>Polymer Engineering</li>
-        <li>Power & Machine</li>
-        <li>Quality Control</li>
-        <li>Quantity Surveying</li>
-        <li>Railway Technology</li>
-        <li>Software Engineering</li>
-        <li>Structural Engineering</li>
-        <li>Sustainable Energy</li>
-        <li>Telecommunications</li>
-        <li>Vehicle Engineering</li>
-        <li>Water and Wastewater System</li>
-        <li>Water Engineering and Energy</li>
-        <li>Welding</li>
-    </ul>
-</div>
+          <div class="container-fluid">
+            <div class="row">
 
-<div class="col-md-6 col-sm-12 col-12 mb-4">
-    <h5>Health and Medicine</h5>
-    <ul>
-        <li>Acupuncture</li>
-        <li>Anaesthesiology</li>
-        <li>Anatomy</li>
-        <li>Chinese Medicine</li>
-        <li>Chiropractic</li>
-        <li>Cosmetics</li>
-        <li>Counselling</li>
-        <li>Dentistry</li>
-        <li>Environment Health</li>
-        <li>Gynaecology</li>
-        <li>Health and Safety</li>
-        <li>Health Science</li>
-        <li>Health Studies</li>
-        <li>Homeopathic</li>
-        <li>Internal Medicine</li>
-        <li>Laboratory Technology</li>
-        <li>Medical Imaging</li>
-        <li>Medical Imaging & Radiotherapy</li>
-        <li>Medical Science</li>
-        <li>Medicine</li>
-        <li>Midwifery</li>
-        <li>Nursing</li>
-        <li>Nutrition and Health</li>
-        <li>Nutrition With Wellness</li>
-        <li>Occupational Therapy</li>
-        <li>Ophthalmology</li>
-        <li>Optometry</li>
-        <li>Orthopaedic</li>
-        <li>Otorhinolaryngology-Head and Neck Surgery</li>
-        <li>Paramedical</li>
-        <li>Pharmaceutical Chemistry</li>
-        <li>Pharmaceutical Sciences</li>
-        <li>Pharmaceuticals Technology</li>
-        <li>Pharmacy</li>
-        <li>Physics</li>
-        <li>Physiology</li>
-        <li>Physiotherapy</li>
-        <li>Polygraph Examiner's Course</li>
-        <li>Psychiatry</li>
-        <li>Psychology</li>
-        <li>Public Health</li>
-        <li>Radiology</li>
-        <li>Surgery</li>
-        <li>Ultrasound</li>
-    </ul>
-</div>
-
-<div class="col-md-6 col-sm-12 col-12 mb-4">
-  <h5>Pre-University</h5>
-  <ul>
-    <li>A-Levels</li>
-    <li>Business and Management</li>
-    <li>Certificate</li>
-    <li>Creative Arts and Design</li>
-    <!-- <li>Education and Training</li>
-    <li>Foundation</li>
-    <li>Health and Medicine</li>
-    <li>Law</li>
-    <li>Social Studies and Media</li> -->
-  </ul>
-</div>
-<!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
-  <h5>Diploma</h5>
-  <ul>
-    <li>Agriculture and Veterinary Medicine</li>
-    <li>Applied and Pure Sciences</li>
-    <li>Architecture and Construction</li>
-    <li>Business and Management</li>
-    <li>Certificate</li>
-    <li>Computer Science and IT</li>
-    <li>Creative Arts and Design</li>
-    <li>Education and Training</li>
-    <li>Engineering</li>
-    <li>Foundation</li>
-    <li>Health and Medicine</li>
-    <li>Humanities</li>
-    <li>Law</li>
-    <li>Personal Care and Fitness</li>
-    <li>Social Studies and Media</li>
-    <li>Travel and Hospitality</li>
-  </ul>
-</div> -->
-<!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
-  <h5>Post-Graduate</h5>
-  <ul>
-    <li>Agriculture and Veterinary Medicine</li>
-    <li>Applied and Pure Sciences</li>
-    <li>Architecture and Construction</li>
-    <li>Business and Management</li>
-    <li>Computer Science and IT</li>
-    <li>Creative Arts and Design</li>
-    <li>Education and Training</li>
-    <li>Engineering</li>
-    <li>Health and Medicine</li>
-    <li>Humanities</li>
-    <li>Law</li>
-    <li>MBA</li>
-    <li>Personal Care and Fitness</li>
-    <li>Social Studies and Media</li>
-    <li>Travel and Hospitality</li>
-  </ul>
-</div>
-<div class="col-md-6 col-sm-12 col-12 mb-4">
-  <h5>Under-Graduate</h5>
-  <ul>
-    <li>Agriculture and Veterinary Medicine</li>
-    <li>American Degree program</li>
-    <li>Applied and Pure Sciences</li>
-    <li>Architecture and Construction</li>
-    <li>Business and Management</li>
-    <li>Certificate</li>
-    <li>Computer Science and IT</li>
-    <li>Creative Arts and Design</li>
-    <li>Education and Training</li>
-    <li>Engineering</li>
-    <li>Foundation</li>
-    <li>Health and Medicine</li>
-    <li>Humanities</li>
-    <li>Law</li>
-    <li>MBA</li>
-    <li>Personal Care and Fitness</li>
-    <li>Social Studies and Media</li>
-    <li>Travel and Hospitality</li>
-  </ul>
-</div>
-
-<div class="col-md-6 col-sm-12 col-12 mb-4">
-                  
-                  <h5>Top Courses</h5>
-                  <ul>
-                    <li> Accounting & Finance</li>
-                    <li> Civil Engineering</li>
-                    <li> Arts/Fine Arts</li>
-                    <li> Hospitality</li>
-                    <li> Business Management</li>
-                    <li> Computer Engineering</li>
-                    <li> Physiology</li>
-                    <li> Medicine</li>
-                    <li> Business Information Systems</li>
-                  </ul>
-                </div>
-<div class="col-md-6 col-sm-12 col-12 mb-4">
-  <h5>Post-Graduate-Diploma</h5>
-  <ul>
-    <li>Certificate</li>
-  </ul>
-</div>     -->
-              
-            
-              
-            
+              <div class="col-md-6 col-sm-12 col-12 mb-4">
+                <h5>Diploma / Master / Phd </h5>
+                <ul>
+                  <li>Applied and Pure Sciences</li>
+                  <li>Architecture and Construction</li>
+                  <li>Business and Management</li>
+                  <li>Computer Science and IT</li>
+                  <li>Creative Arts and Design</li>
+                  <li>Education and Training</li>
+                  <li>Engineering</li>
+                  <li>Health and Medicine</li>
+                  <li>Humanities</li>
+                  <li>Law</li>
+                  <li>Personal Care and Fitness</li>
+                  <li>Social Studies and Media</li>
+                  <li>Travel and Hospitality</li>
+                </ul>
               </div>
+              <div class="col-md-6 col-sm-12 col-12 mb-4">
+                <h5>Engineering</h5>
+                <ul>
+                  <li>ROBOTIC</li>
+                  <li>Aeronautical Engineering</li>
+                  <li>Aeronautics and Astronautics</li>
+                  <li>Air Conditioning and Refrigeration</li>
+                  <li>Aircraft Engineering</li>
+                  <li>Automation Engineering</li>
+                  <li>Automotive</li>
+                  <li>Aviation and Aircraft Maintenance</li>
+                  <li>Aviation Management</li>
+                  <li>Biomedical Engineering</li>
+                  <li>Bioprocess Engineering</li>
+                  <li>Chemical Engineering</li>
+                  <li>Civil Engineering</li>
+                  <li>Computer Engineering</li>
+                  <li>Computer Systems</li>
+                  <li>Data Engineering</li>
+                  <li>Electrical and Electronics Engineering</li>
+                  <li>Electrical Engineering</li>
+                  <li>Electronic Engineering</li>
+                  <li>Energy</li>
+                  <li>Engineering</li>
+                  <li>Environmental Engineering</li>
+                  <li>Financial Engineering</li>
+                  <li>Forensic Engineering</li>
+                  <li>General Engineering and Technology</li>
+                  <li>Geomatic</li>
+                  <li>Industrial Automation And Robotics</li>
+                  <li>Industrial Engineering</li>
+                  <li>Industrial Logistic</li>
+                  <li>Industrial Management</li>
+                  <li>Industrial Power</li>
+                  <li>Informatics Engineering</li>
+                  <li>Infrastructure Management</li>
+                  <li>Instrumentation and Control Engineering</li>
+                  <li>Manufacturing and Production</li>
+                  <li>Marine Engineering</li>
+                  <li>Materials</li>
+                  <li>Materials Engineering</li>
+                  <li>Mechanical Engineering</li>
+                  <li>Mechatronics Engineering</li>
+                  <li>Medical Engineering</li>
+                  <li>Metallurgy</li>
+                  <li>Nanotechnology</li>
+                  <li>Nautical Engineering</li>
+                  <li>Nuclear Engineering</li>
+                  <li>Petroleum Engineering</li>
+                  <li>Petroleum Geoscience</li>
+                  <li>Polymer Engineering</li>
+                  <li>Power & Machine</li>
+                  <li>Quality Control</li>
+                  <li>Quantity Surveying</li>
+                  <li>Railway Technology</li>
+                  <li>Software Engineering</li>
+                  <li>Structural Engineering</li>
+                  <li>Sustainable Energy</li>
+                  <li>Telecommunications</li>
+                  <li>Vehicle Engineering</li>
+                  <li>Water and Wastewater System</li>
+                  <li>Water Engineering and Energy</li>
+                  <li>Welding</li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-12 mb-4">
+                <h5>Health and Medicine</h5>
+                <ul>
+                  <li>Acupuncture</li>
+                  <li>Anaesthesiology</li>
+                  <li>Anatomy</li>
+                  <li>Chinese Medicine</li>
+                  <li>Chiropractic</li>
+                  <li>Cosmetics</li>
+                  <li>Counselling</li>
+                  <li>Dentistry</li>
+                  <li>Environment Health</li>
+                  <li>Gynaecology</li>
+                  <li>Health and Safety</li>
+                  <li>Health Science</li>
+                  <li>Health Studies</li>
+                  <li>Homeopathic</li>
+                  <li>Internal Medicine</li>
+                  <li>Laboratory Technology</li>
+                  <li>Medical Imaging</li>
+                  <li>Medical Imaging & Radiotherapy</li>
+                  <li>Medical Science</li>
+                  <li>Medicine</li>
+                  <li>Midwifery</li>
+                  <li>Nursing</li>
+                  <li>Nutrition and Health</li>
+                  <li>Nutrition With Wellness</li>
+                  <li>Occupational Therapy</li>
+                  <li>Ophthalmology</li>
+                  <li>Optometry</li>
+                  <li>Orthopaedic</li>
+                  <li>Otorhinolaryngology-Head and Neck Surgery</li>
+                  <li>Paramedical</li>
+                  <li>Pharmaceutical Chemistry</li>
+                  <li>Pharmaceutical Sciences</li>
+                  <li>Pharmaceuticals Technology</li>
+                  <li>Pharmacy</li>
+                  <li>Physics</li>
+                  <li>Physiology</li>
+                  <li>Physiotherapy</li>
+                  <li>Polygraph Examiner's Course</li>
+                  <li>Psychiatry</li>
+                  <li>Psychology</li>
+                  <li>Public Health</li>
+                  <li>Radiology</li>
+                  <li>Surgery</li>
+                  <li>Ultrasound</li>
+                </ul>
+              </div>
+
+              <div class="col-md-6 col-sm-12 col-12 mb-4">
+                <h5>Pre-University</h5>
+                <ul>
+                  <li>A-Levels</li>
+                  <li>Business and Management</li>
+                  <li>Certificate</li>
+                  <li>Creative Arts and Design</li>
+
+                </ul>
+              </div>
+
             </div>
+          </div>
         </div>
 
       </div>
@@ -360,19 +227,17 @@
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
           <!-- <a href="{{ url(url()->current() . '/institutions') }}"> -->
-            <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" data-toggle="modal"
+          <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" data-toggle="modal"
             data-target=".bd-example-modal-lg">
-              <div class="imgflx">
-                <img src="{{ url('/') }}/front/assets/images/institution.png" alt="">
-              </div>
-              <h2 class="text-xl font-bold">Institutions</h2>
-              <p>Connect with globally recognized Malaysian universities and institutions renowned for academic
-                excellence.
-              </p>
+            <div class="imgflx">
+              <img src="{{ url('/') }}/front/assets/images/institution.png" alt="">
             </div>
+            <h2 class="text-xl font-bold">Institutions</h2>
+            <p>Connect with globally recognized Malaysian universities and institutions renowned for academic
+              excellence.
+            </p>
+          </div>
           <!-- </a> -->
-          <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
-            data-target=".bd-example-modal-lg">Institutions</button> -->
 
         </div>
         <!-- ------------------------------------- -->
@@ -392,101 +257,29 @@
               <div class="modal-body">
                 <div class="row-institutes">
                   <div class="row align-items-center">
-                    <div class="col-12 col-sm-6 col-md-6 mb-4">
-                    <div class="d-flex  align-items-center flex-column istitue-gap">
-                    <div class="institues-img">
-                        <img src="/front/assets/images/maha.png" class="img-fluid" alt="">
-                      </div>
-                      <div class="universitynames">
-                        <h2>mahsa university</h2>
-                      
-                      </div>
-                    </div>
+                    @foreach ($pageDetail->universities as $row)
+                      <div class="col-12 col-sm-6 col-md-6 mb-4">
+                        <div class="d-flex  align-items-center flex-column istitue-gap">
+                          <div class="institues-img">
+                            <img src="{{ asset($row->university->logo_path) }}" class="img-fluid"
+                              alt="{{ $row->university->name }}">
+                          </div>
+                          <div class="universitynames">
+                            <h2>{{ $row->university->name }}</h2>
 
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 mb-4">
-                    <div class="d-flex  align-items-center flex-column istitue-gap">
-                    <div class="institues-img">
-                        <img src="/front/assets/images/cybra-uni.jpeg" class="img-fluid" alt="">
-                      </div>
-                      <div class="universitynames">
-                        <h2>cyberjaya of university</h2>
-                      
-                      </div>
-                    </div>
+                          </div>
+                        </div>
 
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 mb-4">
-                    <div class="d-flex  align-items-center flex-column istitue-gap">
-                    <div class="institues-img">
-                        <img src="/front/assets/images/mila-uni.png" class="img-fluid" alt="">
                       </div>
-                      <div class="universitynames">
-                        <h2>Mila university</h2>
-                      
-                      </div>
-                    </div>
-
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 mb-4">
-                    <div class="d-flex  align-items-center flex-column istitue-gap">
-                    <div class="institues-img">
-                        <img src="/front/assets/images/IIUM.png" class="img-fluid" alt="">
-                      </div>
-                      <div class="universitynames">
-                        <h2>interantional islamic university malysia ( IIUM)</h2>
-                      
-                      </div>
-                    </div>
-
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-md-6 mb-4">
-                    <div class="d-flex  align-items-center flex-column istitue-gap">
-                    <div class="institues-img">
-                        <img src="/front/assets/images/UPSI.png" class="img-fluid" alt="">
-                      </div>
-                      <div class="universitynames">
-                        <h2>UCSI</h2>
-                  
-                      </div>
-                    </div>
-
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 mb-4">
-                    <div class="d-flex  align-items-center flex-column istitue-gap">
-                    <div class="institues-img">
-                        <img src="/front/assets/images/segi.png" class="img-fluid" alt="">
-                      </div>
-                      <div class="universitynames">
-                        <h2>SEGI University</h2>
-                  
-                      </div>
-                    </div>
-
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-6 mb-4">
-                    <div class="d-flex  align-items-center flex-column istitue-gap">
-                    <div class="institues-img">
-                        <img src="/front/assets/images/ucsi.png" class="img-fluid" alt="">
-                      </div>
-                      <div class="universitynames">
-                        <h2>universiti pendidikan sultan idris (upsi)</h2>
-                  
-                      </div>
-                    </div>
-
-                    </div>
-                 
+                    @endforeach
                   </div>
-             
                 </div>
               </div>
             </div>
           </div>
         </div>
         <!-- -------------------------------  -->
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 ">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
           <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center">
             <div class="imgflx">
               <img src="{{ url('/') }}/front/assets/images/scholarship.png" alt="">
@@ -504,11 +297,12 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
+
           <div class="fair-details">
             <h2 class="main-faris">
               Education Fair 2025 </h2>
             <!-- <p class="all-fair mb-2">{{ $pageDetail->date_and_address }}</p> -->
-          
+
             <h2 class="fairs">
               Malaysian Universities Education & Training Fair </h2>
             <ul class="set_uls">
@@ -519,13 +313,7 @@
               <li><b><i class="fa fa-clock-o" aria-hidden="true"></i>
                   Time:</b> <span>:</span> 9:30 AM – 1:00 PM & 4:00 PM – 8:00 PM</li>
             </ul>
-            <!-- <ul class="set_uls" >
-                                            <li><b>Hosted by:</b>  Ministry of Higher Education and Scientific Research, Libya
-                                            </li>
-                                            <li><b>Organised by:</b> Malaysian Export Academy (MEXA), Malaysia
-                                            </li>
-                                            <li><b>Supported by:</b> NAPEI, Malaysia</li>
-                                          </ul> -->
+
             <div class="imgsfaird">
               <img src="/front/assets/images/libya-malaysia.png" class="imgsfairs" alt="">
             </div>
@@ -533,6 +321,28 @@
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 ">
+          @if ($errors->any())
+            <div class="alert alert-danger">
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+
+          @if (session()->has('smsg'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {{ session()->get('smsg') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
+          @if (session()->has('emsg'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ session()->get('emsg') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
 
           <div class="all-forms main-modals">
             <h2 class="new-regist">Register Now</h2>
@@ -543,7 +353,7 @@
               <input class="mt-0" type="hidden" name="return_path" value="{{ url()->current() }}">
 
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6 col-sm-12">
                   <div class="form-group">
                     <input name="name" class="form-control" type="text" placeholder="Enter Full Name"
                       pattern="[a-zA-Z'-'\s]*" value="{{ old('name', '') }}" required>
@@ -553,7 +363,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-6  col-sm-12">
                   <div class="form-group">
                     <input name="email" class="form-control" type="email" placeholder="Enter Email Address"
                       value="{{ old('email', '') }}" required>
@@ -570,7 +380,7 @@
                       @foreach ($phonecodes as $row)
                         <option value="{{ $row->phonecode }}"
                           {{ $row->iso == $curCountry || old('c_code') == $row->phonecode ? 'selected' : '' }}>
-                          +{{ $row->phonecode }}
+                          +{{ $row->phonecode }} ({{ $row->name }})
                         </option>
                       @endforeach
                     </select>
@@ -603,6 +413,25 @@
                     @enderror
                   </div>
                 </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <input name="libya_identification_number" class="form-control" type="text"
+                      placeholder="LIBYA IDENTIFICATION NUMBER" value="{{ old('libya_identification_number', '') }}"
+                      required>
+                    @error('libya_identification_number')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <input name="passport_number" class="form-control" type="text"
+                      placeholder="LIBYAN PASSPORT NUMBER" value="{{ old('passport_number', '') }}" required>
+                    @error('passport_number')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+                </div>
 
                 <div class="col-lg-12 col-md-6 col-sm-12">
                   <div class="form-group">
@@ -621,10 +450,27 @@
                   </div>
                 </div>
 
-                <div class="col-lg-12 col-md-6 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
-                    <select name="program" class="form-control" id="ef_program">
-                      <option value="">Select Interested Course (Optional)</option>
+                    <select name="university" class="form-control" id="ef_university" required>
+                      <option value="">Select Interested University</option>
+                      @foreach ($pageDetail->universities as $row)
+                        <option value="{{ $row->university_id }}"
+                          {{ old('university') == $row->university_id ? 'selected' : '' }}>
+                          {{ $row->university->name }}
+                        </option>
+                      @endforeach
+                    </select>
+                    @error('university')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <select name="program" class="form-control" id="ef_program" required>
+                      <option value="">Select Interested Course</option>
                       @foreach ($categories as $row)
                         <option value="{{ $row->name }}" {{ old('program') == $row->name ? 'selected' : '' }}>
                           {{ $row->name }}
@@ -637,13 +483,13 @@
                   </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-5 col-md-5 col-sm-12">
                   <div class="form-group">
                     <input type="text" placeholder="Captcha: {{ $captcha['text'] }} =" class="form-control"
                       value="Captcha: {{ $captcha['text'] }} =" disabled readonly>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-12  col-sm-12">
+                <div class="col-lg-7 col-md-7  col-sm-12">
                   <div class="form-group">
                     <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
                       name="captcha_answer" required>
@@ -653,7 +499,6 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
 
                   <div class="form-check checkbx-white pl-4">
-                    <input type="checkbox" class="form-check-input" id="test5">
                     <label class="form-check-label px-0 " for="test5">By clicking on register I agree to the
                       <a href="{{ url('terms-and-conditions') }}" target="_blank">terms & conditions</a></label>
                   </div>
@@ -696,7 +541,8 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
           <div class="fariul">
             <div class="flspan">
-              <span> <img src="/front/assets/images/Exclusive-Scholarship.png " class="img-fluid" alt=""></span>
+              <span> <img src="/front/assets/images/Exclusive-Scholarship.png " class="img-fluid"
+                  alt=""></span>
 
             </div>
             <div class="fair-us">
@@ -779,8 +625,9 @@
   <section class="particaptes-universties">
     <div class="container">
       <div class="particaptes">
-        <h3 class="universties   px-2 py-3 align-items-center gap-3 my-0 justify-content-between d-flex ">
-          Participates University</h3>
+        <P class="universties   px-2 py-3 align-items-center gap-3 my-0 justify-content-between d-flex ">
+          Participating University
+          </h3>
 
         <div class="tab-content" id="one-tabContent">
           <div class="tab-pane last-div active mx-2" id="one" role="tabpanel" aria-labelledby="one-tab">
@@ -790,7 +637,7 @@
                 class=" px-2 py-2 align-items-center  setparticaptes gap-3 my-0 justify-content-between d-flex border-top border-bottom ">
                 <span class="grow"><label>EXHIBITOR</label></span>
                 <div class="d-flex justify-content-between spacebx">
-                  <span class="shrink"><label>BOOTH</label></span>
+                  <span class="shrink"><label></label></span>
 
                   <span class="shrink"><label>Send Application
                     </label></span>
@@ -1134,11 +981,11 @@
 
         </div>
         <!-- <div class="col-md-6">
-                                                      <div class="imgfaq">
-                                                        <img src="{{ url('/') }}/front/assets/images/faq.png" class="img-fluid" alt="">
+                                                                                                                            <div class="imgfaq">
+                                                                                                                              <img src="{{ url('/') }}/front/assets/images/faq.png" class="img-fluid" alt="">
 
-                                                      </div>
-                                                    </div> -->
+                                                                                                                            </div>
+                                                                                                                          </div> -->
       </div>
     </div>
   </section>
@@ -1183,7 +1030,7 @@
       // Function to fetch programs
       function fetchPrograms(universityId) {
         $.ajax({
-          url: "{{ route('libia.fetch.program') }}",
+          url: "{{ route('libia.fetch.courses') }}",
           type: 'POST',
           headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token

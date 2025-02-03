@@ -134,10 +134,16 @@ Route::get('/f/migrate', function () {
 
 
 /* FRONT ROUTES */
-Route::get('/', [LibiaLandingPageFc::class, 'index'])->name('libia.page');
-Route::get('/courses', [LibiaLandingPageFc::class, 'courses'])->name('libia.courses');
-Route::get('/institutions', [LibiaLandingPageFc::class, 'institutions'])->name('libia.institutions');
+//Route::get('/', [LibiaLandingPageFc::class, 'index'])->name('libia.page');
+Route::get('/', function () {
+  return redirect()->route('libia.page');
+});
+
+Route::get('/education-fair-in-libya-2025', [LibiaLandingPageFc::class, 'index'])->name('libia.page');
+Route::get('/education-fair-in-libya-2025/courses', [LibiaLandingPageFc::class, 'courses'])->name('libia.courses');
+Route::get('/education-fair-in-libya-2025/institutions', [LibiaLandingPageFc::class, 'institutions'])->name('libia.institutions');
 
 Route::post('/libia/register', [LibiaLandingPageFc::class, 'register'])->name('libia.register');
 Route::post('/libia/fetch-program', [LibiaLandingPageFc::class, 'getProgramsByUniversity'])->name('libia.fetch.program');
+Route::post('/libia/fetch-courses', [LibiaLandingPageFc::class, 'getCoursesByUniversity'])->name('libia.fetch.courses');
 // COURSES IN MALAYSIA ROUTES END

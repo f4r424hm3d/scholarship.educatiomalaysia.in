@@ -55,7 +55,7 @@ class LibiaLandingPageFc extends Controller
     }
 
     $countries = Country::orderBy('name', 'ASC')->get();
-    $phonecodes = Country::orderBy('phonecode', 'ASC')->where('phonecode', '!=', 0)->get();
+    $phonecodes = Country::orderBy('phonecode', 'ASC')->groupBy('phonecode')->where('phonecode', '!=', 0)->get();
     $levels = Level::all();
     $categories = CourseCategory::all();
 
@@ -97,6 +97,23 @@ class LibiaLandingPageFc extends Controller
     }
     echo $output;
   }
+  public function getCoursesByUniversity(Request $request)
+  {
+    $university_id = $request->university_id;
+    $output = '<option>Select Course</option>';
+    if (!empty($university_id)) {
+      $programs = CourseCategory::whereHas('programs', function ($query) use ($university_id) {
+        $query->where('university_id', $university_id)->where('status', 1);
+      })->get();
+
+      if (!empty($programs)) {
+        foreach ($programs as $row) {
+          $output .= '<option value="' . $row->name . '">' . $row->name . '</option>';
+        }
+      }
+    }
+    echo $output;
+  }
 
   public function register(Request $request)
   {
@@ -114,8 +131,12 @@ class LibiaLandingPageFc extends Controller
         ],
         'c_code' => 'required|numeric',
         'mobile' => 'required|numeric',
-        'password' => ['required', 'string', Password::min(8)->mixedCase()->numbers()->symbols()],
-        'nationality' => 'required'
+        'nationality' => 'required',
+        'libya_identification_number' => 'required',
+        'passport_number' => 'required',
+        'highest_qualification' => 'required',
+        'university' => 'required',
+        'program' => 'required',
       ]
     );
     $university = University::find($request->university);
@@ -127,36 +148,61 @@ class LibiaLandingPageFc extends Controller
     $field->highest_qualification = $request['highest_qualification'];
     $field->intrested_subject = $request->program;
     $field->interested_program = $request->program;
+    $field->intrested_university = $university->name;
+    $field->university_id = $university->id;
     $field->nationality = $request['nationality'];
+    $field->identification_number = $request['libya_identification_number'];
+    $field->passport_number = $request['passport_number'];
     $field->password = $password;
     $field->source = $request->source;
     $field->source_path = $request->source_path;
     $field->otp = $otp;
     $field->otp_expire_at = $otp_expire_at;
-    $field->status = 0;
+    $field->status = 1;
+    $field->registered = 1;
     $field->website = site_var;
+    $field->save();
 
     $emaildata = ['name' => $request['name'], 'otp' => $otp];
     $dd = ['to' => $request['email'], 'to_name' => $request['name'], 'subject' => 'OTP'];
 
-    $chk = Mail::send(
-      'mails.send-otp',
-      $emaildata,
-      function ($message) use ($dd) {
-        $message->to($dd['to'], $dd['to_name']);
-        $message->subject('OTP');
-        $message->priority(1);
-      }
-    );
-    if ($chk == false) {
-      $emsg = 'Sorry! Please try again later';
-      session()->flash('emsg', $emsg);
-      return redirect($request->return_path);
+    $direct = true;
+    if ($direct) {
+      $emaildata = ['name' => $field['name']];
+      $dd = ['to' => $field['email'], 'to_name' => $field['name'], 'subject' => 'Successfully registration on Education Malaysia.'];
+
+      Mail::send(
+        'mails.student-welcome-mail',
+        $emaildata,
+        function ($message) use ($dd) {
+          $message->to($dd['to'], $dd['to_name']);
+          $message->subject($dd['subject']);
+          $message->priority(1);
+        }
+      );
+
+      session()->flash('smsg', 'Thank you for reaching out! We have received your inquiry and will get back to you soon.');
+      return redirect()->route('libia.page');
     } else {
-      $field->save();
-      session()->flash('smsg', 'An OTP has been send to your registered email address.');
-      $request->session()->put('last_id', $field->id);
-      return redirect('confirmed-email');
+      $chk = Mail::send(
+        'mails.send-otp',
+        $emaildata,
+        function ($message) use ($dd) {
+          $message->to($dd['to'], $dd['to_name']);
+          $message->subject('OTP');
+          $message->priority(1);
+        }
+      );
+      if ($chk == false) {
+        $emsg = 'Sorry! Please try again later';
+        session()->flash('emsg', $emsg);
+        return redirect($request->return_path);
+      } else {
+        $field->save();
+        session()->flash('smsg', 'An OTP has been send to your registered email address.');
+        $request->session()->put('last_id', $field->id);
+        return redirect('confirmed-email');
+      }
     }
   }
 }
