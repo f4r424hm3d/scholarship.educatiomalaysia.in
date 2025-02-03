@@ -7,7 +7,7 @@
   <section class="banner-section">
 
     <div class="container">
-      <h2 class="banner-titles">MALAYSIAN UNIVERSITIES EDUCATION & TRAINING FAIR
+      <h2 class="banner-titles">MALAYSIAN UNIVERSITIES EDUCATION & TRAINING Fair
       </h2>
       <div class="row">
 
@@ -81,7 +81,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal courses-modal  fade" id="courseListModal" tabindex="-1" role="dialog"
+  <div class="modal coursemodal  fade" id="courseListModal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -92,91 +92,250 @@
           </button>
         </div>
         <div class="modal-body">
-          <footer class="dark-footer skin-dark-footer pt-3 rounded">
-            <div class="container-fluid">
+        <div class="container-fluid">
               <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
-                  <div class="footer-widget">
-                    <span class="widget-title">Top Courses</span>
-                    <ul class="footer-menu">
-                      <li> <i class="ti-arrow-right"></i> Accounting & Finance</li>
-                      <li> <i class="ti-arrow-right"></i> Civil Engineering</li>
-                      <li> <i class="ti-arrow-right"></i> Arts/Fine Arts</li>
-                      <li> <i class="ti-arrow-right"></i> Hospitality</li>
-                      <li> <i class="ti-arrow-right"></i> Business Management</li>
-                      <li> <i class="ti-arrow-right"></i> Computer Engineering</li>
-                      <li> <i class="ti-arrow-right"></i> Physiology</li>
-                      <li> <i class="ti-arrow-right"></i> Medicine</li>
-                      <li> <i class="ti-arrow-right"></i> Business Information Systems</li>
-                    </ul>
-                  </div>
+               
+            
+                <div class="col-md-6 col-sm-12 col-12 mb-4">
+  <h5>Diploma / Master / Phd </h5>
+  <ul>
+    <li>Applied and Pure Sciences</li>
+    <li>Architecture and Construction</li>
+    <li>Business and Management</li>
+    <li>Computer Science and IT</li>
+    <li>Creative Arts and Design</li>
+    <li>Education and Training</li>
+    <li>Engineering</li>
+    <li>Health and Medicine</li>
+    <li>Humanities</li>
+    <li>Law</li>
+    <li>Personal Care and Fitness</li>
+    <li>Social Studies and Media</li>
+    <li>Travel and Hospitality</li>
+  </ul>
+</div>
+<div class="col-md-6 col-sm-12 col-12 mb-4">
+    <h5>Engineering</h5>
+    <ul>
+        <li>ROBOTIC</li>
+        <li>Aeronautical Engineering</li>
+        <li>Aeronautics and Astronautics</li>
+        <li>Air Conditioning and Refrigeration</li>
+        <li>Aircraft Engineering</li>
+        <li>Automation Engineering</li>
+        <li>Automotive</li>
+        <li>Aviation and Aircraft Maintenance</li>
+        <li>Aviation Management</li>
+        <li>Biomedical Engineering</li>
+        <li>Bioprocess Engineering</li>
+        <li>Chemical Engineering</li>
+        <li>Civil Engineering</li>
+        <li>Computer Engineering</li>
+        <li>Computer Systems</li>
+        <li>Data Engineering</li>
+        <li>Electrical and Electronics Engineering</li>
+        <li>Electrical Engineering</li>
+        <li>Electronic Engineering</li>
+        <li>Energy</li>
+        <li>Engineering</li>
+        <li>Environmental Engineering</li>
+        <li>Financial Engineering</li>
+        <li>Forensic Engineering</li>
+        <li>General Engineering and Technology</li>
+        <li>Geomatic</li>
+        <li>Industrial Automation And Robotics</li>
+        <li>Industrial Engineering</li>
+        <li>Industrial Logistic</li>
+        <li>Industrial Management</li>
+        <li>Industrial Power</li>
+        <li>Informatics Engineering</li>
+        <li>Infrastructure Management</li>
+        <li>Instrumentation and Control Engineering</li>
+        <li>Manufacturing and Production</li>
+        <li>Marine Engineering</li>
+        <li>Materials</li>
+        <li>Materials Engineering</li>
+        <li>Mechanical Engineering</li>
+        <li>Mechatronics Engineering</li>
+        <li>Medical Engineering</li>
+        <li>Metallurgy</li>
+        <li>Nanotechnology</li>
+        <li>Nautical Engineering</li>
+        <li>Nuclear Engineering</li>
+        <li>Petroleum Engineering</li>
+        <li>Petroleum Geoscience</li>
+        <li>Polymer Engineering</li>
+        <li>Power & Machine</li>
+        <li>Quality Control</li>
+        <li>Quantity Surveying</li>
+        <li>Railway Technology</li>
+        <li>Software Engineering</li>
+        <li>Structural Engineering</li>
+        <li>Sustainable Energy</li>
+        <li>Telecommunications</li>
+        <li>Vehicle Engineering</li>
+        <li>Water and Wastewater System</li>
+        <li>Water Engineering and Energy</li>
+        <li>Welding</li>
+    </ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-12 mb-4">
+    <h5>Health and Medicine</h5>
+    <ul>
+        <li>Acupuncture</li>
+        <li>Anaesthesiology</li>
+        <li>Anatomy</li>
+        <li>Chinese Medicine</li>
+        <li>Chiropractic</li>
+        <li>Cosmetics</li>
+        <li>Counselling</li>
+        <li>Dentistry</li>
+        <li>Environment Health</li>
+        <li>Gynaecology</li>
+        <li>Health and Safety</li>
+        <li>Health Science</li>
+        <li>Health Studies</li>
+        <li>Homeopathic</li>
+        <li>Internal Medicine</li>
+        <li>Laboratory Technology</li>
+        <li>Medical Imaging</li>
+        <li>Medical Imaging & Radiotherapy</li>
+        <li>Medical Science</li>
+        <li>Medicine</li>
+        <li>Midwifery</li>
+        <li>Nursing</li>
+        <li>Nutrition and Health</li>
+        <li>Nutrition With Wellness</li>
+        <li>Occupational Therapy</li>
+        <li>Ophthalmology</li>
+        <li>Optometry</li>
+        <li>Orthopaedic</li>
+        <li>Otorhinolaryngology-Head and Neck Surgery</li>
+        <li>Paramedical</li>
+        <li>Pharmaceutical Chemistry</li>
+        <li>Pharmaceutical Sciences</li>
+        <li>Pharmaceuticals Technology</li>
+        <li>Pharmacy</li>
+        <li>Physics</li>
+        <li>Physiology</li>
+        <li>Physiotherapy</li>
+        <li>Polygraph Examiner's Course</li>
+        <li>Psychiatry</li>
+        <li>Psychology</li>
+        <li>Public Health</li>
+        <li>Radiology</li>
+        <li>Surgery</li>
+        <li>Ultrasound</li>
+    </ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-12 mb-4">
+  <h5>Pre-University</h5>
+  <ul>
+    <li>A-Levels</li>
+    <li>Business and Management</li>
+    <li>Certificate</li>
+    <li>Creative Arts and Design</li>
+    <!-- <li>Education and Training</li>
+    <li>Foundation</li>
+    <li>Health and Medicine</li>
+    <li>Law</li>
+    <li>Social Studies and Media</li> -->
+  </ul>
+</div>
+<!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
+  <h5>Diploma</h5>
+  <ul>
+    <li>Agriculture and Veterinary Medicine</li>
+    <li>Applied and Pure Sciences</li>
+    <li>Architecture and Construction</li>
+    <li>Business and Management</li>
+    <li>Certificate</li>
+    <li>Computer Science and IT</li>
+    <li>Creative Arts and Design</li>
+    <li>Education and Training</li>
+    <li>Engineering</li>
+    <li>Foundation</li>
+    <li>Health and Medicine</li>
+    <li>Humanities</li>
+    <li>Law</li>
+    <li>Personal Care and Fitness</li>
+    <li>Social Studies and Media</li>
+    <li>Travel and Hospitality</li>
+  </ul>
+</div> -->
+<!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
+  <h5>Post-Graduate</h5>
+  <ul>
+    <li>Agriculture and Veterinary Medicine</li>
+    <li>Applied and Pure Sciences</li>
+    <li>Architecture and Construction</li>
+    <li>Business and Management</li>
+    <li>Computer Science and IT</li>
+    <li>Creative Arts and Design</li>
+    <li>Education and Training</li>
+    <li>Engineering</li>
+    <li>Health and Medicine</li>
+    <li>Humanities</li>
+    <li>Law</li>
+    <li>MBA</li>
+    <li>Personal Care and Fitness</li>
+    <li>Social Studies and Media</li>
+    <li>Travel and Hospitality</li>
+  </ul>
+</div>
+<div class="col-md-6 col-sm-12 col-12 mb-4">
+  <h5>Under-Graduate</h5>
+  <ul>
+    <li>Agriculture and Veterinary Medicine</li>
+    <li>American Degree program</li>
+    <li>Applied and Pure Sciences</li>
+    <li>Architecture and Construction</li>
+    <li>Business and Management</li>
+    <li>Certificate</li>
+    <li>Computer Science and IT</li>
+    <li>Creative Arts and Design</li>
+    <li>Education and Training</li>
+    <li>Engineering</li>
+    <li>Foundation</li>
+    <li>Health and Medicine</li>
+    <li>Humanities</li>
+    <li>Law</li>
+    <li>MBA</li>
+    <li>Personal Care and Fitness</li>
+    <li>Social Studies and Media</li>
+    <li>Travel and Hospitality</li>
+  </ul>
+</div>
+
+<div class="col-md-6 col-sm-12 col-12 mb-4">
+                  
+                  <h5>Top Courses</h5>
+                  <ul>
+                    <li> Accounting & Finance</li>
+                    <li> Civil Engineering</li>
+                    <li> Arts/Fine Arts</li>
+                    <li> Hospitality</li>
+                    <li> Business Management</li>
+                    <li> Computer Engineering</li>
+                    <li> Physiology</li>
+                    <li> Medicine</li>
+                    <li> Business Information Systems</li>
+                  </ul>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
-                  <div class="footer-widget">
-                    <span class="widget-title">Qualified Level</span>
-                    <ul class="footer-menu">
-                      <li> <i class="ti-arrow-right"></i> CERTIFICATE</li>
-                      <li> <i class="ti-arrow-right"></i> PRE UNIVERSITY</li>
-                      <li> <i class="ti-arrow-right"></i> DIPLOMA</li>
-                      <li> <i class="ti-arrow-right"></i> UNDER GRADUATE</li>
-                      <li> <i class="ti-arrow-right"></i> POST GRADUATE</li>
-                      <li> <i class="ti-arrow-right"></i> PhD COURSES</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
-                  <div class="footer-widget">
-                    <span class="widget-title">HELP & SUPPORT</span>
-                    <ul class="footer-menu">
-                      <li> <i class="ti-arrow-right"></i> FAQs</li>
-                      <li> <i class="ti-arrow-right"></i> What People Say</li>
-                      <li> <i class="ti-arrow-right"></i> Contact us</li>
-                      <li> <i class="ti-arrow-right"></i> Terms & Conditions</li>
-                      <li> <i class="ti-arrow-right"></i> Articles</li>
-                      <li> <i class="ti-arrow-right"></i> Privacy Policy</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-4">
-                  <div class="indin-office">
-                    <span class="Head-indian">India Head Office</span>
-                    <p>B-16 Ground Floor, Mayfield Garden, Sector 50, Gurugram, Haryana, India 122002</p>
-                    <p>Phone: +91-98185-60331</p>
-                    <p>Email: info@educationmalaysia.in</p>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-4">
-                  <div class="indin-office">
-                    <span class="Head-indian">Malaysia Office</span>
-                    <p>8, Jalan Tun Sambanthan, Wilayah Persekutuan Kuala Lumpur Malaysia 50470</p>
-                    <p>Phone: +60 11 1778 4424</p>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-4">
-                  <div class="indin-office">
-                    <span class="Head-indian">Pakistan Office</span>
-                    <p>#311, Garden Heights, Garden Town Lahore Pakistan 54000</p>
-                    <p>Phone: +60-11-1778-4424</p>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-4">
-                  <div class="indin-office">
-                    <span class="b">Bangladesh Office</span>
-                    <p>H-16, Road-09, Sector-01, (Flat-A5/B), Uttara, Dhaka, Bangladesh 1230</p>
-                    <p>Phone: +91-98185-60331</p>
-                    <ul class="linksfooters">
-                      <li class="lia"> <i class="fa fa-facebook" aria-hidden="true"></i> </li>
-                      <li class="lia"> <i class="fa fa-twitter" aria-hidden="true"></i> </li>
-                      <li class="lia"> <i class="fa fa-linkedin" aria-hidden="true"></i> </li>
-                      <li class="lia"> <i class="fa fa-pinterest" aria-hidden="true"></i> </li>
-                      <li class="lia"> <i class="fa fa-instagram" aria-hidden="true"></i> </li>
-                      <li class="lia"> <i class="fa fa-youtube" aria-hidden="true"></i> </li>
-                    </ul>
-                  </div>
-                </div>
+<div class="col-md-6 col-sm-12 col-12 mb-4">
+  <h5>Post-Graduate-Diploma</h5>
+  <ul>
+    <li>Certificate</li>
+  </ul>
+</div>     -->
+              
+            
+              
+            
               </div>
             </div>
-          </footer>
         </div>
 
       </div>
@@ -190,7 +349,7 @@
           <a href="#" data-toggle="modal" data-target="#courseListModal">
             <div class="flex flex-col all-flexx gap-3 items-center text-center h-100 ">
               <div class="imgflx">
-                <img src="{{ url('/') }}/assets/images/courses.png" alt="">
+                <img src="{{ url('/') }}/front/assets/images/courses.png" alt="">
               </div>
               <h2 class="text-xl font-bold">Courses</h2>
               <p>Discover a diverse range of programs from undergraduate to postgraduate degrees, explore options in
@@ -200,19 +359,20 @@
           {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#courseListModal">courses</button> --}}
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
-          <a href="{{ url(url()->current() . '/institutions') }}">
-            <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center">
+          <!-- <a href="{{ url(url()->current() . '/institutions') }}"> -->
+            <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" data-toggle="modal"
+            data-target=".bd-example-modal-lg">
               <div class="imgflx">
-                <img src="{{ url('/') }}/assets/images/institution.png" alt="">
+                <img src="{{ url('/') }}/front/assets/images/institution.png" alt="">
               </div>
               <h2 class="text-xl font-bold">Institutions</h2>
               <p>Connect with globally recognized Malaysian universities and institutions renowned for academic
                 excellence.
               </p>
             </div>
-          </a>
-          <button type="button" class="btn btn-primary" data-toggle="modal"
-            data-target=".bd-example-modal-lg">Institutions</button>
+          <!-- </a> -->
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+            data-target=".bd-example-modal-lg">Institutions</button> -->
 
         </div>
         <!-- ------------------------------------- -->
@@ -232,71 +392,94 @@
               <div class="modal-body">
                 <div class="row-institutes">
                   <div class="row align-items-center">
-                    <div class="col-2 col-sm-12 col-md-2 mb-4">
-                      <div class="institues-img">
-                        <img src="/assets/images/malaysia-uni1.jpeg" class="img-fluid" alt="">
+                    <div class="col-12 col-sm-6 col-md-6 mb-4">
+                    <div class="d-flex  align-items-center flex-column istitue-gap">
+                    <div class="institues-img">
+                        <img src="/front/assets/images/maha.png" class="img-fluid" alt="">
                       </div>
-
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-10 mb-4 ">
                       <div class="universitynames">
-                        <h2>University of Malaya (UM)</h2>
-                        <p> <span>Location:</span> Kuala Lumpur</p>
+                        <h2>mahsa university</h2>
+                      
                       </div>
                     </div>
 
-                  </div>
-                  <div class="c">
-                    <p class=" parargraph-more">
-                      UKM is located in Bangi, a township just next to Kajang. It is easy to take Commuter train, just
-                      about 20
-                      minutes ride to Kuala Lumpur, the capital of Malaysia. Taxis are plentiful and easy accessible too.
-                      Taxi
-                      will cost you about RM 5.00 per trip to UKM.
-                      UKM is located in Bangi, a township just next to Kajang. It is easy to take Commuter train, just
-                      about 20
-                      minutes ride to Kuala Lumpur, the capital of Malaysia. Taxis are plentiful and easy accessible too.
-                      Taxi
-                      will cost you about RM 5.00 per trip to UKM.
-                      UKM is located in Bangi, a township just next to Kajang. It is easy to take Commuter train, just
-                      about 20
-                      minutes ride to Kuala Lumpur, the capital of Malaysia. Taxis are plentiful and easy accessible too.
-                      Taxi
-                      will cost you about RM 5.00 per trip to UKM.
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 mb-4">
+                    <div class="d-flex  align-items-center flex-column istitue-gap">
+                    <div class="institues-img">
+                        <img src="/front/assets/images/cybra-uni.jpeg" class="img-fluid" alt="">
+                      </div>
+                      <div class="universitynames">
+                        <h2>cyberjaya of university</h2>
+                      
+                      </div>
+                    </div>
 
-                      UKM is located in Bangi, a township just next to Kajang. It is easy to take Commuter train, just
-                      about 20
-                      minutes ride to Kuala Lumpur, the capital of Malaysia. Taxis are plentiful and easy accessible too.
-                      Taxi
-                      will cost you about RM 5.00 per trip to UKM.
-                      UKM is located in Bangi, a township just next to Kajang. It is easy to take Commuter train, just
-                      about 20
-                      minutes ride to Kuala Lumpur, the capital of Malaysia. Taxis are plentiful and easy accessible too.
-                      Taxi
-                      will cost you about RM 5.00 per trip to UKM.
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 mb-4">
+                    <div class="d-flex  align-items-center flex-column istitue-gap">
+                    <div class="institues-img">
+                        <img src="/front/assets/images/mila-uni.png" class="img-fluid" alt="">
+                      </div>
+                      <div class="universitynames">
+                        <h2>Mila university</h2>
+                      
+                      </div>
+                    </div>
 
-                      UKM is located in Bangi, a township just next to Kajang. It is easy to take Commuter train, just
-                      about 20
-                      minutes ride to Kuala Lumpur, the capital of Malaysia. Taxis are plentiful and easy accessible too.
-                      Taxi
-                      will cost you about RM 5.00 per trip to UKM.UKM is located in Bangi, a township just next to Kajang.
-                      It is
-                      easy to take Commuter train, just about 20 minutes ride to Kuala Lumpur, the capital of Malaysia.
-                      Taxis are
-                      plentiful and easy accessible too. Taxi will cost you about RM 5.00 per trip to UKM.UKM is located
-                      in Bangi,
-                      a township just next to Kajang. It is easy to take Commuter train, just about 20 minutes ride to
-                      Kuala
-                      Lumpur, the capital of Malaysia. Taxis are plentiful and easy accessible too. Taxi will cost you
-                      about RM
-                      5.00 per trip to UKM.
-                    </p>
-                    <a class="showbx" href="#">Show More <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    </a>
-                    <a class="showbx" href="#">Show Less <i class="fa fa-angle-up" aria-hidden="true"></i>
-                    </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 mb-4">
+                    <div class="d-flex  align-items-center flex-column istitue-gap">
+                    <div class="institues-img">
+                        <img src="/front/assets/images/IIUM.png" class="img-fluid" alt="">
+                      </div>
+                      <div class="universitynames">
+                        <h2>interantional islamic university malysia ( IIUM)</h2>
+                      
+                      </div>
+                    </div>
+
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 mb-4">
+                    <div class="d-flex  align-items-center flex-column istitue-gap">
+                    <div class="institues-img">
+                        <img src="/front/assets/images/UPSI.png" class="img-fluid" alt="">
+                      </div>
+                      <div class="universitynames">
+                        <h2>UCSI</h2>
+                  
+                      </div>
+                    </div>
+
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 mb-4">
+                    <div class="d-flex  align-items-center flex-column istitue-gap">
+                    <div class="institues-img">
+                        <img src="/front/assets/images/segi.png" class="img-fluid" alt="">
+                      </div>
+                      <div class="universitynames">
+                        <h2>SEGI University</h2>
+                  
+                      </div>
+                    </div>
+
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 mb-4">
+                    <div class="d-flex  align-items-center flex-column istitue-gap">
+                    <div class="institues-img">
+                        <img src="/front/assets/images/ucsi.png" class="img-fluid" alt="">
+                      </div>
+                      <div class="universitynames">
+                        <h2>universiti pendidikan sultan idris (upsi)</h2>
+                  
+                      </div>
+                    </div>
+
+                    </div>
+                 
                   </div>
-                  <button class="featuresoption"> <span></span> Featured </button>
+             
                 </div>
               </div>
             </div>
@@ -306,7 +489,7 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 ">
           <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center">
             <div class="imgflx">
-              <img src="{{ url('/') }}/assets/images/scholarship.png" alt="">
+              <img src="{{ url('/') }}/front/assets/images/scholarship.png" alt="">
             </div>
             <h2 class="text-xl font-bold">Scholarships</h2>
             <p>Exclusive scholarship opportunities for Libyan students sponsored by the Libyan Government.</p>
@@ -325,8 +508,7 @@
             <h2 class="main-faris">
               Education Fair 2025 </h2>
             <!-- <p class="all-fair mb-2">{{ $pageDetail->date_and_address }}</p> -->
-            <p class="all-fair mb-2">Libyan Academy for Postgraduate Studies, Tripoli Libya. 22nd & 23rd February 2025,
-              9.30am to 1.00pm & 4.00pm to 8.00pm</p>
+          
             <h2 class="fairs">
               Malaysian Universities Education & Training Fair </h2>
             <ul class="set_uls">
@@ -345,7 +527,7 @@
                                             <li><b>Supported by:</b> NAPEI, Malaysia</li>
                                           </ul> -->
             <div class="imgsfaird">
-              <img src="/assets/images/libya-malaysia.png" class="imgsfairs" alt="">
+              <img src="/front/assets/images/libya-malaysia.png" class="imgsfairs" alt="">
             </div>
             <!-- <a href="#register" class="new-registor">Register Now</a> -->
           </div>
@@ -501,7 +683,7 @@
 
           <div class="fariul">
             <div class="flspan">
-              <span> <img src="/assets/images/top-universities.png " class="img-fluid" alt=""></span>
+              <span> <img src="/front/assets/images/top-universities.png " class="img-fluid" alt=""></span>
 
             </div>
             <div class="fair-us">
@@ -514,7 +696,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
           <div class="fariul">
             <div class="flspan">
-              <span> <img src="/assets/images/Exclusive-Scholarship.png " class="img-fluid" alt=""></span>
+              <span> <img src="/front/assets/images/Exclusive-Scholarship.png " class="img-fluid" alt=""></span>
 
             </div>
             <div class="fair-us">
@@ -527,7 +709,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
           <div class="fariul">
             <div class="flspan">
-              <span> <img src="/assets/images/Spot-Admissions.png " class="img-fluid" alt=""></span>
+              <span> <img src="/front/assets/images/Spot-Admissions.png " class="img-fluid" alt=""></span>
 
             </div>
             <div class="fair-us">
@@ -540,7 +722,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
           <div class="fariul">
             <div class="flspan">
-              <span> <img src="/assets/images/Visa-travel.png " class="img-fluid" alt=""></span>
+              <span> <img src="/front/assets/images/Visa-travel.png " class="img-fluid" alt=""></span>
 
             </div>
             <div class="fair-us">
@@ -553,7 +735,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
           <div class="fariul">
             <div class="flspan">
-              <span> <img src="/assets/images/Work-Internships.png " class="img-fluid" alt=""></span>
+              <span> <img src="/front/assets/images/Work-Internships.png " class="img-fluid" alt=""></span>
             </div>
             <div class="fair-us">
               <h2>Work & Internships</h2>
@@ -565,7 +747,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
           <div class="fariul">
             <div class="flspan">
-              <span> <img src="/assets/images/Cultural-Insights.png " class="img-fluid" alt=""></span>
+              <span> <img src="/front/assets/images/Cultural-Insights.png " class="img-fluid" alt=""></span>
 
             </div>
             <div class="fair-us">
@@ -578,7 +760,7 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
           <div class="fariul">
             <div class="flspan">
-              <span> <img src="/assets/images/save-time.png " class="img-fluid" alt=""></span>
+              <span> <img src="/front/assets/images/save-time.png " class="img-fluid" alt=""></span>
 
             </div>
             <div class="fair-us">
@@ -659,7 +841,7 @@
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4 ">
           <div class="all-fairss-img text-center ">
-            <img src="/assets/images/group-photos.png " class="img-fluid" alt="">
+            <img src="/front/assets/images/group-photos.png " class="img-fluid" alt="">
           </div>
         </div>
       </div>
@@ -837,62 +1019,62 @@
               <div class="slider">
                 <div class="slide-track">
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/govermentlibya.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/govermentlibya.png" alt="">
                   </div>
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/Libia-education-board-Logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/govt-logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/Libia-education-board-Logo.png" alt="">
                   </div>
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/britannica-logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/govt-logo.png" alt="">
                   </div>
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/Flag-of-Libya.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                  </div>
+
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/Flag-of-Libya.png" alt="">
                   </div>
                   <!-- 1  -->
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/govermentlibya.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/govermentlibya.png" alt="">
                   </div>
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/Libia-education-board-Logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/govt-logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/Libia-education-board-Logo.png" alt="">
                   </div>
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/britannica-logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/govt-logo.png" alt="">
                   </div>
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/Flag-of-Libya.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                  </div>
+
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/Flag-of-Libya.png" alt="">
                   </div>
                   <!-- 2  -->
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/govermentlibya.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/govermentlibya.png" alt="">
                   </div>
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/Libia-education-board-Logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/govt-logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/Libia-education-board-Logo.png" alt="">
                   </div>
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/britannica-logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/govt-logo.png" alt="">
                   </div>
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/assets/web/images/Flag-of-Libya.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                  </div>
+
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/Flag-of-Libya.png" alt="">
                   </div>
 
                 </div>
@@ -953,7 +1135,7 @@
         </div>
         <!-- <div class="col-md-6">
                                                       <div class="imgfaq">
-                                                        <img src="{{ url('/') }}/assets/web/images/faq.png" class="img-fluid" alt="">
+                                                        <img src="{{ url('/') }}/front/assets/images/faq.png" class="img-fluid" alt="">
 
                                                       </div>
                                                     </div> -->

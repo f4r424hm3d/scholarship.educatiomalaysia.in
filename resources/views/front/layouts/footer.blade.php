@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="dark-footer skin-dark-footer">
+<!-- <footer class="dark-footer skin-dark-footer">
   <div>
     <div class="container">
       <div class="row">
@@ -117,14 +117,12 @@
         </div>
 
       </div>
-      <!-- <div class="row">
 
-            </div> -->
 
-      <!-- Footer End -->
-
+  
       <span id="back2Top" class="top-scroll" title="Back to top"><i class="ti-arrow-up"></i></span>
     </div>
+    </footer> -->
     <!-- All Js -->
     <script src="{{ url('front/') }}/assets/js/jquery.min.js"></script>
     <script src="{{ url('front/') }}/assets/js/popper.min.js"></script>
@@ -243,11 +241,11 @@
       });
     </script>
 
-    <div class="whats-float">
+    <!-- <div class="whats-float">
       <a href="javascript:void()" class="open-button" onClick="openForm()">
         <span>Need any help<br><small>Chat with us</small></span>
         <img data-src="/assets/images/wa.png" width="30" alt="whatsapp"></a>
-    </div>
+    </div> -->
 
     <div class="chat-popup" id="myForm">
       <div class="wa-container">

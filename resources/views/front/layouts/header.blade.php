@@ -111,7 +111,7 @@
   <div id="main-wrapper">
     <!-- Top header-->
 
-    <nav class="navbar navbar-expand-lg navbar-light main-heddd">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light main-heddd">
       <div class="container">
         <a class="navbar-brand" href="{{ url('/') }} " alt="Education Malaysia Education Logo">
           <img src="{{ url('front/') }}/assets/img/logo.png" class="logo-max" alt="">
@@ -184,7 +184,7 @@
           </form>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <!-- new header added start -->
 
