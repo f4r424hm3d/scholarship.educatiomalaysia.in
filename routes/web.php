@@ -146,4 +146,7 @@ Route::get('/education-fair-in-libya-2025/institutions', [LibiaLandingPageFc::cl
 Route::post('/libia/register', [LibiaLandingPageFc::class, 'register'])->name('libia.register');
 Route::post('/libia/fetch-program', [LibiaLandingPageFc::class, 'getProgramsByUniversity'])->name('libia.fetch.program');
 Route::post('/libia/fetch-courses', [LibiaLandingPageFc::class, 'getCoursesByUniversity'])->name('libia.fetch.courses');
+
+Route::get('privacy-policy', [HomeFc::class, 'privacyPolicy'])->name('pp');
+Route::get('terms-and-conditions', [HomeFc::class, 'termsConditions'])->name('tc');
 // COURSES IN MALAYSIA ROUTES END

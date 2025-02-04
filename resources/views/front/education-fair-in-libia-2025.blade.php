@@ -7,39 +7,84 @@
   <section class="banner-section">
 
     <div class="container">
-      <h2 class="banner-titles">MALAYSIAN UNIVERSITIES EDUCATION & TRAINING Fair
+      <h2 class="banner-titles">MALAYSIAN UNIVERSITIES EDUCATION & TRAINING Fair 2025
       </h2>
       <div class="row">
-
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <!-- class="carousel slide" data-ride="carousel" -->
+        <div id="carouselExampleControls">
           <div class="carousel-inner">
             @php
               $i = 1;
             @endphp
             @foreach ($pageDetail->banners as $row)
               <div class="carousel-item {{ $i == '1' ? 'active' : '' }}">
-                <img class="d-block w-100" src="{{ asset($row->file_path) }}" alt="{{ $row->alt_text }}">
+                <!-- <img class="d-block w-100" src="{{ asset($row->file_path) }}" alt="{{ $row->alt_text }}"> -->
+                <video autoplay muted loop>
+  <source src="/front/video/videoflag.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
               </div>
               @php
                 $i++;
               @endphp
             @endforeach;
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-          </a>
+          </a> -->
         </div>
       </div>
-      <h2 class="bannerma">Malaysian Universities Education held in Tripoli hosted by Ministry of Higher Education and
-        Scientific Research of Libya and organized by Malaysian Export Academy (MEXA).</h2>
+      <h2 class="bannerma">Hosted by Ministry of Higher Education
+        and
+        Scientific Research of Libya and organized by Malaysian Export Academy (MEXA)</h2>
     </div>
 
   </section>
+
+  <!-- Modal -->
+  <div class="modal courses-modal  fade" id="courseListModaldfdf" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> Participating Universities</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <footer class="dark-footer skin-dark-footer pt-3 rounded">
+            <div class="container-fluid">
+              <div class="row">
+
+                @foreach ($result as $data)
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-4">
+                    <div class="footer-widget">
+                      <span class="widget-title">{{ $data['category_name'] }}</span>
+                      <ul class="footer-menu">
+                        @foreach ($data['specializations'] as $specialization_name)
+                          <li> <i class="ti-arrow-right"></i> {{ $specialization_name }}</li>
+                        @endforeach
+                      </ul>
+                    </div>
+                  </div>
+                @endforeach
+
+              </div>
+            </div>
+
+          </footer>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- Modal -->
   <div class="modal coursemodal  fade" id="courseListModal" tabindex="-1" role="dialog"
@@ -47,7 +92,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> what is offered by the participating universities.?</h5>
+          <h5 class="modal-title" id="exampleModalLabel"> Participating Universities</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -197,9 +242,99 @@
                   <li>Business and Management</li>
                   <li>Certificate</li>
                   <li>Creative Arts and Design</li>
-
+                  <!-- <li>Education and Training</li>
+                                <li>Foundation</li>
+                                <li>Health and Medicine</li>
+                                <li>Law</li>
+                                <li>Social Studies and Media</li> -->
                 </ul>
               </div>
+              <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
+                              <h5>Diploma</h5>
+                              <ul>
+                                <li>Agriculture and Veterinary Medicine</li>
+                                <li>Applied and Pure Sciences</li>
+                                <li>Architecture and Construction</li>
+                                <li>Business and Management</li>
+                                <li>Certificate</li>
+                                <li>Computer Science and IT</li>
+                                <li>Creative Arts and Design</li>
+                                <li>Education and Training</li>
+                                <li>Engineering</li>
+                                <li>Foundation</li>
+                                <li>Health and Medicine</li>
+                                <li>Humanities</li>
+                                <li>Law</li>
+                                <li>Personal Care and Fitness</li>
+                                <li>Social Studies and Media</li>
+                                <li>Travel and Hospitality</li>
+                              </ul>
+                            </div> -->
+              <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
+                              <h5>Post-Graduate</h5>
+                              <ul>
+                                <li>Agriculture and Veterinary Medicine</li>
+                                <li>Applied and Pure Sciences</li>
+                                <li>Architecture and Construction</li>
+                                <li>Business and Management</li>
+                                <li>Computer Science and IT</li>
+                                <li>Creative Arts and Design</li>
+                                <li>Education and Training</li>
+                                <li>Engineering</li>
+                                <li>Health and Medicine</li>
+                                <li>Humanities</li>
+                                <li>Law</li>
+                                <li>MBA</li>
+                                <li>Personal Care and Fitness</li>
+                                <li>Social Studies and Media</li>
+                                <li>Travel and Hospitality</li>
+                              </ul>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-12 mb-4">
+                              <h5>Under-Graduate</h5>
+                              <ul>
+                                <li>Agriculture and Veterinary Medicine</li>
+                                <li>American Degree program</li>
+                                <li>Applied and Pure Sciences</li>
+                                <li>Architecture and Construction</li>
+                                <li>Business and Management</li>
+                                <li>Certificate</li>
+                                <li>Computer Science and IT</li>
+                                <li>Creative Arts and Design</li>
+                                <li>Education and Training</li>
+                                <li>Engineering</li>
+                                <li>Foundation</li>
+                                <li>Health and Medicine</li>
+                                <li>Humanities</li>
+                                <li>Law</li>
+                                <li>MBA</li>
+                                <li>Personal Care and Fitness</li>
+                                <li>Social Studies and Media</li>
+                                <li>Travel and Hospitality</li>
+                              </ul>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-12 mb-4">
+
+                                              <h5>Top Courses</h5>
+                                              <ul>
+                                                <li> Accounting & Finance</li>
+                                                <li> Civil Engineering</li>
+                                                <li> Arts/Fine Arts</li>
+                                                <li> Hospitality</li>
+                                                <li> Business Management</li>
+                                                <li> Computer Engineering</li>
+                                                <li> Physiology</li>
+                                                <li> Medicine</li>
+                                                <li> Business Information Systems</li>
+                                              </ul>
+                                            </div>
+                            <div class="col-md-6 col-sm-12 col-12 mb-4">
+                              <h5>Post-Graduate-Diploma</h5>
+                              <ul>
+                                <li>Certificate</li>
+                              </ul>
+                            </div>     -->
 
             </div>
           </div>
@@ -249,7 +384,7 @@
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">what is offered by the participating universities.? </h5>
+                <h5 class="modal-title" id="exampleModalLabel">Participating Universities </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -295,55 +430,55 @@
 
   <section class="registrations-fomrs" id="register">
     <div class="container">
-      <div class="row align-items-center">
+      <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
-
           <div class="fair-details">
             <h2 class="main-faris">
-              Education Fair 2025 </h2>
+              Malaysian Universities Education & Training Fair 2025 </h2>
             <!-- <p class="all-fair mb-2">{{ $pageDetail->date_and_address }}</p> -->
 
-            <h2 class="fairs">
-              Malaysian Universities Education & Training Fair </h2>
+            <!-- <h2 class="fairs">
+                                          </h2> -->
             <ul class="set_uls">
               <li><b><i class="fa fa-map-pin" aria-hidden="true"></i>
-                  Venue / Place</b> <span>:</span> Libyan Academy for Postgraduate Studies, Tripoli, Libya</li>
-              <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date:</b> <span>:</span> 22nd & 23rd February 2025
+                  Venue</b> <span>:</span> Libyan Academy for Postgraduate Studies, Tripoli, Libya</li>
+              <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date</b> <span>:</span> 22nd & 23rd February 2025
               </li>
               <li><b><i class="fa fa-clock-o" aria-hidden="true"></i>
-                  Time:</b> <span>:</span> 9:30 AM – 1:00 PM & 4:00 PM – 8:00 PM</li>
+                  Time</b> <span>:</span> 9:30 AM – 1:00 PM & 4:00 PM – 8:00 PM</li>
             </ul>
-
             <div class="imgsfaird">
               <img src="/front/assets/images/libya-malaysia.png" class="imgsfairs" alt="">
             </div>
-            <!-- <a href="#register" class="new-registor">Register Now</a> -->
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 ">
-          @if ($errors->any())
-            <div class="alert alert-danger">
-              <ul>
-                @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                @endforeach
-              </ul>
-            </div>
-          @endif
 
           @if (session()->has('smsg'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              {{ session()->get('smsg') }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div
+              class="alert alert-success alert-dismissible d-flex justify-content-between align-items-center errorshow"
+              role="alert">
+              <h6 class="mb-0">{{ session()->get('smsg') }}</h6>
+              <button type="button" class="btn-close alert alert-success mb-0 p-0 " data-bs-dismiss="alert"
+                aria-label="Close">
+                <i class="fa fa-times cclose" aria-hidden="true"></i>
+
+              </button>
+
             </div>
           @endif
           @if (session()->has('emsg'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              {{ session()->get('emsg') }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="alert alert-danger alert-dismissible d-flex justify-content-between align-items-center errorshow"
+              role="alert">
+              <h6 class="mb-0">{{ session()->get('smsg') }}</h6>
+              <button type="button" class="btn-close alert alert-danger mb-0 p-0" data-bs-dismiss="alert"
+                aria-label="Close">
+
+                <i class="fa fa-times cclose" aria-hidden="true"></i>
+
+              </button>
             </div>
           @endif
-
           <div class="all-forms main-modals">
             <h2 class="new-regist">Register Now</h2>
             <form class="s12 f" action="{{ route('libia.register') }}" method="post">
@@ -355,7 +490,7 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
-                    <input name="name" class="form-control" type="text" placeholder="Enter Full Name"
+                    <input name="name" class="form-control" type="text" placeholder="Full Name"
                       pattern="[a-zA-Z'-'\s]*" value="{{ old('name', '') }}" required>
                     @error('name')
                       <span class="text-danger">{{ $message }}</span>
@@ -365,7 +500,7 @@
 
                 <div class="col-md-6  col-sm-12">
                   <div class="form-group">
-                    <input name="email" class="form-control" type="email" placeholder="Enter Email Address"
+                    <input name="email" class="form-control" type="email" placeholder="Personal Email Address"
                       value="{{ old('email', '') }}" required>
                     @error('email')
                       <span class="text-danger">{{ $message }}</span>
@@ -416,7 +551,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                   <div class="form-group">
                     <input name="libya_identification_number" class="form-control" type="text"
-                      placeholder="LIBYA IDENTIFICATION NUMBER" value="{{ old('libya_identification_number', '') }}"
+                      placeholder="Libya Identitifcation Number" value="{{ old('libya_identification_number', '') }}"
                       required>
                     @error('libya_identification_number')
                       <span class="text-danger">{{ $message }}</span>
@@ -426,7 +561,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                   <div class="form-group">
                     <input name="passport_number" class="form-control" type="text"
-                      placeholder="LIBYAN PASSPORT NUMBER" value="{{ old('passport_number', '') }}" required>
+                      placeholder="Liyan Passport Number" value="{{ old('passport_number', '') }}" required>
                     @error('passport_number')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -483,26 +618,27 @@
                   </div>
                 </div>
 
-                <div class="col-lg-5 col-md-5 col-sm-12">
+                <div class="col-lg-4 col-md-4 col-sm-12">
                   <div class="form-group">
                     <input type="text" placeholder="Captcha: {{ $captcha['text'] }} =" class="form-control"
                       value="Captcha: {{ $captcha['text'] }} =" disabled readonly>
                   </div>
                 </div>
-                <div class="col-lg-7 col-md-7  col-sm-12">
+                <div class="col-lg-8 col-md-8  col-sm-12">
                   <div class="form-group">
                     <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
                       name="captcha_answer" required>
                   </div>
                 </div>
 
-                <div class="col-lg-12 col-md-12 col-sm-12">
+                <!-- <div class="col-lg-12 col-md-12 col-sm-12">
 
                   <div class="form-check checkbx-white pl-4">
+                  <input type="checkbox" class="form-check-input">
                     <label class="form-check-label px-0 " for="test5">By clicking on register I agree to the
                       <a href="{{ url('terms-and-conditions') }}" target="_blank">terms & conditions</a></label>
                   </div>
-                </div>
+                </div> -->
 
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="input-field s4 d-flex justify-content-center align-items-center">
@@ -521,7 +657,7 @@
 
   <section class="educationfairs">
     <div class="container">
-      <h2 class="set-fairs mb-4">Why Join This Education Fair?</h2>
+      <p class="universties mb-4">Why Join This Education Fair ?</p>
       <div class="row align-items-center  justify-content-center  ">
 
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
@@ -632,18 +768,7 @@
         <div class="tab-content" id="one-tabContent">
           <div class="tab-pane last-div active mx-2" id="one" role="tabpanel" aria-labelledby="one-tab">
 
-            <div class="flex flex-col divide-y">
-              <div
-                class=" px-2 py-2 align-items-center  setparticaptes gap-3 my-0 justify-content-between d-flex border-top border-bottom ">
-                <span class="grow"><label>EXHIBITOR</label></span>
-                <div class="d-flex justify-content-between spacebx">
-                  <span class="shrink"><label></label></span>
-
-                  <span class="shrink"><label>Send Application
-                    </label></span>
-                </div>
-              </div>
-            </div>
+            
             @foreach ($pageDetail->universities as $row)
               <div
                 class="px-2 py-2 align-items-center setparticaptes gap-3 my-0 justify-content-between d-flex border-top border-bottom">
@@ -652,14 +777,9 @@
                     <span class="">{{ $row->university->name }}</span>
                   </a>
                 </div>
-                <div class="d-flex justify-content-between spacebx">
-                  <div class="numbers">
-                    {{ $row->booth_no }}
-                  </div>
-                  <div class="shrink">
+                <div class="shrink">
                     <button class="all-apply" data-id="{{ $row->university_id }}">Apply Now</button>
                   </div>
-                </div>
               </div>
             @endforeach
 
@@ -672,7 +792,7 @@
     </div>
   </section>
 
-  <section class="education-fairs">
+  <!-- <section class="education-fairs">
     <div class="container">
       <div class="row align-items-center ">
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4 ">
@@ -693,7 +813,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="education-special">
     <div class="container">
@@ -788,7 +908,7 @@
     </div>
   </section>
 
-  <section class="applyisss">
+  <!-- <section class="applyisss">
     <div class="applyingsstart">
       <h2 class="applyings">Applying for Scholarships in Malaysia? Here’s a Quick Guide
     </div>
@@ -852,7 +972,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="malaysia-govt">
     <div class="contanier">
@@ -865,64 +985,21 @@
             <div class="allsponser">
               <div class="slider">
                 <div class="slide-track">
+                
                   <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/govermentlibya.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/libian-logo.png" alt="">
                   </div>
                   <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/Libia-education-board-Logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
-
+                 
                   <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/govt-logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/Flag-of-Libya.png" alt="">
-                  </div>
-                  <!-- 1  -->
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/govermentlibya.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/libian-logo.png" alt="">
                   </div>
                   <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/Libia-education-board-Logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/govt-logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/Flag-of-Libya.png" alt="">
-                  </div>
-                  <!-- 2  -->
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/govermentlibya.png" alt="">
-                  </div>
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/Libia-education-board-Logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/govt-logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                  </div>
-
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/Flag-of-Libya.png" alt="">
-                  </div>
+                 
 
                 </div>
               </div>
@@ -936,12 +1013,12 @@
     </div>
   </section>
 
-  <section class="faq-sections">
+  <!-- <section class="faq-sections">
 
     <div class="container">
-      <div class=" faq-details">
-        Frequently Ask <span>Question</span>
-      </div>
+      <p class=" universties  pl-2   ">
+        Frequently Asked Questions (FAQ <span class="lss" >s</span>)
+      </s>
       <div class="row align-items-center">
         <div class="col-md-12">
 
@@ -980,15 +1057,10 @@
           </div>
 
         </div>
-        <!-- <div class="col-md-6">
-                                                                                                                            <div class="imgfaq">
-                                                                                                                              <img src="{{ url('/') }}/front/assets/images/faq.png" class="img-fluid" alt="">
-
-                                                                                                                            </div>
-                                                                                                                          </div> -->
+       
       </div>
     </div>
-  </section>
+  </section> -->
   <script>
     $(document).ready(function() {
       // Wrap the table in a div with class 'table-responsive'
