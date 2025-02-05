@@ -5,12 +5,12 @@
 @endpush
 @section('main-section')
   <section class="banner-section">
-
+    <div id="google_translate_element"></div>
     <div class="container">
       <h2 class="banner-titles">MALAYSIAN UNIVERSITIES EDUCATION & TRAINING Fair 2025
       </h2>
       <div class="row">
-      <!-- class="carousel slide" data-ride="carousel" -->
+        <!-- class="carousel slide" data-ride="carousel" -->
         <div id="carouselExampleControls">
           <div class="carousel-inner">
             @php
@@ -20,9 +20,9 @@
               <div class="carousel-item {{ $i == '1' ? 'active' : '' }}">
                 <!-- <img class="d-block w-100" src="{{ asset($row->file_path) }}" alt="{{ $row->alt_text }}"> -->
                 <video autoplay muted loop>
-  <source src="/front/video/videoflag.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+                  <source src="/front/video/videoflag.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
 
               </div>
               @php
@@ -30,14 +30,7 @@
               @endphp
             @endforeach;
           </div>
-          <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a> -->
+
         </div>
       </div>
       <h2 class="bannerma">Hosted by Ministry of Higher Education
@@ -242,99 +235,8 @@
                   <li>Business and Management</li>
                   <li>Certificate</li>
                   <li>Creative Arts and Design</li>
-                  <!-- <li>Education and Training</li>
-                                <li>Foundation</li>
-                                <li>Health and Medicine</li>
-                                <li>Law</li>
-                                <li>Social Studies and Media</li> -->
                 </ul>
               </div>
-              <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
-                              <h5>Diploma</h5>
-                              <ul>
-                                <li>Agriculture and Veterinary Medicine</li>
-                                <li>Applied and Pure Sciences</li>
-                                <li>Architecture and Construction</li>
-                                <li>Business and Management</li>
-                                <li>Certificate</li>
-                                <li>Computer Science and IT</li>
-                                <li>Creative Arts and Design</li>
-                                <li>Education and Training</li>
-                                <li>Engineering</li>
-                                <li>Foundation</li>
-                                <li>Health and Medicine</li>
-                                <li>Humanities</li>
-                                <li>Law</li>
-                                <li>Personal Care and Fitness</li>
-                                <li>Social Studies and Media</li>
-                                <li>Travel and Hospitality</li>
-                              </ul>
-                            </div> -->
-              <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
-                              <h5>Post-Graduate</h5>
-                              <ul>
-                                <li>Agriculture and Veterinary Medicine</li>
-                                <li>Applied and Pure Sciences</li>
-                                <li>Architecture and Construction</li>
-                                <li>Business and Management</li>
-                                <li>Computer Science and IT</li>
-                                <li>Creative Arts and Design</li>
-                                <li>Education and Training</li>
-                                <li>Engineering</li>
-                                <li>Health and Medicine</li>
-                                <li>Humanities</li>
-                                <li>Law</li>
-                                <li>MBA</li>
-                                <li>Personal Care and Fitness</li>
-                                <li>Social Studies and Media</li>
-                                <li>Travel and Hospitality</li>
-                              </ul>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-12 mb-4">
-                              <h5>Under-Graduate</h5>
-                              <ul>
-                                <li>Agriculture and Veterinary Medicine</li>
-                                <li>American Degree program</li>
-                                <li>Applied and Pure Sciences</li>
-                                <li>Architecture and Construction</li>
-                                <li>Business and Management</li>
-                                <li>Certificate</li>
-                                <li>Computer Science and IT</li>
-                                <li>Creative Arts and Design</li>
-                                <li>Education and Training</li>
-                                <li>Engineering</li>
-                                <li>Foundation</li>
-                                <li>Health and Medicine</li>
-                                <li>Humanities</li>
-                                <li>Law</li>
-                                <li>MBA</li>
-                                <li>Personal Care and Fitness</li>
-                                <li>Social Studies and Media</li>
-                                <li>Travel and Hospitality</li>
-                              </ul>
-                            </div>
-
-                            <div class="col-md-6 col-sm-12 col-12 mb-4">
-
-                                              <h5>Top Courses</h5>
-                                              <ul>
-                                                <li> Accounting & Finance</li>
-                                                <li> Civil Engineering</li>
-                                                <li> Arts/Fine Arts</li>
-                                                <li> Hospitality</li>
-                                                <li> Business Management</li>
-                                                <li> Computer Engineering</li>
-                                                <li> Physiology</li>
-                                                <li> Medicine</li>
-                                                <li> Business Information Systems</li>
-                                              </ul>
-                                            </div>
-                            <div class="col-md-6 col-sm-12 col-12 mb-4">
-                              <h5>Post-Graduate-Diploma</h5>
-                              <ul>
-                                <li>Certificate</li>
-                              </ul>
-                            </div>     -->
 
             </div>
           </div>
@@ -438,7 +340,7 @@
             <!-- <p class="all-fair mb-2">{{ $pageDetail->date_and_address }}</p> -->
 
             <!-- <h2 class="fairs">
-                                          </h2> -->
+                                              </h2> -->
             <ul class="set_uls">
               <li><b><i class="fa fa-map-pin" aria-hidden="true"></i>
                   Venue</b> <span>:</span> Libyan Academy for Postgraduate Studies, Tripoli, Libya</li>
@@ -633,12 +535,12 @@
 
                 <!-- <div class="col-lg-12 col-md-12 col-sm-12">
 
-                  <div class="form-check checkbx-white pl-4">
-                  <input type="checkbox" class="form-check-input">
-                    <label class="form-check-label px-0 " for="test5">By clicking on register I agree to the
-                      <a href="{{ url('terms-and-conditions') }}" target="_blank">terms & conditions</a></label>
-                  </div>
-                </div> -->
+                      <div class="form-check checkbx-white pl-4">
+                      <input type="checkbox" class="form-check-input">
+                        <label class="form-check-label px-0 " for="test5">By clicking on register I agree to the
+                          <a href="{{ url('terms-and-conditions') }}" target="_blank">terms & conditions</a></label>
+                      </div>
+                    </div> -->
 
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="input-field s4 d-flex justify-content-center align-items-center">
@@ -768,7 +670,6 @@
         <div class="tab-content" id="one-tabContent">
           <div class="tab-pane last-div active mx-2" id="one" role="tabpanel" aria-labelledby="one-tab">
 
-            
             @foreach ($pageDetail->universities as $row)
               <div
                 class="px-2 py-2 align-items-center setparticaptes gap-3 my-0 justify-content-between d-flex border-top border-bottom">
@@ -778,8 +679,8 @@
                   </a>
                 </div>
                 <div class="shrink">
-                    <button class="all-apply" data-id="{{ $row->university_id }}">Apply Now</button>
-                  </div>
+                  <button class="all-apply" data-id="{{ $row->university_id }}">Apply Now</button>
+                </div>
               </div>
             @endforeach
 
@@ -791,29 +692,6 @@
 
     </div>
   </section>
-
-  <!-- <section class="education-fairs">
-    <div class="container">
-      <div class="row align-items-center ">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4 ">
-          <div class="all-fairss">
-            <h2> <span>Why Attend </span> the Malaysian Universities Education Fair Tripoli, Libya?</h2>
-            <p>The Education Fair is a pioneering event designed to connect Libyan students with representatives from
-              prestigious universities from Malaysia.
-              Sponsored by the Libyan Government, this Education Fair provides students with invaluable opportunities to
-              explore international academic pathways, secure scholarships, and take significant steps toward fulfilling
-              their educational aspirations.
-            </p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4 ">
-          <div class="all-fairss-img text-center ">
-            <img src="/front/assets/images/group-photos.png " class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <section class="education-special">
     <div class="container">
@@ -908,72 +786,6 @@
     </div>
   </section>
 
-  <!-- <section class="applyisss">
-    <div class="applyingsstart">
-      <h2 class="applyings">Applying for Scholarships in Malaysia? Here’s a Quick Guide
-    </div>
-    </h2>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-
-          <ol class="olrearsarch">
-            <li>
-              <h2>Research available scholarships</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident</p>
-            </li>
-            <li>
-              <h2>Check eligibility criteria</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident</p>
-            </li>
-            <li>
-
-              <h2>Gather required documents</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident</p>
-            </li>
-            <li>
-              <h2>Apply online or offline</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident</p>
-            </li>
-            <li>
-              <h2>Submit the application</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident</p>
-            </li>
-            <li>
-              <h2>Wait for results</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident</p>
-            </li>
-            <li>
-              <h2>Fulfil scholarship requirements</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident</p>
-            </li>
-            <li>
-              <h2>Submit the application</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                cupiditate non provident</p>
-            </li>
-
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
   <section class="malaysia-govt">
     <div class="contanier">
       <div class="row">
@@ -985,21 +797,20 @@
             <div class="allsponser">
               <div class="slider">
                 <div class="slide-track">
-                
+
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/libian-logo.png" alt="">
                   </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
-                 
+
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/libian-logo.png" alt="">
                   </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
-                 
 
                 </div>
               </div>
@@ -1013,54 +824,6 @@
     </div>
   </section>
 
-  <!-- <section class="faq-sections">
-
-    <div class="container">
-      <p class=" universties  pl-2   ">
-        Frequently Asked Questions (FAQ <span class="lss" >s</span>)
-      </s>
-      <div class="row align-items-center">
-        <div class="col-md-12">
-
-          <div id="accordion" class="mainacc">
-            <div class="card-diff">
-              <div class="row">
-                @foreach ($pageDetail->faqs as $row)
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
-                    <div class=" card mb-0">
-                      <div class="card-header" id="heading{{ $row->id }}">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" data-toggle="collapse"
-                            data-target="#collapse{{ $row->id }}" aria-expanded="true"
-                            aria-controls="collapse{{ $row->id }}">
-                            <div class="clickfa d-flex justify-content-between gapss align-items-center">
-                              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                              <h2 class="span-accord">{{ $row->question }}</h2>
-
-                            </div>
-                          </button>
-                        </h5>
-                      </div>
-                      <div id="collapse{{ $row->id }}" class="collapse "
-                        aria-labelledby="heading{{ $row->id }}" data-parent="#accordion">
-                        <div class="card-body">
-                          <p class="card-anwer"> {!! $row->answer !!}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                @endforeach
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-       
-      </div>
-    </div>
-  </section> -->
   <script>
     $(document).ready(function() {
       // Wrap the table in a div with class 'table-responsive'

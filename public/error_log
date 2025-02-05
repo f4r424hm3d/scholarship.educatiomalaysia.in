@@ -1,0 +1,12 @@
+[18-Dec-2024 19:14:27 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.31. in /home/rnjthaia/educationmalaysia_code/vendor/composer/platform_check.php on line 24
+[18-Dec-2024 19:16:56 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.31. in /home/rnjthaia/educationmalaysia_code/vendor/composer/platform_check.php on line 24
+[18-Dec-2024 19:55:03 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.31. in /home/rnjthaia/educationmalaysia_code/vendor/composer/platform_check.php on line 24
+[07-Jan-2025 12:34:04 UTC] PHP Warning:  require(/home/rnjthaia/new.educationmalaysia.in/../educationmalaysia_code/vendor/autoload.php): Failed to open stream: No such file or directory in /home/rnjthaia/new.educationmalaysia.in/index.php on line 13
+[07-Jan-2025 12:34:04 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/rnjthaia/new.educationmalaysia.in/../educationmalaysia_code/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/rnjthaia/new.educationmalaysia.in/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/rnjthaia/new.educationmalaysia.in/index.php on line 13
+[30-Jan-2025 07:11:24 UTC] PHP Parse error:  Unclosed '{' on line 119 in /home/rnjthaia/educationmalaysia_code/app/helper.php on line 120
+[30-Jan-2025 07:11:25 UTC] PHP Parse error:  Unclosed '{' on line 119 in /home/rnjthaia/educationmalaysia_code/app/helper.php on line 120
+[30-Jan-2025 07:11:28 UTC] PHP Parse error:  Unclosed '{' on line 119 in /home/rnjthaia/educationmalaysia_code/app/helper.php on line 120
+[30-Jan-2025 07:11:30 UTC] PHP Parse error:  Unclosed '{' on line 119 in /home/rnjthaia/educationmalaysia_code/app/helper.php on line 120
