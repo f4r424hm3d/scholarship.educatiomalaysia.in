@@ -104,10 +104,11 @@ class LibiaLandingPageFc extends Controller
   public function getCoursesByUniversity(Request $request)
   {
     $university_id = $request->university_id;
+    $level = $request->level;
     $output = '<option>Select Course</option>';
     if (!empty($university_id)) {
-      $programs = CourseCategory::whereHas('programs', function ($query) use ($university_id) {
-        $query->where('university_id', $university_id)->where('status', 1);
+      $programs = CourseCategory::whereHas('programs', function ($query) use ($university_id, $level) {
+        $query->where('university_id', $university_id)->where('status', 1)->where('level', $level);
       })->get();
 
       if (!empty($programs)) {
@@ -207,7 +208,6 @@ class LibiaLandingPageFc extends Controller
         'mobile' => 'required|numeric',
         'nationality' => 'required',
         'libya_identification_number' => 'required',
-        'passport_number' => 'required',
         'highest_qualification' => 'required',
         'university' => 'required',
         'program' => 'required',

@@ -486,14 +486,14 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                   <div class="form-group">
                     <input name="passport_number" class="form-control" type="text"
-                      placeholder="Liyan Passport Number" value="{{ old('passport_number', '') }}" required>
+                      placeholder="Libyan Passport Number" value="{{ old('passport_number', '') }}">
                     @error('passport_number')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
                 </div>
 
-                <div class="col-lg-12 col-md-6 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
                     <select name="highest_qualification" class="form-control" required>
                       <option value="">Your Highest Qualification</option>
@@ -505,6 +505,26 @@
                       @endforeach
                     </select>
                     @error('highest_qualification')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <select name="interested_level" class="form-control" required>
+                      <option value="">Are you interested in</option>
+                      <option value="UNDER-GRADUATE"
+                        {{ old('interested_level') == 'UNDER-GRADUATE' ? 'selected' : '' }}>
+                        UNDER-GRADUATE
+                      </option>
+                      <option value="POST-GRADUATE" {{ old('interested_level') == 'POST-GRADUATE' ? 'selected' : '' }}>
+                        POST-GRADUATE
+                      </option>
+                      <option value="PHD" {{ old('interested_level') == 'PHD' ? 'selected' : '' }}>
+                        PHD
+                      </option>
+                    </select>
+                    @error('interested_level')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
@@ -758,7 +778,7 @@
               <div
                 class="px-2 py-2 align-items-center setparticaptes gap-3 my-0 justify-content-between d-flex border-top border-bottom">
                 <div class="grow">
-                  <a href="{{ url('university/' . $row->university_slug) }}" target="_blank">
+                  <a href="https://educationmalaysia.in/university/{{ $row->university->uname }}" target="_blank">
                     <span class="">{{ $row->university->name }}</span>
                   </a>
                 </div>
@@ -816,7 +836,7 @@
         <div class="col-md-12">
           <div class="minsiter">
 
-            <h2 class="titles-malaysia">Over a steamed Partner or sponser </h2>
+            <h2 class="titles-malaysia">OUR ESTEEMED PARTNERS </h2>
 
             <div class="allsponser">
               <div class="slider">
@@ -883,6 +903,7 @@
 
       // Function to fetch programs
       function fetchPrograms(universityId) {
+        var level = $('#interested_level').val();
         $.ajax({
           url: "{{ route('libia.fetch.courses') }}",
           type: 'POST',
@@ -890,7 +911,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
           },
           data: {
-            university_id: universityId
+            university_id: universityId,
           },
           success: function(response) {
             $('#ef_program').html(response);

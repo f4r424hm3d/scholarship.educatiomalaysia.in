@@ -9,6 +9,7 @@
 @endpush
 
 @section('main-section')
+  <div id="google_translate_element"></div>
   <section class="p-0">
     <div class="log-space">
       <div>
@@ -61,4 +62,5 @@
       </div>
     </div>
   </section>
+  @include('front.js.translate')
 @endsection
