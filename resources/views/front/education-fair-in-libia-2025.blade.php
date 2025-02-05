@@ -4,6 +4,34 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @section('main-section')
+  <style>
+    .contact-forms {
+      background-color: rgb(238 202 3);
+    }
+
+    .contact-fromss {
+      background-color: transparent !important;
+      border: transparent !important;
+      text-align: center;
+    }
+
+    .contact-forms ul {}
+
+    .contact-forms ul li a {
+      color: black !important;
+    }
+
+    .contact-forms {
+      background-color: rgb(238 202 3) !important;
+    }
+
+    .minsiter .titles-malaysia {
+      color: #fff;
+      font-weight: 600 !important;
+      background-color: #229944 !important;
+      padding: 22px !important;
+    }
+  </style>
   <section class="banner-section">
     <div id="google_translate_element"></div>
     <div class="container">
@@ -497,12 +525,17 @@
                   <div class="form-group">
                     <select name="highest_qualification" class="form-control" required>
                       <option value="">Your Highest Qualification</option>
-                      @foreach ($levels as $row)
-                        <option value="{{ $row->level }}"
-                          {{ old('highest_qualification') == $row->level ? 'selected' : '' }}>
-                          {{ $row->level }}
-                        </option>
-                      @endforeach
+                      <option value="UNDER-GRADUATE"
+                        {{ old('highest_qualification') == 'UNDER-GRADUATE' ? 'selected' : '' }}>
+                        UNDER-GRADUATE
+                      </option>
+                      <option value="POST-GRADUATE"
+                        {{ old('highest_qualification') == 'POST-GRADUATE' ? 'selected' : '' }}>
+                        POST-GRADUATE
+                      </option>
+                      <option value="PHD" {{ old('highest_qualification') == 'PHD' ? 'selected' : '' }}>
+                        PHD
+                      </option>
                     </select>
                     @error('highest_qualification')
                       <span class="text-danger">{{ $message }}</span>
@@ -624,38 +657,6 @@
 
           </div>
 
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="contact-forms">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 ">
-          <div class="contact-fromss">
-            <h2>Ms. Malathi</h2>
-            <ul>
-              <li><strong>Project Manager</strong></li>
-              <li>Malaysian Export Academy Sdn Bhd</li>
-              <li>Email: <a href="mailto:malathi@exportacademy.net">malathi@exportacademy.net</a> / <a
-                  href="mailto:malathi@srim.my">malathi@srim.my</a></li>
-              <li>Contact Number: <a href="tel:+60122631251">012-2631251</a></li>
-            </ul>
-
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6  mb-4">
-          <div class="contact-fromss">
-            <h2>Mr. Parthiban</h2>
-            <ul>
-              <li><strong>Project Manager</strong></li>
-              <li>Malaysian Export Academy Sdn Bhd</li>
-              <li>Email: <a href="mailto:parthiban@exportacademy.net">parthiban@exportacademy.net</a> / <a
-                  href="mailto:thibanshan@gmail.com">thibanshan@gmail.com</a></li>
-              <li>Contact Number: <a href="tel:+60122245649">012-2245649</a></li>
-            </ul>
-
-          </div>
         </div>
       </div>
     </div>
@@ -854,6 +855,9 @@
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/education_11.jpg" alt="">
+                  </div>
 
                 </div>
               </div>
@@ -863,6 +867,43 @@
 
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-forms">
+    <div class="container">
+      <div class="row" style="text-align: center">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 ">
+          <div class="contact-froms">
+            <h2>Ms. Malathi</h2>
+            <ul>
+              <li><strong>Project Manager</strong></li>
+              <li>Malaysian Export Academy Sdn Bhd</li>
+              <li><i class="fa fa-envelope"></i>
+                : <a href="mailto:malathi@exportacademy.net">malathi@exportacademy.net</a> / <a
+                  href="mailto:malathi@srim.my">malathi@srim.my</a></li>
+              <li><i class="fa fa-phone"></i>
+                : <a href="tel:+60122631251">+60 012-2631251</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6  mb-4">
+          <div class="contact-froms">
+            <h2>Mr. Parthiban</h2>
+            <ul>
+              <li><strong>Project Manager</strong></li>
+              <li>Malaysian Export Academy Sdn Bhd</li>
+              <li><i class="fa fa-envelope"></i>
+                : <a href="mailto:parthiban@exportacademy.net">parthiban@exportacademy.net</a> / <a
+                  href="mailto:thibanshan@gmail.com">thibanshan@gmail.com</a></li>
+              <li><i class="fa fa-phone"></i>
+                : <a href="tel:+60122245649">+60 012-2245649</a></li>
+            </ul>
+
+          </div>
+        </div>
       </div>
     </div>
   </section>
