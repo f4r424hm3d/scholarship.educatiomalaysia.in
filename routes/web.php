@@ -144,6 +144,9 @@ Route::get('/education-fair-in-libya-2025/courses', [LibiaLandingPageFc::class, 
 Route::get('/education-fair-in-libya-2025/institutions', [LibiaLandingPageFc::class, 'institutions'])->name('libia.institutions');
 
 Route::post('/libia/register', [LibiaLandingPageFc::class, 'register'])->name('libia.register');
+Route::get('registration-complete', [LibiaLandingPageFc::class, 'thankYou'])->name('thank.you');
+Route::get('/download-qr', [LibiaLandingPageFc::class, 'downloadQR'])->name('download.qr');
+
 Route::post('/libia/fetch-program', [LibiaLandingPageFc::class, 'getProgramsByUniversity'])->name('libia.fetch.program');
 Route::post('/libia/fetch-courses', [LibiaLandingPageFc::class, 'getCoursesByUniversity'])->name('libia.fetch.courses');
 

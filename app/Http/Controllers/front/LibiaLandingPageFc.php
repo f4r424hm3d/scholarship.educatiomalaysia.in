@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\Rule;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Response;
 
 class LibiaLandingPageFc extends Controller
 {
@@ -137,6 +139,8 @@ class LibiaLandingPageFc extends Controller
         'highest_qualification' => 'required',
         'university' => 'required',
         'program' => 'required',
+        'gender' => 'required',
+        'dob' => 'required',
       ]
     );
     $university = University::find($request->university);
@@ -153,6 +157,8 @@ class LibiaLandingPageFc extends Controller
     $field->nationality = $request['nationality'];
     $field->identification_number = $request['libya_identification_number'];
     $field->passport_number = $request['passport_number'];
+    $field->gender = $request['gender'];
+    $field->dob = $request['dob'];
     $field->password = $password;
     $field->source = $request->source;
     $field->source_path = $request->source_path;
@@ -166,43 +172,59 @@ class LibiaLandingPageFc extends Controller
     $emaildata = ['name' => $request['name'], 'otp' => $otp];
     $dd = ['to' => $request['email'], 'to_name' => $request['name'], 'subject' => 'OTP'];
 
-    $direct = true;
-    if ($direct) {
-      $emaildata = ['name' => $field['name']];
-      $dd = ['to' => $field['email'], 'to_name' => $field['name'], 'subject' => 'Successfully registration on Education Malaysia.'];
+    $emaildata = ['name' => $field['name']];
+    $dd = ['to' => $field['email'], 'to_name' => $field['name'], 'subject' => 'Successfully registration on Education Malaysia.'];
 
-      Mail::send(
-        'mails.student-welcome-mail',
-        $emaildata,
-        function ($message) use ($dd) {
-          $message->to($dd['to'], $dd['to_name']);
-          $message->subject($dd['subject']);
-          $message->priority(1);
-        }
-      );
-
-      session()->flash('smsg', 'Thank you for reaching out! We have received your inquiry and will get back to you soon.');
-      return redirect()->route('libia.page');
-    } else {
-      $chk = Mail::send(
-        'mails.send-otp',
-        $emaildata,
-        function ($message) use ($dd) {
-          $message->to($dd['to'], $dd['to_name']);
-          $message->subject('OTP');
-          $message->priority(1);
-        }
-      );
-      if ($chk == false) {
-        $emsg = 'Sorry! Please try again later';
-        session()->flash('emsg', $emsg);
-        return redirect($request->return_path);
-      } else {
-        $field->save();
-        session()->flash('smsg', 'An OTP has been send to your registered email address.');
-        $request->session()->put('last_id', $field->id);
-        return redirect('confirmed-email');
+    Mail::send(
+      'mails.student-welcome-mail',
+      $emaildata,
+      function ($message) use ($dd) {
+        $message->to($dd['to'], $dd['to_name']);
+        $message->subject($dd['subject']);
+        $message->priority(1);
       }
-    }
+    );
+
+    session()->flash('smsg', 'Thank you for registering! Please bring this QR code to the Education Fair.');
+    session()->put('newId', $field->id);
+    return redirect()->route('thank.you');
+  }
+  public function thankYou()
+  {
+    $id = session('newId');
+    $lead = Lead::findOrFail($id);
+    return view('front.thank-you', compact('lead'));
+  }
+  public function downloadQRXXX()
+  {
+    $id = session('newId');
+    $lead = Lead::findOrFail($id);
+    $qrCode = QrCode::format('png')->size(300)->generate(url('/profile/' . $lead->id));
+
+    return response($qrCode)
+      ->header('Content-Type', 'image/png')
+      ->header('Content-Disposition', 'attachment; filename="education-fair-qr.png"');
+  }
+
+
+  public function downloadQR()
+  {
+    $id = session('newId');
+    $lead = Lead::findOrFail($id);
+
+    // Encode user details
+    $data = json_encode([
+      'id' => $lead->id,
+      'name' => $lead->name,
+      'email' => $lead->email
+    ]);
+
+    // Generate PNG QR Code (No Imagick Required)
+    $qrCode = QrCode::format('png')->size(300)->generate($data);
+
+    return Response::make($qrCode, 200, [
+      'Content-Type' => 'image/png',
+      'Content-Disposition' => 'attachment; filename="education-fair-qr.png"',
+    ]);
   }
 }

@@ -7,7 +7,7 @@
   <section class="banner-section">
     <div id="google_translate_element"></div>
     <div class="container">
-      <h2 class="banner-titles">MALAYSIAN UNIVERSITIES EDUCATION & TRAINING Fair 2025
+      <h2 class="banner-titles">Where Ambitions Meet Opportunities: Malaysian Universities Education & Training Fair 2025
       </h2>
       <div class="row">
         <!-- class="carousel slide" data-ride="carousel" -->
@@ -33,9 +33,13 @@
 
         </div>
       </div>
-      <h2 class="bannerma">Hosted by Ministry of Higher Education
-        and
-        Scientific Research of Libya and organized by Malaysian Export Academy (MEXA)</h2>
+      <h2 class="bannerma">
+        malaysian universities education and training fair held in tripoli, libya
+        hosted by ministry of higher education and scientific research of libya
+        organized by malaysian export academy (mexa)
+        supported by national association of private educational institutions, malaysia (napei)
+
+      </h2>
     </div>
 
   </section>
@@ -95,7 +99,7 @@
             <div class="row">
 
               <div class="col-md-6 col-sm-12 col-12 mb-4">
-                <h5>Diploma / Master / Phd </h5>
+                <h5> under graduate, post graduate, phd </h5>
                 <ul>
                   <li>Applied and Pure Sciences</li>
                   <li>Architecture and Construction</li>
@@ -228,16 +232,6 @@
                 </ul>
               </div>
 
-              <div class="col-md-6 col-sm-12 col-12 mb-4">
-                <h5>Pre-University</h5>
-                <ul>
-                  <li>A-Levels</li>
-                  <li>Business and Management</li>
-                  <li>Certificate</li>
-                  <li>Creative Arts and Design</li>
-                </ul>
-              </div>
-
             </div>
           </div>
         </div>
@@ -317,7 +311,8 @@
         </div>
         <!-- -------------------------------  -->
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
-          <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center">
+          <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" data-toggle="modal"
+            data-target="#exampleModal">
             <div class="imgflx">
               <img src="{{ url('/') }}/front/assets/images/scholarship.png" alt="">
             </div>
@@ -330,6 +325,39 @@
     </div>
   </section>
 
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal scholarship-modal  fade" id="exampleModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <button type="button" class="close whencloses " data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="scholarship-body">
+            <img src="/front/assets/images/scholarship-modal.png" class="imagesfront" alt="">
+            <p>The Education Fair is a pioneering event designed to connect Libyan students with representatives from
+              prestigious universities from Malaysia.
+              Sponsored by the Libyan Government, this Education Fair provides students with invaluable opportunities to
+              explore international academic pathways, secure scholarships, and take significant steps toward fulfilling
+              their educational aspirations.
+              <br>
+              The Education Fair is a great way for students to make well-informed decisions about studying abroad while
+              gaining direct access to important resources and experts.
+            </p>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section class="registrations-fomrs" id="register">
     <div class="container">
       <div class="row">
@@ -337,10 +365,7 @@
           <div class="fair-details">
             <h2 class="main-faris">
               Malaysian Universities Education & Training Fair 2025 </h2>
-            <!-- <p class="all-fair mb-2">{{ $pageDetail->date_and_address }}</p> -->
 
-            <!-- <h2 class="fairs">
-                                              </h2> -->
             <ul class="set_uls">
               <li><b><i class="fa fa-map-pin" aria-hidden="true"></i>
                   Venue</b> <span>:</span> Libyan Academy for Postgraduate Studies, Tripoli, Libya</li>
@@ -413,13 +438,9 @@
                 <div class="col-lg-4 col-md-4 col-sm-12">
                   <div class="form-group">
                     <select name="c_code" id="countryCode" class="form-control" required>
-                      <option value="">Country Code</option>
-                      @foreach ($phonecodes as $row)
-                        <option value="{{ $row->phonecode }}"
-                          {{ $row->iso == $curCountry || old('c_code') == $row->phonecode ? 'selected' : '' }}>
-                          +{{ $row->phonecode }} ({{ $row->name }})
-                        </option>
-                      @endforeach
+                      <option value="218" {{ old('c_code') == 218 ? 'selected' : '' }}>
+                        +218 (State of Libya)
+                      </option>
                     </select>
                     @error('c_code')
                       <span class="text-danger">{{ $message }}</span>
@@ -453,13 +474,14 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                   <div class="form-group">
                     <input name="libya_identification_number" class="form-control" type="text"
-                      placeholder="Libya Identitifcation Number" value="{{ old('libya_identification_number', '') }}"
+                      placeholder="Libya National Number" value="{{ old('libya_identification_number', '') }}"
                       required>
                     @error('libya_identification_number')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
                 </div>
+
                 <div class="col-lg-6 col-md-6 col-sm-6">
                   <div class="form-group">
                     <input name="passport_number" class="form-control" type="text"
@@ -473,7 +495,7 @@
                 <div class="col-lg-12 col-md-6 col-sm-12">
                   <div class="form-group">
                     <select name="highest_qualification" class="form-control" required>
-                      <option value="">Select Highest Qualification</option>
+                      <option value="">Your Highest Qualification</option>
                       @foreach ($levels as $row)
                         <option value="{{ $row->level }}"
                           {{ old('highest_qualification') == $row->level ? 'selected' : '' }}>
@@ -519,6 +541,39 @@
                     @enderror
                   </div>
                 </div>
+                <div class="col-md-6 col-sm-12">
+
+                  <div class="d-flex align-items-center justify-content-around addsd">
+                    <div class="form-check mb-0">
+                      <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
+                        value="option1" checked>
+                      <label class="form-check-label" for="exampleRadios1">
+                        male
+                      </label>
+                    </div>
+                    <div class="form-check mb-0 ">
+                      <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
+                        value="option2">
+                      <label class="form-check-label" for="exampleRadios2">
+                        female
+                      </label>
+                    </div>
+                    @error('gender')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" id="dob" placeholder="Date of Birth"
+                      class="form-control" required>
+                  </div>
+                  @error('dob')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-12">
                   <div class="form-group">
@@ -526,21 +581,13 @@
                       value="Captcha: {{ $captcha['text'] }} =" disabled readonly>
                   </div>
                 </div>
+
                 <div class="col-lg-8 col-md-8  col-sm-12">
                   <div class="form-group">
                     <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
                       name="captcha_answer" required>
                   </div>
                 </div>
-
-                <!-- <div class="col-lg-12 col-md-12 col-sm-12">
-
-                      <div class="form-check checkbx-white pl-4">
-                      <input type="checkbox" class="form-check-input">
-                        <label class="form-check-label px-0 " for="test5">By clicking on register I agree to the
-                          <a href="{{ url('terms-and-conditions') }}" target="_blank">terms & conditions</a></label>
-                      </div>
-                    </div> -->
 
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="input-field s4 d-flex justify-content-center align-items-center">
@@ -552,6 +599,38 @@
 
           </div>
 
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-forms">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 ">
+          <div class="contact-fromss">
+            <h2>Ms. Malathi</h2>
+            <ul>
+              <li><strong>Project Manager</strong></li>
+              <li>Malaysian Export Academy Sdn Bhd</li>
+              <li>Email: <a href="mailto:malathi@exportacademy.net">malathi@exportacademy.net</a> / <a
+                  href="mailto:malathi@srim.my">malathi@srim.my</a></li>
+              <li>Contact Number: <a href="tel:+60122631251">012-2631251</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6  mb-4">
+          <div class="contact-fromss">
+            <h2>Mr. Parthiban</h2>
+            <ul>
+              <li><strong>Project Manager</strong></li>
+              <li>Malaysian Export Academy Sdn Bhd</li>
+              <li>Email: <a href="mailto:parthiban@exportacademy.net">parthiban@exportacademy.net</a> / <a
+                  href="mailto:thibanshan@gmail.com">thibanshan@gmail.com</a></li>
+              <li>Contact Number: <a href="tel:+60122245649">012-2245649</a></li>
+            </ul>
+
+          </div>
         </div>
       </div>
     </div>
@@ -664,7 +743,7 @@
     <div class="container">
       <div class="particaptes">
         <P class="universties   px-2 py-3 align-items-center gap-3 my-0 justify-content-between d-flex ">
-          Participating University
+          Participating Universities
           </h3>
 
         <div class="tab-content" id="one-tabContent">
@@ -696,89 +775,29 @@
   <section class="education-special">
     <div class="container">
 
-      <div class="all-special">
-        <h2>What Makes Libya Education
-          Fair Special?</h2>
+      <div class="row align-items-center flex-column-reverse flex-lg-row  ">
 
-      </div>
-      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 ">
+          <div class="all-speci">
+            <h2>What Makes Libya Education
+              Fair Special?</h2>
 
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="cards-spec">
+            <ul>
+              <li>Explore international education opportunities.</li>
+              <li>Interact with Malaysian university representatives.</li>
+              <li>Compare programs & courses.</li>
+              <li>Understand the Malaysian education system.</li>
+              <li>Get firsthand course & career info.</li>
+              <li>Gain cultural awareness & global exposure.</li>
+              <li>Study in Malaysia & adapt to a new culture.</li>
+              <li>Receive guidance for the right course & university.</li>
+            </ul>
 
-            <div class="special-black event-overlay">
-
-              <h2>Government Sponsored Scholarships</h2>
-              <div class="specil-p">
-                <p>The Libya Education Fair offers 100% government-funded scholarships for eligible students, covering
-                  tuition fees, living expenses, and more. Merit-based scholarships are available to empower deserving
-                  students.</p>
-              </div>
-            </div>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="cards-spec">
-            <div class="special-black event-overlay">
-
-              <h2>Meet University Representatives</h2>
-              <div class="specil-p">
-                <p>Engage directly with university delegates to learn about programs, application processes, and campus
-                  life. Get your questions about courses, scholarships, visas, and more answered by experts.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="cards-spec">
-
-            <div class="special-black event-overlay">
-
-              <h2>On-The-Spot Offers and Admissions</h2>
-              <div class="specil-p">
-                <p>Bring your academic documents to secure on-the-spot offers and admission assessments from top
-                  universities.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="cards-spec">
-            <div class="special-black event-overlay">
-
-              <h2>
-                Scholarships and Application Fee Waivers</h2>
-              <div class="specil-p">
-                <p>Many universities will provide application fee waivers and exclusive scholarships to eligible
-                  candidates submitting complete applications during the event.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="cards-spec">
-            <div class="special-black event-overlay">
-
-              <h2>
-                Interactive Sessions</h2>
-              <div class="specil-p">
-                <p>Participate in interactive sessions with university delegates, alumni, and counselors to gain insights
-                  into academic programs, career prospects, and student life.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="cards-spec">
-            <div class="special-black event-overlay">
-
-              <h2>
-                Comprehensive Guidance</h2>
-              <div class="specil-p">
-                <p>The event provides personalized assistance with study abroad processes, including information on visa
-                  procedures, education loans, and student accommodation.</p>
-              </div>
-            </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
+          <div class="allimags">
+            <img src="/front/assets/images/libya.jpeg" class="imdd" alt="">
           </div>
         </div>
 
@@ -799,18 +818,24 @@
                 <div class="slide-track">
 
                   <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/libian-logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/libian-logo.jpg" alt="">
                   </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
+                  </div>
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                  </div>
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
 
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/libian-logo.png" alt="">
-                  </div>
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
-                  </div>
+                  <!-- <div class="slide">
+                                                    <img src="{{ url('/') }}/front/assets/images/libian-logo.jpg" alt="">
+                                                  </div>
+                                                  <div class="slide">
+                                                    <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
+                                                  </div> -->
 
                 </div>
               </div>
@@ -848,11 +873,7 @@
   </script>
   <script>
     $(document).ready(function() {
-      // Check if a university is already selected on page load
-      // const selectedUniversityId = $('#ef_university').val();
-      // if (selectedUniversityId) {
-      // 	fetchPrograms(selectedUniversityId); // Call the function to fetch programs
-      // }
+
 
       // Fetch programs when university dropdown changes
       $('#ef_university').change(function() {
@@ -902,4 +923,5 @@
       });
     });
   </script>
+  @include('front.js.translate')
 @endsection
