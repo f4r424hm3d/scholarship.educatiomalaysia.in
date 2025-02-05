@@ -19,6 +19,8 @@ use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\Rule;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class LibiaLandingPageFc extends Controller
 {
@@ -117,7 +119,7 @@ class LibiaLandingPageFc extends Controller
     echo $output;
   }
 
-  public function register(Request $request)
+  public function register_working_x(Request $request)
   {
     $otp = rand(1000, 9999);
     $otp_expire_at = date("YmdHis", strtotime("+5 minutes"));
@@ -189,24 +191,117 @@ class LibiaLandingPageFc extends Controller
     session()->put('newId', $field->id);
     return redirect()->route('thank.you');
   }
+  public function register(Request $request)
+  {
+    $password = Str::random(10);
+    $request->validate(
+      [
+        'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
+        'name' => 'required|regex:/^[a-zA-Z\s\x{0600}-\x{06FF}\'-]*$/u',
+        'email' => [
+          'required',
+          'email',
+          Rule::unique('leads', 'email')->where('website', site_var),
+        ],
+        'c_code' => 'required|numeric',
+        'mobile' => 'required|numeric',
+        'nationality' => 'required',
+        'libya_identification_number' => 'required',
+        'passport_number' => 'required',
+        'highest_qualification' => 'required',
+        'university' => 'required',
+        'program' => 'required',
+        'gender' => 'required',
+        'dob' => 'required',
+      ]
+    );
+    // Detect and translate Arabic input to English
+    $translator = new GoogleTranslate('en'); // Translate to English
+    $name = $translator->translate($request->input('name'));
+
+    $university = University::find($request->university);
+    $field = new Lead();
+    $field->name = $name;
+    $field->email = $request['email'];
+    $field->c_code = $request['c_code'];
+    $field->mobile = $request['mobile'];
+    $field->highest_qualification = $request['highest_qualification'];
+    $field->intrested_subject = $request->program;
+    $field->interested_program = $request->program;
+    $field->intrested_university = $university->name;
+    $field->university_id = $university->id;
+    $field->nationality = $request['nationality'];
+    $field->identification_number = $request['libya_identification_number'];
+    $field->passport_number = $request['passport_number'];
+    $field->gender = $request['gender'];
+    $field->dob = $request['dob'];
+    $field->password = $password;
+    $field->source = $request->source;
+    $field->source_path = $request->source_path;
+
+    $field->status = 1;
+    $field->registered = 1;
+    $field->website = site_var;
+    $field->save();
+
+    // Generate QR Code
+    $qrData = json_encode([
+      'id' => $field->id,
+      'name' => $field->name,
+      'email' => $field->email
+    ]);
+    $qrCode = QrCode::format('png')->size(300)->generate($qrData);
+
+    // Path to store the QR code
+    $qrCodeDirectory = storage_path('app/public/qr-codes');
+
+    // Check if the directory exists, and create it if it doesn't
+    if (!is_dir($qrCodeDirectory)) {
+      mkdir($qrCodeDirectory, 0777, true); // Create the directory with proper permissions
+    }
+
+    // Now, you can generate and save the QR code
+    $qrFilePath = $qrCodeDirectory . '/' . $field->id . '-qr.png';
+    file_put_contents($qrFilePath, $qrCode);
+
+    // Prepare the email data
+    $emaildata = ['name' => $field['name']];
+    $dd = [
+      'to' => $field['email'],
+      'to_name' => $field['name'],
+      'subject' => 'Successfully registered on Education Malaysia.',
+    ];
+
+    // Send the email with the QR code as attachment
+    Mail::send(
+      'mails.student-welcome-mail',
+      $emaildata,
+      function ($message) use ($dd, $qrFilePath) {
+        $message->to($dd['to'], $dd['to_name']);
+        $message->subject($dd['subject']);
+        $message->priority(1);
+
+        // Attach the QR Code to the email
+        $message->attach($qrFilePath, [
+          'as' => 'education-fair-qr.png',
+          'mime' => 'image/png',
+        ]);
+      }
+    );
+
+    // Delete the temporary QR code file after sending the email
+    unlink($qrFilePath);
+
+    session()->flash('smsg', 'Thank you for registering! Please bring this QR code to the Education Fair.');
+    session()->put('newId', $field->id);
+    return redirect()->route('thank.you');
+  }
   public function thankYou()
   {
     $id = session('newId');
     $lead = Lead::findOrFail($id);
     return view('front.thank-you', compact('lead'));
   }
-  public function downloadQRXXX()
-  {
-    $id = session('newId');
-    $lead = Lead::findOrFail($id);
-    $qrCode = QrCode::format('png')->size(300)->generate(url('/profile/' . $lead->id));
-
-    return response($qrCode)
-      ->header('Content-Type', 'image/png')
-      ->header('Content-Disposition', 'attachment; filename="education-fair-qr.png"');
-  }
-
-
   public function downloadQR()
   {
     $id = session('newId');
@@ -222,9 +317,12 @@ class LibiaLandingPageFc extends Controller
     // Generate PNG QR Code (No Imagick Required)
     $qrCode = QrCode::format('png')->size(300)->generate($data);
 
+    // Set the filename with lead ID
+    $filename = 'education-fair-qr-' . $lead->id . '.png';
+
     return Response::make($qrCode, 200, [
       'Content-Type' => 'image/png',
-      'Content-Disposition' => 'attachment; filename="education-fair-qr.png"',
+      'Content-Disposition' => 'attachment; filename="' . $filename . '"',
     ]);
   }
 }

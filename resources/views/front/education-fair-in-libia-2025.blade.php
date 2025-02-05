@@ -418,7 +418,8 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
                     <input name="name" class="form-control" type="text" placeholder="Full Name"
-                      pattern="[a-zA-Z'-'\s]*" value="{{ old('name', '') }}" required>
+                      pattern="[a-zA-Z'-'\s\u0600-\u06FF]*" value="{{ old('name', '') }}" required>
+
                     @error('name')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -543,17 +544,18 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
 
+                  <label>Gender</label>
                   <div class="d-flex align-items-center justify-content-around addsd">
                     <div class="form-check mb-0">
                       <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
-                        value="option1" checked>
+                        value="Male" {{ old('gender') == 'Male' ? 'checked' : '' }}>
                       <label class="form-check-label" for="exampleRadios1">
                         male
                       </label>
                     </div>
                     <div class="form-check mb-0 ">
                       <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
-                        value="option2">
+                        value="Female"{{ old('gender') == 'Female' ? 'checked' : '' }}>
                       <label class="form-check-label" for="exampleRadios2">
                         female
                       </label>
@@ -568,7 +570,7 @@
                   <div class="form-group">
                     <label for="dob">Date of Birth</label>
                     <input type="date" name="dob" id="dob" placeholder="Date of Birth"
-                      class="form-control" required>
+                      class="form-control" value="{{ old('dob') }}" required>
                   </div>
                   @error('dob')
                     <span class="text-danger">{{ $message }}</span>
@@ -587,6 +589,9 @@
                     <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
                       name="captcha_answer" required>
                   </div>
+                  @error('captcha_answer')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -829,13 +834,6 @@
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
-
-                  <!-- <div class="slide">
-                                                    <img src="{{ url('/') }}/front/assets/images/libian-logo.jpg" alt="">
-                                                  </div>
-                                                  <div class="slide">
-                                                    <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
-                                                  </div> -->
 
                 </div>
               </div>
