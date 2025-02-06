@@ -218,7 +218,7 @@ class LibiaLandingPageFc extends Controller
     $dd = [
       'to' => $field['email'],
       'to_name' => $field['name'],
-      'subject' => 'Successfully registered on Education Malaysia.',
+      'subject' => 'Registration Confirmed – Malaysian Universities Education & Training Fair 2025',
     ];
 
     // Send the email with the QR code as attachment
