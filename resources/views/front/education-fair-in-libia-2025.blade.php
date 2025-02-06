@@ -18,24 +18,24 @@
     .contact-forms ul {}
 
     .contact-forms ul li a {
-      color: black !important;
+      color: #fff !important;
     }
 
     .contact-forms {
-      background-color: rgb(238 202 3) !important;
+      background-color: rgb(10 65 145) !important;
     }
 
     .minsiter .titles-malaysia {
       color: #fff;
-      font-weight: 600 !important;
-      background-color: #229944 !important;
-      padding: 22px !important;
+    font-weight: 600 !important;
+    background-color: #0a4191 !important;
+    padding: 22px !important;
     }
   </style>
   <section class="banner-section">
-    <div id="google_translate_element"></div>
+    <div class="googlechanges " id="google_translate_element"></div>
     <div class="container">
-      <h2 class="banner-titles">Where Ambitions Meet Opportunities: Malaysian Universities Education & Training Fair 2025
+      <h2 class="banner-titles"> Ambitions Meet Opportunities
       </h2>
       <div class="row">
         <!-- class="carousel slide" data-ride="carousel" -->
@@ -61,13 +61,13 @@
 
         </div>
       </div>
-      <h2 class="bannerma">
-        malaysian universities education and training fair held in tripoli, libya
-        hosted by ministry of higher education and scientific research of libya
-        organized by malaysian export academy (mexa)
-        supported by national association of private educational institutions, malaysia (napei)
+      <ul class="malyss" >
+    <li>Malaysian Universities Education and Training Fair held in Tripoli, Libya</li>
+    <li>Hosted by Ministry of Higher Education and Scientific Research of Libya</li>
+    <li>Organized by Malaysian Export Academy (MEXA)</li>
+    <li>Supported by National Association of Private Educational Institutions, Malaysia (NAPEI)</li>
+</ul>
 
-      </h2>
     </div>
 
   </section>
@@ -367,14 +367,8 @@
           </button>
           <div class="scholarship-body">
             <img src="/front/assets/images/scholarship-modal.png" class="imagesfront" alt="">
-            <p>The Education Fair is a pioneering event designed to connect Libyan students with representatives from
-              prestigious universities from Malaysia.
-              Sponsored by the Libyan Government, this Education Fair provides students with invaluable opportunities to
-              explore international academic pathways, secure scholarships, and take significant steps toward fulfilling
-              their educational aspirations.
-              <br>
-              The Education Fair is a great way for students to make well-informed decisions about studying abroad while
-              gaining direct access to important resources and experts.
+            <p>The Education Fair is a pioneering event designed to connect Libyan students with representatives from prestigious universities from Malaysia. Sponsored by the Libyan Government, this Education Fair provides students with invaluable opportunities to explore international academic pathways, secure scholarships, and take significant steps toward fulfilling their educational aspirations. <br>
+            The Education Fair is a great way for students to make well-informed decisions about studying abroad while gaining direct access to important resources and experts.
             </p>
 
           </div>
@@ -389,7 +383,7 @@
   <section class="registrations-fomrs" id="register">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4">
           <div class="fair-details">
             <h2 class="main-faris">
               Malaysian Universities Education & Training Fair 2025 </h2>
@@ -403,7 +397,7 @@
                   Time</b> <span>:</span> 9:30 AM – 1:00 PM & 4:00 PM – 8:00 PM</li>
             </ul>
             <div class="imgsfaird">
-              <img src="/front/assets/images/libya-malaysia.png" class="imgsfairs" alt="">
+              <img src="../front/assets/images/libya-malaysia.png" class="imgsfairs" alt="">
             </div>
           </div>
         </div>
@@ -464,7 +458,7 @@
                   </div>
                 </div>
 
-                <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
                     <select name="c_code" id="countryCode" class="form-control" required>
                       <option value="218" {{ old('c_code') == 218 ? 'selected' : '' }}>
@@ -477,7 +471,7 @@
                   </div>
                 </div>
 
-                <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
                     <input name="mobile" class="form-control mt-0" required type="text" pattern="[0-9]+"
                       placeholder="Phone number" value="{{ old('mobile', '') }}">
@@ -597,8 +591,9 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
 
-                  <label>Gender</label>
-                  <div class="d-flex align-items-center justify-content-around addsd">
+                 <div class="postion-relative">
+                 <label class="gender" >Gender</label>
+                  <div class="d-flex align-items-center justify-content-around addsd form-group">
                     <div class="form-check mb-0">
                       <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
                         value="Male" {{ old('gender') == 'Male' ? 'checked' : '' }}>
@@ -617,10 +612,11 @@
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
+                 </div>
 
                 </div>
                 <div class="col-md-6 col-sm-12">
-                  <div class="form-group">
+                  <div class="form-group dobdd">
                     <label for="dob">Date of Birth</label>
                     <input type="date" name="dob" id="dob" placeholder="Date of Birth"
                       class="form-control" value="{{ old('dob') }}" required>
@@ -630,14 +626,14 @@
                   @enderror
                 </div>
 
-                <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="form-group">
                     <input type="text" placeholder="Captcha: {{ $captcha['text'] }} =" class="form-control"
                       value="Captcha: {{ $captcha['text'] }} =" disabled readonly>
                   </div>
                 </div>
 
-                <div class="col-lg-8 col-md-8  col-sm-12">
+                <div class="col-lg-8 col-md-12  col-sm-12">
                   <div class="form-group">
                     <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
                       name="captcha_answer" required>
@@ -760,6 +756,38 @@
           </div>
         </div>
 
+        
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
+
+          <div class="fariul">
+            <div class="flspan">
+              <span> <img src="/front/assets/images/Opportunities.png " class="img-fluid" alt=""></span>
+
+            </div>
+            <div class="fair-us">
+              <h2>Post-Study Opportunities 
+              </h2>
+              <p>Discover post-graduation carrier options</p>
+            </div>
+
+          </div>
+        </div>
+        
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
+
+          <div class="fariul">
+            <div class="flspan">
+              <span> <img src="/front/assets/images/Dependents.png " class="img-fluid" alt=""></span>
+
+            </div>
+            <div class="fair-us">
+              <h2>Bring Your Dependents 
+              </h2>
+              <p>Postgraduate students can bring their family</p>
+            </div>
+
+          </div>
+        </div>
       </div>
 
     </div>
@@ -803,25 +831,33 @@
 
       <div class="row align-items-center flex-column-reverse flex-lg-row  ">
 
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 ">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-2 ">
           <div class="all-speci">
             <h2>What Makes Libya Education
               Fair Special?</h2>
 
             <ul>
-              <li>Explore international education opportunities.</li>
-              <li>Interact with Malaysian university representatives.</li>
-              <li>Compare programs & courses.</li>
-              <li>Understand the Malaysian education system.</li>
-              <li>Get firsthand course & career info.</li>
-              <li>Gain cultural awareness & global exposure.</li>
-              <li>Study in Malaysia & adapt to a new culture.</li>
-              <li>Receive guidance for the right course & university.</li>
+              <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+ Explore international education opportunities.</li>
+              <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+ Interact with Malaysian university representatives.</li>
+              <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+ Compare programs & courses.</li>
+              <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+ Understand the Malaysian education system.</li>
+              <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+ Get firsthand course & career info.</li>
+              <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+ Gain cultural awareness & global exposure.</li>
+              <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+ Study in Malaysia & adapt to a new culture.</li>
+              <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+ Receive guidance for the right course & university.</li>
             </ul>
 
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-2">
           <div class="allimags">
             <img src="/front/assets/images/libya.jpeg" class="imdd" alt="">
           </div>
@@ -849,9 +885,9 @@
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
-                  <div class="slide">
+                  <!-- <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                  </div>
+                  </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
