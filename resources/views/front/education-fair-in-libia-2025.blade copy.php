@@ -1,19 +1,9 @@
-@php
-  use SimpleSoftwareIO\QrCode\Facades\QrCode;
-@endphp
 @extends('front.layouts.main')
 @push('seo_meta_tag')
   @include('front.layouts.static_page_meta_tag')
   <meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @section('main-section')
-  @if (session()->has('QR'))
-    <script>
-      $(document).ready(function() {
-        showQrCodeModal()
-      });
-    </script>
-  @endif
   <style>
     .contact-forms {
       background-color: rgb(238 202 3);
@@ -37,9 +27,9 @@
 
     .minsiter .titles-malaysia {
       color: #fff;
-      font-weight: 600 !important;
-      background-color: #0a4191 !important;
-      padding: 22px !important;
+    font-weight: 600 !important;
+    background-color: #0a4191 !important;
+    padding: 22px !important;
     }
   </style>
   <section class="banner-section">
@@ -71,70 +61,56 @@
 
         </div>
       </div>
-      <ul class="malyss">
-        <li>Malaysian Universities Education and Training Fair held in Tripoli, Libya</li>
-        <li>Hosted by Ministry of Higher Education and Scientific Research of Libya</li>
-        <li>Organized by Malaysian Export Academy (MEXA)</li>
-        <li>Supported by National Association of Private Educational Institutions, Malaysia (NAPEI)</li>
-      </ul>
+      <ul class="malyss" >
+    <li>Malaysian Universities Education and Training Fair held in Tripoli, Libya</li>
+    <li>Hosted by Ministry of Higher Education and Scientific Research of Libya</li>
+    <li>Organized by Malaysian Export Academy (MEXA)</li>
+    <li>Supported by National Association of Private Educational Institutions, Malaysia (NAPEI)</li>
+</ul>
 
     </div>
 
   </section>
 
   <!-- Modal -->
-  <div class="modal coursemodal  fade " id="qrCodeModal" tabindex="-1" role="dialog" aria-labelledby="qrCodeModalLabel">
+  <div class="modal courses-modal  fade" id="courseListModaldfdf" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="qrCodeModalLabel"></h5>
-          <button type="button" class="close" onclick="hideQrCodeModal()">
+          <h5 class="modal-title" id="exampleModalLabel"> Participating Universities</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-12 mb-4">
-                @if (session()->has('newId') && $lead)
-                  <div class="row align-items-center">
+          <footer class="dark-footer skin-dark-footer pt-3 rounded">
+            <div class="container-fluid">
+              <div class="row">
 
-                    {{-- Success Message --}}
-                    <div class="col-lg-12 text-center">
-
-                      <h4>Thank You, {{ $lead->name }}!</h4>
-                      <p>Please bring this QR code to the **Education Fair** for easy check-in.</p>
+                @foreach ($result as $data)
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-4">
+                    <div class="footer-widget">
+                      <span class="widget-title">{{ $data['category_name'] }}</span>
+                      <ul class="footer-menu">
+                        @foreach ($data['specializations'] as $specialization_name)
+                          <li> <i class="ti-arrow-right"></i> {{ $specialization_name }}</li>
+                        @endforeach
+                      </ul>
                     </div>
-
-                    {{-- QR Code --}}
-                    <div class="col-lg-12 text-center">
-                      <div class="mcod">
-
-                        <img
-                          src="data:image/png;base64,{{ base64_encode(QrCode::format('png')->size(300)->generate(json_encode(['id' => $lead->id, 'name' => $lead->name, 'email' => $lead->email]))) }}"
-                          alt="QR Code">
-
-                      </div>
-                    </div>
-
-                    {{-- Download Button --}}
-                    <div class="col-lg-12 text-center">
-                      <div class="form-group"><br><br>
-                        <a href="{{ route('download.qr') }}" class="btn btn-sm btn-success">Download QR
-                          Code</a>
-                      </div>
-                    </div>
-                    <br>
-
                   </div>
-                @endif
+                @endforeach
+
               </div>
             </div>
-          </div>
+
+          </footer>
         </div>
+
       </div>
     </div>
   </div>
+
   <!-- Modal -->
   <div class="modal coursemodal  fade" id="courseListModal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -391,12 +367,8 @@
           </button>
           <div class="scholarship-body">
             <img src="/front/assets/images/scholarship-modal.png" class="imagesfront" alt="">
-            <p>The Education Fair is a pioneering event designed to connect Libyan students with representatives from
-              prestigious universities from Malaysia. Sponsored by the Libyan Government, this Education Fair provides
-              students with invaluable opportunities to explore international academic pathways, secure scholarships, and
-              take significant steps toward fulfilling their educational aspirations. <br>
-              The Education Fair is a great way for students to make well-informed decisions about studying abroad while
-              gaining direct access to important resources and experts.
+            <p>The Education Fair is a pioneering event designed to connect Libyan students with representatives from prestigious universities from Malaysia. Sponsored by the Libyan Government, this Education Fair provides students with invaluable opportunities to explore international academic pathways, secure scholarships, and take significant steps toward fulfilling their educational aspirations. <br>
+            The Education Fair is a great way for students to make well-informed decisions about studying abroad while gaining direct access to important resources and experts.
             </p>
 
           </div>
@@ -430,11 +402,8 @@
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 ">
-          @if (session()->has('newId') && $lead)
-            <center><a href="#" onclick="showQrCodeModal()" class="btn btn-sm btn-success">Download QR Code</a>
-            </center>
-          @endif
-          {{-- @if (session()->has('smsg'))
+
+          @if (session()->has('smsg'))
             <div
               class="alert alert-success alert-dismissible d-flex justify-content-between align-items-center errorshow"
               role="alert">
@@ -442,7 +411,9 @@
               <button type="button" class="btn-close alert alert-success mb-0 p-0 " data-bs-dismiss="alert"
                 aria-label="Close">
                 <i class="fa fa-times cclose" aria-hidden="true"></i>
+
               </button>
+
             </div>
           @endif
           @if (session()->has('emsg'))
@@ -451,10 +422,12 @@
               <h6 class="mb-0">{{ session()->get('smsg') }}</h6>
               <button type="button" class="btn-close alert alert-danger mb-0 p-0" data-bs-dismiss="alert"
                 aria-label="Close">
+
                 <i class="fa fa-times cclose" aria-hidden="true"></i>
+
               </button>
             </div>
-          @endif --}}
+          @endif
           <div class="all-forms main-modals">
             <h2 class="new-regist">Register Now</h2>
             <form class="s12 f" action="{{ route('libia.register') }}" method="post">
@@ -467,79 +440,68 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
                     <input name="name" class="form-control" type="text" placeholder="Full Name"
-                      pattern="[a-zA-Z'-'\s\u0600-\u06FF]*" value="{{ old('name', '') }}">
+                      pattern="[a-zA-Z'-'\s\u0600-\u06FF]*" value="{{ old('name', '') }}" required>
 
-                    <span class="text-danger" id="name-err">
-                      @error('name')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    @error('name')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
 
                 <div class="col-md-6  col-sm-12">
                   <div class="form-group">
                     <input name="email" class="form-control" type="email" placeholder="Personal Email Address"
-                      value="{{ old('email', '') }}">
-                    <span class="text-danger" id="email-err">
-                      @error('email')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                      value="{{ old('email', '') }}" required>
+                    @error('email')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
-                    <select name="c_code" id="countryCode" class="form-control">
+                    <select name="c_code" id="countryCode" class="form-control" required>
                       <option value="218" {{ old('c_code') == 218 ? 'selected' : '' }}>
                         +218 (State of Libya)
                       </option>
                     </select>
-                    <span class="text-danger" id="c_code-err">
-                      @error('c_code')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    @error('c_code')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
-                    <input name="mobile" class="form-control mt-0" type="text" pattern="[0-9]+"
+                    <input name="mobile" class="form-control mt-0" required type="text" pattern="[0-9]+"
                       placeholder="Phone number" value="{{ old('mobile', '') }}">
-                    <span class="text-danger" id="mobile-err">
-                      @error('mobile')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    @error('mobile')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-6 col-sm-12">
                   <div class="form-group">
-                    <select name="nationality" class="form-control">
+                    <select name="nationality" class="form-control" required>
                       <option value="">Select Nationality</option>
                       <option value="Libyan" {{ old('nationality') == 'Libyan' ? 'selected' : '' }}>Libyan</option>
                       <option value="Non-Libyan" {{ old('nationality') == 'Non-Libyan' ? 'selected' : '' }}>
                         Non-Libyan</option>
                     </select>
-                    <span class="text-danger" id="nationality-err">
-                      @error('nationality')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    @error('nationality')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                   <div class="form-group">
                     <input name="libya_identification_number" class="form-control" type="text"
-                      placeholder="Libya National Number" value="{{ old('libya_identification_number', '') }}">
-                    <span class="text-danger" id="libya_identification_number-err">
-                      @error('libya_identification_number')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                      placeholder="Libya National Number" value="{{ old('libya_identification_number', '') }}"
+                      required>
+                    @error('libya_identification_number')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
 
@@ -547,41 +509,57 @@
                   <div class="form-group">
                     <input name="passport_number" class="form-control" type="text"
                       placeholder="Libyan Passport Number" value="{{ old('passport_number', '') }}">
-                    <span class="text-danger" id="pasport_number-err">
-                      @error('pasport_number')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    @error('passport_number')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
-                    <select name="highest_qualification" class="form-control">
+                    <select name="highest_qualification" class="form-control" required>
                       <option value="">Your Highest Qualification</option>
                       <option value="UNDER-GRADUATE"
                         {{ old('highest_qualification') == 'UNDER-GRADUATE' ? 'selected' : '' }}>
-                        Under-Graduate
+                        UNDER-GRADUATE
                       </option>
                       <option value="POST-GRADUATE"
                         {{ old('highest_qualification') == 'POST-GRADUATE' ? 'selected' : '' }}>
-                        Post-Graduate
+                        POST-GRADUATE
                       </option>
                       <option value="PHD" {{ old('highest_qualification') == 'PHD' ? 'selected' : '' }}>
                         PHD
                       </option>
                     </select>
-                    <span class="text-danger" id="highest_qualification-err">
-                      @error('highest_qualification')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    @error('highest_qualification')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <select name="interested_level" class="form-control" required>
+                      <option value="">Are you interested in</option>
+                      <option value="UNDER-GRADUATE"
+                        {{ old('interested_level') == 'UNDER-GRADUATE' ? 'selected' : '' }}>
+                        UNDER-GRADUATE
+                      </option>
+                      <option value="POST-GRADUATE" {{ old('interested_level') == 'POST-GRADUATE' ? 'selected' : '' }}>
+                        POST-GRADUATE
+                      </option>
+                      <option value="PHD" {{ old('interested_level') == 'PHD' ? 'selected' : '' }}>
+                        PHD
+                      </option>
+                    </select>
+                    @error('interested_level')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
-                    <select name="university" class="form-control" id="university">
+                    <select name="university" class="form-control" id="ef_university" required>
                       <option value="">Select Interested University</option>
                       @foreach ($pageDetail->universities as $row)
                         <option value="{{ $row->university_id }}"
@@ -590,105 +568,62 @@
                         </option>
                       @endforeach
                     </select>
-                    <span class="text-danger" id="university-err">
-                      @error('university')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    @error('university')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
-                    <select name="interested_level" id="interested_level" class="form-control">
-                      <option value="">Are you interested in</option>
-                      <option value="UNDER-GRADUATE"
-                        {{ old('interested_level') == 'UNDER-GRADUATE' ? 'selected' : '' }}>
-                        Under-Graduate
-                      </option>
-                      <option value="POST-GRADUATE" {{ old('interested_level') == 'POST-GRADUATE' ? 'selected' : '' }}>
-                        Post-Graduate
-                      </option>
-                      <option value="PHD" {{ old('interested_level') == 'PHD' ? 'selected' : '' }}>
-                        PHD
-                      </option>
-                    </select>
-                    <span class="text-danger" id="interested_level-err">
-                      @error('interested_level')
-                        {{ $message }}
-                      @enderror
-                    </span>
-                  </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                  <div class="form-group">
-                    <select name="interested_course" class="form-control" id="interested_course">
+                    <select name="program" class="form-control" id="ef_program" required>
                       <option value="">Select Interested Course</option>
-
+                      @foreach ($categories as $row)
+                        <option value="{{ $row->name }}" {{ old('program') == $row->name ? 'selected' : '' }}>
+                          {{ $row->name }}
+                        </option>
+                      @endforeach
                     </select>
-                    <span class="text-danger" id="interested_course-err">
-                      @error('interested_course')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    @error('program')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
                 </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                  <div class="form-group">
-                    <select name="interested_program" class="form-control" id="interested_program">
-                      <option value="">Select Interested Program</option>
-
-                    </select>
-                    <span class="text-danger" id="interested_program-err">
-                      @error('interested_program')
-                        {{ $message }}
-                      @enderror
-                    </span>
-                  </div>
-                </div>
-
                 <div class="col-md-6 col-sm-12">
 
-                  <div class="postion-relative">
-                    <label class="gender">Gender</label>
-                    <div class="d-flex align-items-center justify-content-around addsd form-group">
-                      <div class="form-check mb-0">
-                        <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
-                          value="Male" {{ old('gender') == 'Male' ? 'checked' : '' }}>
-                        <label class="form-check-label" for="exampleRadios1">
-                          male
-                        </label>
-                      </div>
-                      <div class="form-check mb-0 ">
-                        <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
-                          value="Female"{{ old('gender') == 'Female' ? 'checked' : '' }}>
-                        <label class="form-check-label" for="exampleRadios2">
-                          female
-                        </label>
-                      </div>
+                 <div class="postion-relative">
+                 <label class="gender" >Gender</label>
+                  <div class="d-flex align-items-center justify-content-around addsd form-group">
+                    <div class="form-check mb-0">
+                      <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
+                        value="Male" {{ old('gender') == 'Male' ? 'checked' : '' }}>
+                      <label class="form-check-label" for="exampleRadios1">
+                        male
+                      </label>
                     </div>
-
-                    <span class="text-danger" id="gender-err">
-                      @error('gender')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                    <div class="form-check mb-0 ">
+                      <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
+                        value="Female"{{ old('gender') == 'Female' ? 'checked' : '' }}>
+                      <label class="form-check-label" for="exampleRadios2">
+                        female
+                      </label>
+                    </div>
+                    @error('gender')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
+                 </div>
 
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group dobdd">
                     <label for="dob">Date of Birth</label>
                     <input type="date" name="dob" id="dob" placeholder="Date of Birth"
-                      class="form-control" value="{{ old('dob') }}">
-                    <span class="text-danger" id="dob-err">
-                      @error('dob')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                      class="form-control" value="{{ old('dob') }}" required>
                   </div>
+                  @error('dob')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
@@ -701,13 +636,11 @@
                 <div class="col-lg-8 col-md-12  col-sm-12">
                   <div class="form-group">
                     <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
-                      name="captcha_answer">
-                    <span class="text-danger" id="captcha_answer-err">
-                      @error('captcha_answer')
-                        {{ $message }}
-                      @enderror
-                    </span>
+                      name="captcha_answer" required>
                   </div>
+                  @error('captcha_answer')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -823,6 +756,7 @@
           </div>
         </div>
 
+        
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
 
           <div class="fariul">
@@ -831,14 +765,14 @@
 
             </div>
             <div class="fair-us">
-              <h2>Post-Study Opportunities
+              <h2>Post-Study Opportunities 
               </h2>
               <p>Discover post-graduation carrier options</p>
             </div>
 
           </div>
         </div>
-
+        
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
 
           <div class="fariul">
@@ -847,7 +781,7 @@
 
             </div>
             <div class="fair-us">
-              <h2>Bring Your Dependents
+              <h2>Bring Your Dependents 
               </h2>
               <p>Postgraduate students can bring their family</p>
             </div>
@@ -904,21 +838,21 @@
 
             <ul>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Explore international education opportunities.</li>
+ Explore international education opportunities.</li>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Interact with Malaysian university representatives.</li>
+ Interact with Malaysian university representatives.</li>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Compare programs & courses.</li>
+ Compare programs & courses.</li>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Understand the Malaysian education system.</li>
+ Understand the Malaysian education system.</li>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Get firsthand course & career info.</li>
+ Get firsthand course & career info.</li>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Gain cultural awareness & global exposure.</li>
+ Gain cultural awareness & global exposure.</li>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Study in Malaysia & adapt to a new culture.</li>
+ Study in Malaysia & adapt to a new culture.</li>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                Receive guidance for the right course & university.</li>
+ Receive guidance for the right course & university.</li>
             </ul>
 
           </div>
@@ -952,8 +886,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                              </div> -->
+                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                  </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
@@ -1034,111 +968,37 @@
   </script>
   <script>
     $(document).ready(function() {
-      function showError(field, message) {
-        $('#' + field + '-err').text(message);
-      }
 
-      function clearError(field) {
-        $('#' + field + '-err').text('');
-      }
 
-      // Reset fields when university changes
-      $('#university').change(function() {
-        $('#interested_level').val('');
-        $('#interested_course').html('<option value="">Select Interested Course</option>');
-        $('#interested_program').html('<option value="">Select Interested Program</option>');
-      });
-
-      $('#interested_level').focus(function() {
-        if (!$('#university').val()) {
-          showError('interested_level', 'Please select a university first.');
-          $(this).blur();
-        } else {
-          clearError('interested_level');
+      // Fetch programs when university dropdown changes
+      $('#ef_university').change(function() {
+        const universityId = $(this).val();
+        if (universityId) {
+          fetchPrograms(universityId); // Call the function to fetch programs
         }
       });
 
-      $('#interested_course').focus(function() {
-        if (!$('#interested_level').val()) {
-          showError('interested_course', 'Please select an interested level first.');
-          $(this).blur();
-        } else {
-          clearError('interested_course');
-        }
-      });
-
-      $('#interested_program').focus(function() {
-        if (!$('#interested_course').val()) {
-          showError('interested_program', 'Please select an interested course first.');
-          $(this).blur();
-        } else {
-          clearError('interested_program');
-        }
-      });
-
-      // Fetch courses based on interested_level
-      $('#interested_level').change(function() {
-        var universityId = $('#university').val();
-        var level = $(this).val();
-
-        if (!universityId) {
-          showError('interested_level', 'Please select a university first.');
-          return;
-        }
-
+      // Function to fetch programs
+      function fetchPrograms(universityId) {
+        var level = $('#interested_level').val();
         $.ajax({
           url: "{{ route('libia.fetch.courses') }}",
           type: 'POST',
           headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          data: {
-            level: level,
-            university_id: universityId,
-          },
-          success: function(response) {
-            $('#interested_course').html(response);
-            clearError('interested_level');
-          },
-          error: function() {
-            alert('An error occurred while fetching courses.');
-          },
-        });
-      });
-
-      // Fetch programs based on interested_course
-      $('#interested_course').change(function() {
-        var universityId = $('#university').val();
-        var level = $('#interested_level').val();
-        var courseCategoryId = $(this).val();
-
-        if (!level) {
-          showError('interested_course', 'Please select an interested level first.');
-          return;
-        }
-
-        $.ajax({
-          url: "{{ route('libia.fetch.program') }}",
-          type: 'POST',
-          headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
           },
           data: {
             university_id: universityId,
-            level: level,
-            course_category_id: courseCategoryId
           },
           success: function(response) {
-            $('#interested_program').html(response);
-            clearError('interested_course');
+            $('#ef_program').html(response);
           },
           error: function() {
             alert('An error occurred while fetching programs.');
           },
         });
-      });
+      }
     });
-
 
     $(document).ready(function() {
       // Handle the click event on the "Apply Now" button
@@ -1157,58 +1017,6 @@
         // Trigger change event to ensure any dependent functionality updates
         $('#ef_university').trigger('change');
       });
-    });
-  </script>
-  <script>
-    function hideQrCodeModal() {
-      $('#qrCodeModal').removeClass('show');
-      $('#qrCodeModal').hide();
-    }
-
-    function showQrCodeModal() {
-      $('#qrCodeModal').addClass('show');
-      $('#qrCodeModal').show();
-    }
-
-    function printErrorMsg(msg) {
-      $.each(msg, function(key, value) {
-        $("#" + key + "-err").text(value);
-      });
-    }
-
-    $(document).ready(function() {
-      $('#dataForm').on('submit', function(event) {
-        event.preventDefault();
-        $(".errSpan").text('');
-        $.ajax({
-          url: "{{ route('libia.register') }}",
-          method: "POST",
-          data: new FormData(this),
-          contentType: false,
-          cache: false,
-          processData: false,
-          success: function(data) {
-            //alert(data);
-            if ($.isEmptyObject(data.error)) {
-              //alert(data.success);
-              if (data.hasOwnProperty('success')) {
-                var h = 'Success';
-                var msg = data.success;
-                var type = 'success';
-                $('#dataForm')[0].reset();
-              }
-            } else {
-              //alert(data.error);
-              printErrorMsg(data.error);
-              var h = 'Failed';
-              var msg = 'Some error occured';
-              var type = 'danger';
-            }
-          }
-        })
-      });
-
-
     });
   </script>
   @include('front.js.translate')
