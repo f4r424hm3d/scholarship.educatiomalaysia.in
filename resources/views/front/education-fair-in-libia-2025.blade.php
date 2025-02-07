@@ -476,7 +476,7 @@
             <h2 class="new-regist">Register Now</h2>
             <form class="s12 f" action="{{ route('libia.register') }}" method="post">
               @csrf
-              <input class="mt-0" type="hidden" name="source" value="Education Malaysia - Libia Landing Page">
+              <input class="mt-0" type="hidden" name="source" value="Education Malaysia - Libya Landing Page">
               <input class="mt-0" type="hidden" name="source_path" value="{{ url()->current() }}">
               <input class="mt-0" type="hidden" name="return_path" value="{{ url()->current() }}">
 
