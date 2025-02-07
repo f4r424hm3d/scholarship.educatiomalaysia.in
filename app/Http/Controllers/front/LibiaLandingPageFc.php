@@ -195,9 +195,10 @@ class LibiaLandingPageFc extends Controller
 
     // Generate QR Code
     $qrData = json_encode([
-      'id' => $field->id,
-      'name' => $field->name,
-      'email' => $field->email
+      'Title' => 'Malaysian Universities Education & Training Fair 2025',
+      'Student Name' => $field->name,
+      'Passport Number' => $field->passport_number,
+      'Libya National Id' => $field->identification_number,
     ]);
     $qrCode = QrCode::format('png')->size(300)->generate($qrData);
 
@@ -376,9 +377,10 @@ class LibiaLandingPageFc extends Controller
 
     // Encode user details
     $data = json_encode([
-      'id' => $lead->id,
-      'name' => $lead->name,
-      'email' => $lead->email
+      'Title' => 'Malaysian Universities Education & Training Fair 2025',
+      'Student Name' => $lead->name,
+      'Passport Number' => $lead->passport_number,
+      'Libya National Id' => $lead->identification_number,
     ]);
 
     // Generate PNG QR Code (No Imagick Required)

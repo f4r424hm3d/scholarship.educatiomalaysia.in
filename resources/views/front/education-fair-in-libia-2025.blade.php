@@ -45,11 +45,11 @@
   <section class="banner-section">
     <div class="googlechanges " id="google_translate_element"></div>
     <div class="container">
-      <h2 class="banner-titles"> Ambitions Meet Opportunities
+      <h2 class="banner-titles"> Where Ambitions Meet Opportunities
       </h2>
       <div class="row">
-        <!-- class="carousel slide" data-ride="carousel" -->
-        <div id="carouselExampleControls">
+        <!--  -->
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             @php
               $i = 1;
@@ -68,6 +68,14 @@
               @endphp
             @endforeach;
           </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
 
         </div>
       </div>
@@ -111,7 +119,16 @@
                       <div class="mcod">
 
                         <img
-                          src="data:image/png;base64,{{ base64_encode(QrCode::format('png')->size(300)->generate(json_encode(['id' => $lead->id, 'name' => $lead->name, 'email' => $lead->email]))) }}"
+                          src="data:image/png;base64,{{ base64_encode(
+                              QrCode::format('png')->size(300)->generate(
+                                      json_encode([
+                                          'Title' => 'Malaysian Universities Education & Training Fair 2025',
+                                          'Student Name' => $lead->name,
+                                          'Passport Number' => $lead->passport_number,
+                                          'Libya National Id' => $lead->identification_number,
+                                      ]),
+                                  ),
+                          ) }}"
                           alt="QR Code">
 
                       </div>
@@ -141,7 +158,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> Participating Universities</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Courses</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -418,11 +435,11 @@
 
             <ul class="set_uls">
               <li><b><i class="fa fa-map-pin" aria-hidden="true"></i>
-                  Venue</b> <span>:</span> Libyan Academy for Postgraduate Studies, Tripoli, Libya</li>
-              <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date</b> <span>:</span> 22nd & 23rd February 2025
+                  Venue</b> Libyan Academy for Postgraduate Studies, Tripoli, Libya</li>
+              <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date</b> 22nd & 23rd February 2025
               </li>
               <li><b><i class="fa fa-clock-o" aria-hidden="true"></i>
-                  Time</b> <span>:</span> 9:30 AM – 1:00 PM & 4:00 PM – 8:00 PM</li>
+                  Time</b> 9:30 AM – 1:00 PM & 4:00 PM – 8:00 PM</li>
             </ul>
             <div class="imgsfaird">
               <img src="../front/assets/images/libya-malaysia.png" class="imgsfairs" alt="">
@@ -469,7 +486,7 @@
                     <input name="name" class="form-control" type="text" placeholder="Full Name"
                       pattern="[a-zA-Z'-'\s\u0600-\u06FF]*" value="{{ old('name', '') }}">
 
-                    <span class="text-danger" id="name-err">
+                    <span class="text-danger redspan" id="name-err">
                       @error('name')
                         {{ $message }}
                       @enderror
@@ -481,7 +498,7 @@
                   <div class="form-group">
                     <input name="email" class="form-control" type="email" placeholder="Personal Email Address"
                       value="{{ old('email', '') }}">
-                    <span class="text-danger" id="email-err">
+                    <span class="text-danger redspan" id="email-err">
                       @error('email')
                         {{ $message }}
                       @enderror
@@ -496,7 +513,7 @@
                         +218 (State of Libya)
                       </option>
                     </select>
-                    <span class="text-danger" id="c_code-err">
+                    <span class="text-danger redspan" id="c_code-err">
                       @error('c_code')
                         {{ $message }}
                       @enderror
@@ -508,7 +525,7 @@
                   <div class="form-group">
                     <input name="mobile" class="form-control mt-0" type="text" pattern="[0-9]+"
                       placeholder="Phone number" value="{{ old('mobile', '') }}">
-                    <span class="text-danger" id="mobile-err">
+                    <span class="text-danger redspan" id="mobile-err">
                       @error('mobile')
                         {{ $message }}
                       @enderror
@@ -524,7 +541,7 @@
                       <option value="Non-Libyan" {{ old('nationality') == 'Non-Libyan' ? 'selected' : '' }}>
                         Non-Libyan</option>
                     </select>
-                    <span class="text-danger" id="nationality-err">
+                    <span class="text-danger redspan" id="nationality-err">
                       @error('nationality')
                         {{ $message }}
                       @enderror
@@ -535,7 +552,7 @@
                   <div class="form-group">
                     <input name="libya_identification_number" class="form-control" type="text"
                       placeholder="Libya National Number" value="{{ old('libya_identification_number', '') }}">
-                    <span class="text-danger" id="libya_identification_number-err">
+                    <span class="text-danger redspan" id="libya_identification_number-err">
                       @error('libya_identification_number')
                         {{ $message }}
                       @enderror
@@ -547,7 +564,7 @@
                   <div class="form-group">
                     <input name="passport_number" class="form-control" type="text"
                       placeholder="Libyan Passport Number" value="{{ old('passport_number', '') }}">
-                    <span class="text-danger" id="pasport_number-err">
+                    <span class="text-danger redspan" id="pasport_number-err">
                       @error('pasport_number')
                         {{ $message }}
                       @enderror
@@ -571,7 +588,7 @@
                         PHD
                       </option>
                     </select>
-                    <span class="text-danger" id="highest_qualification-err">
+                    <span class="text-danger redspan " id="highest_qualification-err">
                       @error('highest_qualification')
                         {{ $message }}
                       @enderror
@@ -590,7 +607,7 @@
                         </option>
                       @endforeach
                     </select>
-                    <span class="text-danger" id="university-err">
+                    <span class="text-danger redspan" id="university-err">
                       @error('university')
                         {{ $message }}
                       @enderror
@@ -613,7 +630,7 @@
                         PHD
                       </option>
                     </select>
-                    <span class="text-danger" id="interested_level-err">
+                    <span class="text-danger redspan" id="interested_level-err">
                       @error('interested_level')
                         {{ $message }}
                       @enderror
@@ -627,7 +644,7 @@
                       <option value="">Select Interested Course</option>
 
                     </select>
-                    <span class="text-danger" id="interested_course-err">
+                    <span class="text-danger redspan" id="interested_course-err">
                       @error('interested_course')
                         {{ $message }}
                       @enderror
@@ -641,7 +658,7 @@
                       <option value="">Select Interested Program</option>
 
                     </select>
-                    <span class="text-danger" id="interested_program-err">
+                    <span class="text-danger redspan" id="interested_program-err">
                       @error('interested_program')
                         {{ $message }}
                       @enderror
@@ -653,28 +670,30 @@
 
                   <div class="postion-relative">
                     <label class="gender">Gender</label>
-                    <div class="d-flex align-items-center justify-content-around addsd form-group">
-                      <div class="form-check mb-0">
-                        <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
-                          value="Male" {{ old('gender') == 'Male' ? 'checked' : '' }}>
-                        <label class="form-check-label" for="exampleRadios1">
-                          male
-                        </label>
+                    <div class=" form-group">
+                      <div class="d-flex align-items-center justify-content-around addsd">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
+                            value="Male" {{ old('gender') == 'Male' ? 'checked' : '' }}>
+                          <label class="form-check-label" for="exampleRadios1">
+                            male
+                          </label>
+                        </div>
+                        <div class="form-check mb-0 ">
+                          <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
+                            value="Female"{{ old('gender') == 'Female' ? 'checked' : '' }}>
+                          <label class="form-check-label" for="exampleRadios2">
+                            female
+                          </label>
+                        </div>
                       </div>
-                      <div class="form-check mb-0 ">
-                        <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
-                          value="Female"{{ old('gender') == 'Female' ? 'checked' : '' }}>
-                        <label class="form-check-label" for="exampleRadios2">
-                          female
-                        </label>
-                      </div>
+                      <span class="text-danger redspan" id="gender-err">
+                        @error('gender')
+                          {{ $message }}
+                        @enderror
+                      </span>
                     </div>
 
-                    <span class="text-danger" id="gender-err">
-                      @error('gender')
-                        {{ $message }}
-                      @enderror
-                    </span>
                   </div>
 
                 </div>
@@ -683,7 +702,7 @@
                     <label for="dob">Date of Birth</label>
                     <input type="date" name="dob" id="dob" placeholder="Date of Birth"
                       class="form-control" value="{{ old('dob') }}">
-                    <span class="text-danger" id="dob-err">
+                    <span class="text-danger redspan" id="dob-err">
                       @error('dob')
                         {{ $message }}
                       @enderror
@@ -691,18 +710,18 @@
                   </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
                     <input type="text" placeholder="Captcha: {{ $captcha['text'] }} =" class="form-control"
                       value="Captcha: {{ $captcha['text'] }} =" disabled readonly>
                   </div>
                 </div>
 
-                <div class="col-lg-8 col-md-12  col-sm-12">
+                <div class="col-lg-6 col-md-6  col-sm-12">
                   <div class="form-group">
                     <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
                       name="captcha_answer">
-                    <span class="text-danger" id="captcha_answer-err">
+                    <span class="text-danger redspan" id="captcha_answer-err">
                       @error('captcha_answer')
                         {{ $message }}
                       @enderror
@@ -952,10 +971,13 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                              </div> -->
+                                                                                                                                                                                                                                                                                                                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                  </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
+                  </div>
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/napei.png" alt="">
                   </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/education_11.jpg" alt="">
