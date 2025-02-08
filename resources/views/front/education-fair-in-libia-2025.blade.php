@@ -44,24 +44,26 @@
   </style>
   <section class="banner-section">
     <div class="googlechanges " id="google_translate_element"></div>
-    <marquee scrollamount="20" direction="right">
-    <h2 class="banner-titles"> Where Ambitions Meet Opportunities
-    </h2>
-    </marquee>
+
     <div class="container">
-   
+
       <div class="row">
+
         <!-- class="carousel slide" data-ride="carousel"   -->
-        
-        <div id="carouselExampleControls" >
+        <video autoplay muted loop class="mb-2">
+          <source src="/front/video/videoslider.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div id="carouselExampleControls">
           <div class="carousel-inner">
+
             @php
               $i = 1;
             @endphp
             @foreach ($pageDetail->banners as $row)
               <div class="carousel-item {{ $i == '1' ? 'active' : '' }}">
                 <!-- <img class="d-block w-100" src="{{ asset($row->file_path) }}" alt="{{ $row->alt_text }}"> -->
-           
+
                 <video autoplay muted loop>
                   <source src="/front/video/videoflag.mp4" type="video/mp4">
                   Your browser does not support the video tag.
@@ -74,13 +76,13 @@
             @endforeach;
           </div>
           <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a> -->
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a> -->
 
         </div>
       </div>
@@ -96,7 +98,8 @@
   </section>
 
   <!-- Modal -->
-  <div class="modal coursemodal  fade " id="qrCodeModal" tabindex="-1" role="dialog" aria-labelledby="qrCodeModalLabel">
+  <div class="modal  thankyou_popup coursemodal  fade " id="qrCodeModal" tabindex="-1" role="dialog"
+    aria-labelledby="qrCodeModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -116,7 +119,8 @@
                     <div class="col-lg-12 text-center">
 
                       <h4>Thank You, {{ $lead->name }}!</h4>
-                      <p>Please bring this QR code to the **Education Fair** for easy check-in.</p>
+                      <p>Please bring this QR code to the **Education Fair** for easy check-in. <br>
+                        You can also download this QR code from your email.</p>
                     </div>
 
                     {{-- QR Code --}}
@@ -254,7 +258,6 @@
                 </ul>
               </div>
 
-
               <div class="col-md-6 col-sm-12 col-12 mb-4">
                 <h5>Health, Safety & Medicine</h5>
                 <ul>
@@ -319,9 +322,7 @@
                   <li>ROBOTIC</li>
                   <li>Aeronautical Engineering</li>
                   <li>Aeronautics and Astronautics</li>
-                  
-                 
-                 
+
                 </ul>
               </div>
             </div>
@@ -389,10 +390,8 @@
                           </div>
                           <div class="universitynames">
                             <h2>{{ $row->university->name }}</h2>
-
                           </div>
                         </div>
-
                       </div>
                     @endforeach
                   </div>
@@ -454,7 +453,7 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4">
           <div class="fair-details">
             <h2 class="main-faris">
-              Malaysian Universities Education <span class="aands" >&</span> Training Fair 2025 </h2>
+              Malaysian Universities Education <span class="aands">&</span> Training Fair 2025 </h2>
 
             <ul class="set_uls">
               <li><b><i class="fa fa-map-pin" aria-hidden="true"></i>
@@ -470,10 +469,10 @@
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 ">
-          @if (session()->has('newId') && $lead)
-            <center><a href="#" onclick="showQrCodeModal()" class="btn btn-sm btn-success">Download QR Code</a>
-            </center>
-          @endif
+          <!-- @if (session()->has('newId') && $lead)
+  <center><a href="#" onclick="showQrCodeModal()" class="btn btn-sm btn-success">Download QR Code</a>
+              </center>
+  @endif -->
           {{-- @if (session()->has('smsg'))
             <div
               class="alert alert-success alert-dismissible d-flex justify-content-between align-items-center errorshow"
@@ -994,8 +993,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                  <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                  </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
