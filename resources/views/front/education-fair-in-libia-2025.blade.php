@@ -44,15 +44,16 @@
   </style>
   <section class="banner-section">
     <div class="googlechanges " id="google_translate_element"></div>
-    <marquee direction="right">
+    <marquee scrollamount="20" direction="right">
     <h2 class="banner-titles"> Where Ambitions Meet Opportunities
     </h2>
     </marquee>
     <div class="container">
    
       <div class="row">
-        <!--  -->
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <!-- class="carousel slide" data-ride="carousel"   -->
+        
+        <div id="carouselExampleControls" >
           <div class="carousel-inner">
             @php
               $i = 1;
@@ -72,14 +73,14 @@
               @endphp
             @endforeach;
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-          </a>
+          </a> -->
 
         </div>
       </div>
@@ -175,6 +176,7 @@
                 <h5> Under Graduate, Post Graduate, Phd </h5>
                 <ul>
                   <li>Applied and Pure Sciences</li>
+                  <li>Architecture, Construcation and Manufacturing</li>
                   <li>Business and Management</li>
                   <li>Computer Science and IT</li>
                   <li>Creative Arts and Design</li>
@@ -252,6 +254,7 @@
                 </ul>
               </div>
 
+
               <div class="col-md-6 col-sm-12 col-12 mb-4">
                 <h5>Health, Safety & Medicine</h5>
                 <ul>
@@ -308,6 +311,17 @@
                   <li>Water and Wastewater System</li>
                   <li>Water Engineering and Energy</li>
                   <li>Welding</li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-sm-12 col-12 mb-4">
+                <h5>Engineering</h5>
+                <ul>
+                  <li>ROBOTIC</li>
+                  <li>Aeronautical Engineering</li>
+                  <li>Aeronautics and Astronautics</li>
+                  
+                 
+                 
                 </ul>
               </div>
             </div>
