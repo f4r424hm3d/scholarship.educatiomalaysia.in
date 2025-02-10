@@ -10,10 +10,18 @@
   @if (session()->has('QR'))
     <script>
       $(document).ready(function() {
-        showQrCodeModal()
+        showQrCodeModal();
+
+        // Push an event to the dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'qr_code_shown'
+        });
       });
     </script>
+    <span id="qrCodeVisible"></span>
   @endif
+
   <style>
     .contact-forms {
       background-color: rgb(238 202 3);
@@ -76,13 +84,13 @@
             @endforeach;
           </div>
           <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a> -->
+                                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                      <span class="sr-only">Previous</span>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                      <span class="sr-only">Next</span>
+                                                    </a> -->
 
         </div>
       </div>
@@ -153,6 +161,15 @@
                     <br>
 
                   </div>
+                @elseif(session()->has('QR'))
+                  <div class="row align-items-center">
+                    <div class="col-lg-12 text-center">
+
+                      <h4>Thank You</h4>
+                      <p>Please bring this QR code to the **Education Fair** for easy check-in. <br>
+                        You can also download this QR code from your email.</p>
+                    </div>
+                  </div>
                 @endif
               </div>
             </div>
@@ -162,12 +179,12 @@
     </div>
   </div>
   <!-- Modal -->
-  <div class="modal coursemodal  fade" id="courseListModal" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="courseListModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Courses</h5>
+          <h5 class="modal-title" id="exampleModalLabel">FACULTY</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -176,11 +193,11 @@
           <div class="container-fluid">
             <div class="row">
 
-              <div class="col-md-6 col-sm-12 col-12 mb-4">
-                <h5> Under Graduate, Post Graduate, Phd </h5>
-                <ul>
+              <div class="col-md-12 col-sm-12 col-12 px-0">
+                <!-- <h5> Under Graduate, Post Graduate, Phd </h5> -->
+                <ul class="coursesdd">
                   <li>Applied and Pure Sciences</li>
-                  <li>Architecture, Construcation and Manufacturing</li>
+                  <li>Architecture, Construction and Manufacturing</li>
                   <li>Business and Management</li>
                   <li>Computer Science and IT</li>
                   <li>Creative Arts and Design</li>
@@ -190,141 +207,144 @@
                   <li>Humanities</li>
                   <li>Social Studies and Media</li>
                   <li>Travel and Hospitality</li>
+                  <li> Acounting & Finance</li>
                 </ul>
               </div>
-              <div class="col-md-6 col-sm-12 col-12 mb-4">
-                <h5>Engineering</h5>
-                <ul>
-                  <li>ROBOTIC</li>
-                  <li>Aeronautical Engineering</li>
-                  <li>Aeronautics and Astronautics</li>
-                  <li>Air Conditioning and Refrigeration</li>
-                  <li>Aircraft Engineering</li>
-                  <li>Automation Engineering</li>
-                  <li>Automotive</li>
-                  <li>Aviation and Aircraft Maintenance</li>
-                  <li>Aviation Management</li>
-                  <li>Biomedical Engineering</li>
-                  <li>Bioprocess Engineering</li>
-                  <li>Chemical Engineering</li>
-                  <li>Civil Engineering</li>
-                  <li>Computer Engineering</li>
-                  <li>Computer Systems</li>
-                  <li>Data Engineering</li>
-                  <li>Electrical and Electronics Engineering</li>
-                  <li>Electrical Engineering</li>
-                  <li>Electronic Engineering</li>
-                  <li>Energy</li>
-                  <li>Engineering</li>
-                  <li>Environmental Engineering</li>
-                  <li>Financial Engineering</li>
-                  <li>Forensic Engineering</li>
-                  <li>General Engineering and Technology</li>
-                  <li>Geomatic</li>
-                  <li>Industrial Automation And Robotics</li>
-                  <li>Industrial Engineering</li>
-                  <li>Industrial Logistic</li>
-                  <li>Industrial Management</li>
-                  <li>Industrial Power</li>
-                  <li>Informatics Engineering</li>
-                  <li>Infrastructure Management</li>
-                  <li>Instrumentation and Control Engineering</li>
-                  <li>Manufacturing and Production</li>
-                  <li>Marine Engineering</li>
-                  <li>Materials</li>
-                  <li>Materials Engineering</li>
-                  <li>Mechanical Engineering</li>
-                  <li>Mechatronics Engineering</li>
-                  <li>Medical Engineering</li>
-                  <li>Metallurgy</li>
-                  <li>Nanotechnology</li>
-                  <li>Nautical Engineering</li>
-                  <li>Nuclear Engineering</li>
-                  <li>Petroleum Engineering</li>
-                  <li>Petroleum Geoscience</li>
-                  <li>Polymer Engineering</li>
-                  <li>Power & Machine</li>
-                  <li>Quality Control</li>
-                  <li>Quantity Surveying</li>
-                  <li>Railway Technology</li>
-                  <li>Software Engineering</li>
-                  <li>Structural Engineering</li>
-                  <li>Sustainable Energy</li>
-                  <li>Telecommunications</li>
-                  <li>Vehicle Engineering</li>
-                  <li>Water and Wastewater System</li>
-                  <li>Water Engineering and Energy</li>
-                  <li>Welding</li>
-                </ul>
-              </div>
+              <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
+                                                          <h5>Engineering</h5>
+                                                          <ul>
+                                                            <li>ROBOTIC</li>
+                                                            <li>Aeronautical Engineering</li>
+                                                            <li>Aeronautics and Astronautics</li>
+                                                            <li>Air Conditioning and Refrigeration</li>
+                                                            <li>Aircraft Engineering</li>
+                                                            <li>Automation Engineering</li>
+                                                            <li>Automotive</li>
+                                                            <li>Aviation and Aircraft Maintenance</li>
+                                                            <li>Aviation Management</li>
+                                                            <li>Biomedical Engineering</li>
+                                                            <li>Bioprocess Engineering</li>
+                                                            <li>Chemical Engineering</li>
+                                                            <li>Civil Engineering</li>
+                                                            <li>Computer Engineering</li>
+                                                            <li>Computer Systems</li>
+                                                            <li>Data Engineering</li>
+                                                            <li>Electrical and Electronics Engineering</li>
+                                                            <li>Electrical Engineering</li>
+                                                            <li>Electronic Engineering</li>
+                                                            <li>Energy</li>
+                                                            <li>Engineering</li>
+                                                            <li>Environmental Engineering</li>
+                                                            <li>Financial Engineering</li>
+                                                            <li>Forensic Engineering</li>
+                                                            <li>General Engineering and Technology</li>
+                                                            <li>Geomatic</li>
+                                                            <li>Industrial Automation And Robotics</li>
+                                                            <li>Industrial Engineering</li>
+                                                            <li>Industrial Logistic</li>
+                                                            <li>Industrial Management</li>
+                                                            <li>Industrial Power</li>
+                                                            <li>Informatics Engineering</li>
+                                                            <li>Infrastructure Management</li>
+                                                            <li>Instrumentation and Control Engineering</li>
+                                                            <li>Manufacturing and Production</li>
+                                                            <li>Marine Engineering</li>
+                                                            <li>Materials</li>
+                                                            <li>Materials Engineering</li>
+                                                            <li>Mechanical Engineering</li>
+                                                            <li>Mechatronics Engineering</li>
+                                                            <li>Medical Engineering</li>
+                                                            <li>Metallurgy</li>
+                                                            <li>Nanotechnology</li>
+                                                            <li>Nautical Engineering</li>
+                                                            <li>Nuclear Engineering</li>
+                                                            <li>Petroleum Engineering</li>
+                                                            <li>Petroleum Geoscience</li>
+                                                            <li>Polymer Engineering</li>
+                                                            <li>Power & Machine</li>
+                                                            <li>Quality Control</li>
+                                                            <li>Quantity Surveying</li>
+                                                            <li>Railway Technology</li>
+                                                            <li>Software Engineering</li>
+                                                            <li>Structural Engineering</li>
+                                                            <li>Sustainable Energy</li>
+                                                            <li>Telecommunications</li>
+                                                            <li>Vehicle Engineering</li>
+                                                            <li>Water and Wastewater System</li>
+                                                            <li>Water Engineering and Energy</li>
+                                                            <li>Welding</li>
+                                                          </ul>
+                                                        </div> -->
 
-              <div class="col-md-6 col-sm-12 col-12 mb-4">
-                <h5>Health, Safety & Medicine</h5>
-                <ul>
-                  <li>Acupuncture</li>
-                  <li>Anaesthesiology</li>
-                  <li>Anatomy</li>
-                  <li>Chinese Medicine</li>
-                  <li>Chiropractic</li>
-                  <li>Cosmetics</li>
-                  <li>Counselling</li>
-                  <li>Dentistry</li>
-                  <li>Environment Health</li>
-                  <li>Gynaecology</li>
-                  <li>Health and Safety</li>
-                  <li>Health Science</li>
-                  <li>Health Studies</li>
-                  <li>Homeopathic</li>
-                  <li>Internal Medicine</li>
-                  <li>Laboratory Technology</li>
-                  <li>Medical Imaging</li>
-                  <li>Medical Imaging & Radiotherapy</li>
-                  <li>Medical Science</li>
-                  <li>Medicine</li>
-                  <li>Midwifery</li>
-                  <li>Nursing</li>
-                  <li>Nutrition and Health</li>
-                  <li>Nutrition With Wellness</li>
-                  <li>Occupational Therapy</li>
-                  <li>Ophthalmology</li>
-                  <li>Optometry</li>
-                  <li>Orthopaedic</li>
-                  <li>Otorhinolaryngology-Head and Neck Surgery</li>
-                  <li>Paramedical</li>
-                  <li>Pharmaceutical Chemistry</li>
-                  <li>Pharmaceutical Sciences</li>
-                  <li>Pharmaceuticals Technology</li>
-                  <li>Pharmacy</li>
-                  <li>Physics</li>
-                  <li>Physiology</li>
-                  <li>Physiotherapy</li>
-                  <li>Polygraph Examiner's Course</li>
-                  <li>Psychiatry</li>
-                  <li>Psychology</li>
-                  <li>Public Health</li>
-                  <li>Radiology</li>
-                  <li>Surgery</li>
-                  <li>Ultrasound</li>
-                </ul>
-              </div>
+              <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
+                                                          <h5>Health, Safety & Medicine</h5>
+                                                          <ul>
+                                                            <li>Acupuncture</li>
+                                                            <li>Anaesthesiology</li>
+                                                            <li>Anatomy</li>
+                                                            <li>Chinese Medicine</li>
+                                                            <li>Chiropractic</li>
+                                                            <li>Cosmetics</li>
+                                                            <li>Counselling</li>
+                                                            <li>Dentistry</li>
+                                                            <li>Environment Health</li>
+                                                            <li>Gynaecology</li>
+                                                            <li>Health and Safety</li>
+                                                            <li>Health Science</li>
+                                                            <li>Health Studies</li>
+                                                            <li>Homeopathic</li>
+                                                            <li>Internal Medicine</li>
+                                                            <li>Laboratory Technology</li>
+                                                            <li>Medical Imaging</li>
+                                                            <li>Medical Imaging & Radiotherapy</li>
+                                                            <li>Medical Science</li>
+                                                            <li>Medicine</li>
+                                                            <li>Midwifery</li>
+                                                            <li>Nursing</li>
+                                                            <li>Nutrition and Health</li>
+                                                            <li>Nutrition With Wellness</li>
+                                                            <li>Occupational Therapy</li>
+                                                            <li>Ophthalmology</li>
+                                                            <li>Optometry</li>
+                                                            <li>Orthopaedic</li>
+                                                            <li>Otorhinolaryngology-Head and Neck Surgery</li>
+                                                            <li>Paramedical</li>
+                                                            <li>Pharmaceutical Chemistry</li>
+                                                            <li>Pharmaceutical Sciences</li>
+                                                            <li>Pharmaceuticals Technology</li>
+                                                            <li>Pharmacy</li>
+                                                            <li>Physics</li>
+                                                            <li>Physiology</li>
+                                                            <li>Physiotherapy</li>
+                                                            <li>Polygraph Examiner's Course</li>
+                                                            <li>Psychiatry</li>
+                                                            <li>Psychology</li>
+                                                            <li>Public Health</li>
+                                                            <li>Radiology</li>
+                                                            <li>Surgery</li>
+                                                            <li>Ultrasound</li>
+                                                          </ul>
+                                                        </div> -->
 
-              <div class="col-md-6 col-sm-12 col-12 mb-4">
-                <h5>Education and Training</h5>
-                <ul>
-                  <li>Water and Wastewater System</li>
-                  <li>Water Engineering and Energy</li>
-                  <li>Welding</li>
-                </ul>
-              </div>
-              <div class="col-md-6 col-sm-12 col-12 mb-4">
-                <h5>Engineering</h5>
-                <ul>
-                  <li>ROBOTIC</li>
-                  <li>Aeronautical Engineering</li>
-                  <li>Aeronautics and Astronautics</li>
+              <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
+                                                          <h5>Education and Training</h5>
+                                                          <ul>
+                                                            <li>Water and Wastewater System</li>
+                                                            <li>Water Engineering and Energy</li>
+                                                            <li>Welding</li>
+                                                          </ul>
+                                                        </div> -->
+              <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
+                                                          <h5>Engineering</h5>
+                                                          <ul>
+                                                            <li>ROBOTIC</li>
+                                                            <li>Aeronautical Engineering</li>
+                                                            <li>Aeronautics and Astronautics</li>
 
-                </ul>
-              </div>
+
+
+                                                          </ul>
+                                                        </div> -->
             </div>
           </div>
         </div>
@@ -390,8 +410,10 @@
                           </div>
                           <div class="universitynames">
                             <h2>{{ $row->university->name }}</h2>
+
                           </div>
                         </div>
+
                       </div>
                     @endforeach
                   </div>
@@ -469,31 +491,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 ">
-          <!-- @if (session()->has('newId') && $lead)
-  <center><a href="#" onclick="showQrCodeModal()" class="btn btn-sm btn-success">Download QR Code</a>
-              </center>
-  @endif -->
-          {{-- @if (session()->has('smsg'))
-            <div
-              class="alert alert-success alert-dismissible d-flex justify-content-between align-items-center errorshow"
-              role="alert">
-              <h6 class="mb-0">{{ session()->get('smsg') }}</h6>
-              <button type="button" class="btn-close alert alert-success mb-0 p-0 " data-bs-dismiss="alert"
-                aria-label="Close">
-                <i class="fa fa-times cclose" aria-hidden="true"></i>
-              </button>
-            </div>
-          @endif
-          @if (session()->has('emsg'))
-            <div class="alert alert-danger alert-dismissible d-flex justify-content-between align-items-center errorshow"
-              role="alert">
-              <h6 class="mb-0">{{ session()->get('smsg') }}</h6>
-              <button type="button" class="btn-close alert alert-danger mb-0 p-0" data-bs-dismiss="alert"
-                aria-label="Close">
-                <i class="fa fa-times cclose" aria-hidden="true"></i>
-              </button>
-            </div>
-          @endif --}}
+
           <div class="all-forms main-modals">
             <h2 class="new-regist">Register Now</h2>
             <form class="s12 f" action="{{ route('libia.register') }}" method="post">
@@ -664,7 +662,13 @@
                   <div class="form-group">
                     <select name="interested_course" class="form-control" id="interested_course">
                       <option value="">Select Interested Course</option>
-
+                      @if (old('interested_course') && old('interested_course') != null)
+                        @foreach ($categories as $row)
+                          <option value="{{ $row->id }}"
+                            {{ old('interested_course') == $row->id ? 'selected' : '' }}>
+                            {{ $row->name }}</option>
+                        @endforeach
+                      @endif
                     </select>
                     <span class="text-danger redspan" id="interested_course-err">
                       @error('interested_course')
@@ -678,7 +682,13 @@
                   <div class="form-group">
                     <select name="interested_program" class="form-control" id="interested_program">
                       <option value="">Select Interested Program</option>
-
+                      @if (old('interested_program') && old('interested_program') != null)
+                        @foreach ($programs as $row)
+                          <option value="{{ $row->course_name }}"
+                            {{ old('interested_program') == $row->course_name ? 'selected' : '' }}>
+                            {{ $row->course_name }}</option>
+                        @endforeach
+                      @endif
                     </select>
                     <span class="text-danger redspan" id="interested_program-err">
                       @error('interested_program')
@@ -993,8 +1003,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                  </div> -->
+                                                                                                                                                                                                                                                                                                                                                            <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                                                          </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
@@ -1019,6 +1029,7 @@
 
   <section class="contact-forms">
     <div class="container">
+      <h2 class="text-center mb-4 text-white font-bold py-3">PLEASE CONTACT</h2>
       <div class="row" style="text-align: center">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 ">
           <div class="contact-froms">

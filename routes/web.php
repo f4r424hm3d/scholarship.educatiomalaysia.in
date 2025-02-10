@@ -152,4 +152,5 @@ Route::post('/libia/fetch-courses', [LibiaLandingPageFc::class, 'getCoursesByUni
 
 Route::get('privacy-policy', [HomeFc::class, 'privacyPolicy'])->name('pp');
 Route::get('terms-and-conditions', [HomeFc::class, 'termsConditions'])->name('tc');
+Route::get('test-popup', [HomeFc::class, 'testPopup']);
 // COURSES IN MALAYSIA ROUTES END

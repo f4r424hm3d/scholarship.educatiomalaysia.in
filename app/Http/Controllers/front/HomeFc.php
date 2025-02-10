@@ -108,4 +108,9 @@ class HomeFc extends Controller
     $data = compact('pageContent', 'categories', 'level');
     return view('front.courses')->with($data);
   }
+  public function testPopup(Request $request)
+  {
+    session()->flash('QR', true);
+    return redirect()->route('libia.page');
+  }
 }

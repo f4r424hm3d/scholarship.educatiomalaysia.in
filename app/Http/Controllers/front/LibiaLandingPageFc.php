@@ -62,10 +62,23 @@ class LibiaLandingPageFc extends Controller
     $countries = Country::orderBy('name', 'ASC')->get();
     $phonecodes = Country::orderBy('phonecode', 'ASC')->groupBy('phonecode')->where('phonecode', '!=', 0)->get();
     $levels = Level::all();
-    $categories = CourseCategory::all();
 
-    if (old('university') && old('university') != null) {
-      $programs = UniversityProgram::where(['university_id' => old('university')])->get();
+    if (old('interested_course') && old('interested_course') != null) {
+      $university_id = old('university');
+      $level = old('interested_level');
+      $categories = CourseCategory::whereHas('programs', function ($query) use ($university_id, $level) {
+        $query->where('university_id', $university_id)->where('status', 1)->where('level', $level);
+      })->get();
+    } else {
+      $categories = null;
+    }
+
+    if (old('interested_program') && old('interested_program') != null) {
+      $university_id = old('university');
+      $level = old('interested_level');
+      $course_category_id = old('interested_course');
+
+      $programs = UniversityProgram::where('university_id', $university_id)->where('level', $level)->where('course_category_id', $course_category_id)->get();
     } else {
       $programs = null;
     }
