@@ -63,6 +63,16 @@ class LibiaLandingPageFc extends Controller
     $phonecodes = Country::orderBy('phonecode', 'ASC')->groupBy('phonecode')->where('phonecode', '!=', 0)->get();
     $levels = Level::all();
 
+    if (old('university') && old('university') != null) {
+      $university_id = old('university');
+      if ($university_id == '3148') {
+        $intrestedLevels = ['Pre-University' => 'PRE-UNIVERSITY'];
+      } else {
+        $intrestedLevels = ['Under-Graduate' => 'UNDER-GRADUATE', 'Post-Graduate' => 'POST-GRADUATE', 'PHD' => 'PHD'];
+      }
+    } else {
+      $intrestedLevels = null;
+    }
     if (old('interested_course') && old('interested_course') != null) {
       $university_id = old('university');
       $level = old('interested_level');
@@ -91,7 +101,7 @@ class LibiaLandingPageFc extends Controller
       $lead = Lead::find($id);
     }
 
-    $data = compact('captcha', 'pageDetail', 'countries', 'phonecodes', 'levels', 'programs', 'curCountry', 'categories', 'result', 'lead');
+    $data = compact('captcha', 'pageDetail', 'countries', 'phonecodes', 'levels', 'programs', 'curCountry', 'categories', 'result', 'lead', 'intrestedLevels');
     return view('front.education-fair-in-libia-2025')->with($data);
   }
   public function courses(Request $request)

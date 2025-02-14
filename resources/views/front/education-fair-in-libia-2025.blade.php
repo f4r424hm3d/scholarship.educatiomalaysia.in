@@ -84,13 +84,13 @@
             @endforeach;
           </div>
           <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                        <span class="sr-only">Previous</span>
-                                                      </a>
-                                                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                        <span class="sr-only">Next</span>
-                                                      </a> -->
+                                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                  </a>
+                                                                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                                    <span class="sr-only">Next</span>
+                                                                  </a> -->
 
         </div>
       </div>
@@ -211,140 +211,140 @@
                 </ul>
               </div>
               <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
-                                                            <h5>Engineering</h5>
-                                                            <ul>
-                                                              <li>ROBOTIC</li>
-                                                              <li>Aeronautical Engineering</li>
-                                                              <li>Aeronautics and Astronautics</li>
-                                                              <li>Air Conditioning and Refrigeration</li>
-                                                              <li>Aircraft Engineering</li>
-                                                              <li>Automation Engineering</li>
-                                                              <li>Automotive</li>
-                                                              <li>Aviation and Aircraft Maintenance</li>
-                                                              <li>Aviation Management</li>
-                                                              <li>Biomedical Engineering</li>
-                                                              <li>Bioprocess Engineering</li>
-                                                              <li>Chemical Engineering</li>
-                                                              <li>Civil Engineering</li>
-                                                              <li>Computer Engineering</li>
-                                                              <li>Computer Systems</li>
-                                                              <li>Data Engineering</li>
-                                                              <li>Electrical and Electronics Engineering</li>
-                                                              <li>Electrical Engineering</li>
-                                                              <li>Electronic Engineering</li>
-                                                              <li>Energy</li>
-                                                              <li>Engineering</li>
-                                                              <li>Environmental Engineering</li>
-                                                              <li>Financial Engineering</li>
-                                                              <li>Forensic Engineering</li>
-                                                              <li>General Engineering and Technology</li>
-                                                              <li>Geomatic</li>
-                                                              <li>Industrial Automation And Robotics</li>
-                                                              <li>Industrial Engineering</li>
-                                                              <li>Industrial Logistic</li>
-                                                              <li>Industrial Management</li>
-                                                              <li>Industrial Power</li>
-                                                              <li>Informatics Engineering</li>
-                                                              <li>Infrastructure Management</li>
-                                                              <li>Instrumentation and Control Engineering</li>
-                                                              <li>Manufacturing and Production</li>
-                                                              <li>Marine Engineering</li>
-                                                              <li>Materials</li>
-                                                              <li>Materials Engineering</li>
-                                                              <li>Mechanical Engineering</li>
-                                                              <li>Mechatronics Engineering</li>
-                                                              <li>Medical Engineering</li>
-                                                              <li>Metallurgy</li>
-                                                              <li>Nanotechnology</li>
-                                                              <li>Nautical Engineering</li>
-                                                              <li>Nuclear Engineering</li>
-                                                              <li>Petroleum Engineering</li>
-                                                              <li>Petroleum Geoscience</li>
-                                                              <li>Polymer Engineering</li>
-                                                              <li>Power & Machine</li>
-                                                              <li>Quality Control</li>
-                                                              <li>Quantity Surveying</li>
-                                                              <li>Railway Technology</li>
-                                                              <li>Software Engineering</li>
-                                                              <li>Structural Engineering</li>
-                                                              <li>Sustainable Energy</li>
-                                                              <li>Telecommunications</li>
-                                                              <li>Vehicle Engineering</li>
-                                                              <li>Water and Wastewater System</li>
-                                                              <li>Water Engineering and Energy</li>
-                                                              <li>Welding</li>
-                                                            </ul>
-                                                          </div> -->
+                                                                        <h5>Engineering</h5>
+                                                                        <ul>
+                                                                          <li>ROBOTIC</li>
+                                                                          <li>Aeronautical Engineering</li>
+                                                                          <li>Aeronautics and Astronautics</li>
+                                                                          <li>Air Conditioning and Refrigeration</li>
+                                                                          <li>Aircraft Engineering</li>
+                                                                          <li>Automation Engineering</li>
+                                                                          <li>Automotive</li>
+                                                                          <li>Aviation and Aircraft Maintenance</li>
+                                                                          <li>Aviation Management</li>
+                                                                          <li>Biomedical Engineering</li>
+                                                                          <li>Bioprocess Engineering</li>
+                                                                          <li>Chemical Engineering</li>
+                                                                          <li>Civil Engineering</li>
+                                                                          <li>Computer Engineering</li>
+                                                                          <li>Computer Systems</li>
+                                                                          <li>Data Engineering</li>
+                                                                          <li>Electrical and Electronics Engineering</li>
+                                                                          <li>Electrical Engineering</li>
+                                                                          <li>Electronic Engineering</li>
+                                                                          <li>Energy</li>
+                                                                          <li>Engineering</li>
+                                                                          <li>Environmental Engineering</li>
+                                                                          <li>Financial Engineering</li>
+                                                                          <li>Forensic Engineering</li>
+                                                                          <li>General Engineering and Technology</li>
+                                                                          <li>Geomatic</li>
+                                                                          <li>Industrial Automation And Robotics</li>
+                                                                          <li>Industrial Engineering</li>
+                                                                          <li>Industrial Logistic</li>
+                                                                          <li>Industrial Management</li>
+                                                                          <li>Industrial Power</li>
+                                                                          <li>Informatics Engineering</li>
+                                                                          <li>Infrastructure Management</li>
+                                                                          <li>Instrumentation and Control Engineering</li>
+                                                                          <li>Manufacturing and Production</li>
+                                                                          <li>Marine Engineering</li>
+                                                                          <li>Materials</li>
+                                                                          <li>Materials Engineering</li>
+                                                                          <li>Mechanical Engineering</li>
+                                                                          <li>Mechatronics Engineering</li>
+                                                                          <li>Medical Engineering</li>
+                                                                          <li>Metallurgy</li>
+                                                                          <li>Nanotechnology</li>
+                                                                          <li>Nautical Engineering</li>
+                                                                          <li>Nuclear Engineering</li>
+                                                                          <li>Petroleum Engineering</li>
+                                                                          <li>Petroleum Geoscience</li>
+                                                                          <li>Polymer Engineering</li>
+                                                                          <li>Power & Machine</li>
+                                                                          <li>Quality Control</li>
+                                                                          <li>Quantity Surveying</li>
+                                                                          <li>Railway Technology</li>
+                                                                          <li>Software Engineering</li>
+                                                                          <li>Structural Engineering</li>
+                                                                          <li>Sustainable Energy</li>
+                                                                          <li>Telecommunications</li>
+                                                                          <li>Vehicle Engineering</li>
+                                                                          <li>Water and Wastewater System</li>
+                                                                          <li>Water Engineering and Energy</li>
+                                                                          <li>Welding</li>
+                                                                        </ul>
+                                                                      </div> -->
 
               <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
-                                                            <h5>Health, Safety & Medicine</h5>
-                                                            <ul>
-                                                              <li>Acupuncture</li>
-                                                              <li>Anaesthesiology</li>
-                                                              <li>Anatomy</li>
-                                                              <li>Chinese Medicine</li>
-                                                              <li>Chiropractic</li>
-                                                              <li>Cosmetics</li>
-                                                              <li>Counselling</li>
-                                                              <li>Dentistry</li>
-                                                              <li>Environment Health</li>
-                                                              <li>Gynaecology</li>
-                                                              <li>Health and Safety</li>
-                                                              <li>Health Science</li>
-                                                              <li>Health Studies</li>
-                                                              <li>Homeopathic</li>
-                                                              <li>Internal Medicine</li>
-                                                              <li>Laboratory Technology</li>
-                                                              <li>Medical Imaging</li>
-                                                              <li>Medical Imaging & Radiotherapy</li>
-                                                              <li>Medical Science</li>
-                                                              <li>Medicine</li>
-                                                              <li>Midwifery</li>
-                                                              <li>Nursing</li>
-                                                              <li>Nutrition and Health</li>
-                                                              <li>Nutrition With Wellness</li>
-                                                              <li>Occupational Therapy</li>
-                                                              <li>Ophthalmology</li>
-                                                              <li>Optometry</li>
-                                                              <li>Orthopaedic</li>
-                                                              <li>Otorhinolaryngology-Head and Neck Surgery</li>
-                                                              <li>Paramedical</li>
-                                                              <li>Pharmaceutical Chemistry</li>
-                                                              <li>Pharmaceutical Sciences</li>
-                                                              <li>Pharmaceuticals Technology</li>
-                                                              <li>Pharmacy</li>
-                                                              <li>Physics</li>
-                                                              <li>Physiology</li>
-                                                              <li>Physiotherapy</li>
-                                                              <li>Polygraph Examiner's Course</li>
-                                                              <li>Psychiatry</li>
-                                                              <li>Psychology</li>
-                                                              <li>Public Health</li>
-                                                              <li>Radiology</li>
-                                                              <li>Surgery</li>
-                                                              <li>Ultrasound</li>
-                                                            </ul>
-                                                          </div> -->
+                                                                        <h5>Health, Safety & Medicine</h5>
+                                                                        <ul>
+                                                                          <li>Acupuncture</li>
+                                                                          <li>Anaesthesiology</li>
+                                                                          <li>Anatomy</li>
+                                                                          <li>Chinese Medicine</li>
+                                                                          <li>Chiropractic</li>
+                                                                          <li>Cosmetics</li>
+                                                                          <li>Counselling</li>
+                                                                          <li>Dentistry</li>
+                                                                          <li>Environment Health</li>
+                                                                          <li>Gynaecology</li>
+                                                                          <li>Health and Safety</li>
+                                                                          <li>Health Science</li>
+                                                                          <li>Health Studies</li>
+                                                                          <li>Homeopathic</li>
+                                                                          <li>Internal Medicine</li>
+                                                                          <li>Laboratory Technology</li>
+                                                                          <li>Medical Imaging</li>
+                                                                          <li>Medical Imaging & Radiotherapy</li>
+                                                                          <li>Medical Science</li>
+                                                                          <li>Medicine</li>
+                                                                          <li>Midwifery</li>
+                                                                          <li>Nursing</li>
+                                                                          <li>Nutrition and Health</li>
+                                                                          <li>Nutrition With Wellness</li>
+                                                                          <li>Occupational Therapy</li>
+                                                                          <li>Ophthalmology</li>
+                                                                          <li>Optometry</li>
+                                                                          <li>Orthopaedic</li>
+                                                                          <li>Otorhinolaryngology-Head and Neck Surgery</li>
+                                                                          <li>Paramedical</li>
+                                                                          <li>Pharmaceutical Chemistry</li>
+                                                                          <li>Pharmaceutical Sciences</li>
+                                                                          <li>Pharmaceuticals Technology</li>
+                                                                          <li>Pharmacy</li>
+                                                                          <li>Physics</li>
+                                                                          <li>Physiology</li>
+                                                                          <li>Physiotherapy</li>
+                                                                          <li>Polygraph Examiner's Course</li>
+                                                                          <li>Psychiatry</li>
+                                                                          <li>Psychology</li>
+                                                                          <li>Public Health</li>
+                                                                          <li>Radiology</li>
+                                                                          <li>Surgery</li>
+                                                                          <li>Ultrasound</li>
+                                                                        </ul>
+                                                                      </div> -->
 
               <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
-                                                            <h5>Education and Training</h5>
-                                                            <ul>
-                                                              <li>Water and Wastewater System</li>
-                                                              <li>Water Engineering and Energy</li>
-                                                              <li>Welding</li>
-                                                            </ul>
-                                                          </div> -->
+                                                                        <h5>Education and Training</h5>
+                                                                        <ul>
+                                                                          <li>Water and Wastewater System</li>
+                                                                          <li>Water Engineering and Energy</li>
+                                                                          <li>Welding</li>
+                                                                        </ul>
+                                                                      </div> -->
               <!-- <div class="col-md-6 col-sm-12 col-12 mb-4">
-                                                            <h5>Engineering</h5>
-                                                            <ul>
-                                                              <li>ROBOTIC</li>
-                                                              <li>Aeronautical Engineering</li>
-                                                              <li>Aeronautics and Astronautics</li>
+                                                                        <h5>Engineering</h5>
+                                                                        <ul>
+                                                                          <li>ROBOTIC</li>
+                                                                          <li>Aeronautical Engineering</li>
+                                                                          <li>Aeronautics and Astronautics</li>
 
 
 
-                                                            </ul>
-                                                          </div> -->
+                                                                        </ul>
+                                                                      </div> -->
             </div>
           </div>
         </div>
@@ -643,20 +643,14 @@
                   <div class="form-group">
                     <select name="interested_level" id="interested_level" class="form-control">
                       <option value="">Are you interested in</option>
-                      <option value="PRE-UNIVERSITY"
-                        {{ old('highest_qualification') == 'PRE-UNIVERSITY' ? 'selected' : '' }}>
-                        Pre-University
-                      </option>
-                      <option value="UNDER-GRADUATE"
-                        {{ old('interested_level') == 'UNDER-GRADUATE' ? 'selected' : '' }}>
-                        Under-Graduate
-                      </option>
-                      <option value="POST-GRADUATE" {{ old('interested_level') == 'POST-GRADUATE' ? 'selected' : '' }}>
-                        Post-Graduate
-                      </option>
-                      <option value="PHD" {{ old('interested_level') == 'PHD' ? 'selected' : '' }}>
-                        PHD
-                      </option>
+                      @if (old('university') && old('university') != null)
+                        @foreach ($intrestedLevels as $key => $value)
+                          <option value="{{ $value }}"
+                            {{ old('interested_level') == $value ? 'selected' : '' }}>
+                            {{ $key }}
+                          </option>
+                        @endforeach
+                      @endif
                     </select>
                     <span class="text-danger redspan" id="interested_level-err">
                       @error('interested_level')
@@ -1011,8 +1005,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                                                              <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                                                          <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                                                                        </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
@@ -1096,6 +1090,29 @@
     }
   </script>
   <script>
+    $(document).ready(function() {
+      $('#university').change(function() {
+        var selectedUniversity = $(this).val();
+        var interestedLevel = $('#interested_level');
+
+        // Clear existing options
+        interestedLevel.html('');
+
+        if (selectedUniversity == '3148') {
+          // If university is 3148, show only Pre-University
+          interestedLevel.append('<option value="">Are you interested in</option>');
+          interestedLevel.append('<option value="PRE-UNIVERSITY">Pre-University</option>');
+        } else {
+          // Otherwise, show other options except Pre-University
+          interestedLevel.append('<option value="">Are you interested in</option>');
+          interestedLevel.append('<option value="UNDER-GRADUATE">Under-Graduate</option>');
+          interestedLevel.append('<option value="POST-GRADUATE">Post-Graduate</option>');
+          interestedLevel.append('<option value="PHD">PHD</option>');
+        }
+      });
+    });
+
+
     $(document).ready(function() {
       function showError(field, message) {
         $('#' + field + '-err').text(message);
