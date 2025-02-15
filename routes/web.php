@@ -74,6 +74,7 @@ use App\Http\Controllers\front\HomeFc;
 use App\Http\Controllers\front\InquiryController;
 use App\Http\Controllers\front\LibiaLandingPageFc;
 use App\Http\Controllers\front\OfferLandingPageFc;
+use App\Http\Controllers\front\RegistrationFormC;
 use App\Http\Controllers\front\ReviewFc;
 use App\Http\Controllers\front\ServiceFc;
 use App\Http\Controllers\front\SpecializationFc;
@@ -140,10 +141,11 @@ Route::get('/', function () {
 });
 
 Route::get('/education-fair-in-libya-2025', [LibiaLandingPageFc::class, 'index'])->name('libia.page');
-Route::get('/education-fair-in-libya-2025/courses', [LibiaLandingPageFc::class, 'courses'])->name('libia.courses');
-Route::get('/education-fair-in-libya-2025/institutions', [LibiaLandingPageFc::class, 'institutions'])->name('libia.institutions');
-
 Route::post('/libia/register', [LibiaLandingPageFc::class, 'register'])->name('libia.register');
+
+Route::get('/education-fair-in-libya-2025-registration', [RegistrationFormC::class, 'index'])->name('registration.form');
+Route::post('/register', [RegistrationFormC::class, 'register'])->name('registration');
+
 Route::get('registration-complete', [LibiaLandingPageFc::class, 'thankYou'])->name('thank.you');
 Route::get('/download-qr', [LibiaLandingPageFc::class, 'downloadQR'])->name('download.qr');
 
@@ -152,5 +154,5 @@ Route::post('/libia/fetch-courses', [LibiaLandingPageFc::class, 'getCoursesByUni
 
 Route::get('privacy-policy', [HomeFc::class, 'privacyPolicy'])->name('pp');
 Route::get('terms-and-conditions', [HomeFc::class, 'termsConditions'])->name('tc');
-Route::get('test-popup', [HomeFc::class, 'testPopup']);
+//Route::get('test-popup', [HomeFc::class, 'testPopup']);
 // COURSES IN MALAYSIA ROUTES END
