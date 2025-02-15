@@ -160,28 +160,34 @@ class LibiaLandingPageFc extends Controller
 
   public function register(Request $request)
   {
-    $request->validate(
-      [
-        'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
-        'name' => 'required|regex:/^[a-zA-Z\s\x{0600}-\x{06FF}\'-]*$/u',
-        'email' => [
-          'required',
-          'email',
-          Rule::unique('leads', 'email')->where('website', site_var),
-        ],
-        'c_code' => 'required|numeric',
-        'mobile' => 'required|numeric',
-        'nationality' => 'required',
-        'libya_identification_number' => 'required',
-        'highest_qualification' => 'required',
-        'university' => 'required',
-        'interested_level' => 'required',
-        'interested_course' => 'required',
-        'interested_program' => 'required',
-        'gender' => 'required',
-        'dob' => 'required',
-      ]
-    );
+    $rules = [
+      'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
+      'name' => 'required|regex:/^[a-zA-Z\s\x{0600}-\x{06FF}\'-]*$/u',
+      'email' => [
+        'required',
+        'email',
+        Rule::unique('leads', 'email')->where('website', site_var),
+      ],
+      'c_code' => 'required|numeric',
+      'mobile' => 'required|numeric',
+      'nationality' => 'required',
+      'libya_identification_number' => 'required',
+      'highest_qualification' => 'required',
+      'university' => 'required',
+      'interested_level' => 'required',
+      'gender' => 'required',
+      'dob' => 'required',
+    ];
+
+    // Conditional validation for program selection
+    if ($request->university == 'other') {
+      $rules['interested_program_name'] = 'required';
+    } else {
+      $rules['interested_course'] = 'required';
+      $rules['interested_program'] = 'required';
+    }
+    // Validate request
+    $request->validate($rules);
 
     $password = Str::random(10);
 
@@ -189,7 +195,16 @@ class LibiaLandingPageFc extends Controller
     $translator = new GoogleTranslate('en'); // Translate to English
     $name = $translator->translate($request->input('name'));
 
-    $university = University::find($request->university);
+    if ($request->university == 'other') {
+      $universityName = $request->university;
+      $universityId = null;
+      $interestedProgram = $request->interested_program_name;
+    } else {
+      $university = University::find($request->university);
+      $universityName = $university->name;
+      $universityId = $university->id;
+      $interestedProgram = $request->interested_program;
+    }
     $courseCategory = CourseCategory::find($request->interested_course);
     $field = new Lead();
     $field->name = $name;
@@ -197,11 +212,11 @@ class LibiaLandingPageFc extends Controller
     $field->c_code = $request['c_code'];
     $field->mobile = $request['mobile'];
     $field->highest_qualification = $request['highest_qualification'];
-    $field->intrested_subject = $courseCategory->name;
-    $field->interested_level = $courseCategory->interested_level;
-    $field->interested_program = $request->interested_program;
-    $field->intrested_university = $university->name;
-    $field->university_id = $university->id;
+    $field->intrested_subject = $courseCategory->name ?? null;
+    $field->interested_level = $request->interested_level;
+    $field->interested_program = $interestedProgram;
+    $field->intrested_university = $universityName;
+    $field->university_id = $universityId;
     $field->nationality = $request['nationality'];
     $field->identification_number = $request['libya_identification_number'];
     $field->passport_number = $request['passport_number'];
@@ -271,121 +286,6 @@ class LibiaLandingPageFc extends Controller
     //return response()->json(['success' => 'Thank you for registering! Please bring this QR code to the Education Fair.']);
     //return redirect()->route('thank.you');
     return redirect()->route('libia.page');
-  }
-  public function registerAjax(Request $request)
-  {
-    $validator = Validator::make($request->all(), [
-      'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
-      'name' => 'required|regex:/^[a-zA-Z\s\x{0600}-\x{06FF}\'-]*$/u',
-      'email' => [
-        'required',
-        'email',
-        Rule::unique('leads', 'email')->where('website', site_var),
-      ],
-      'c_code' => 'required|numeric',
-      'mobile' => 'required|numeric',
-      'nationality' => 'required',
-      'libya_identification_number' => 'required',
-      'highest_qualification' => 'required',
-      'university' => 'required',
-      'interested_level' => 'required',
-      'interested_course' => 'required',
-      'interested_program' => 'required',
-      'gender' => 'required',
-      'dob' => 'required',
-    ]);
-
-    if ($validator->fails()) {
-      return response()->json([
-        'error' => $validator->errors(),
-      ]);
-    }
-
-    $password = Str::random(10);
-
-    // Detect and translate Arabic input to English
-    $translator = new GoogleTranslate('en'); // Translate to English
-    $name = $translator->translate($request->input('name'));
-
-    $university = University::find($request->university);
-    $courseCategory = CourseCategory::find($request->interested_course);
-    $field = new Lead();
-    $field->name = $name;
-    $field->email = $request['email'];
-    $field->c_code = $request['c_code'];
-    $field->mobile = $request['mobile'];
-    $field->highest_qualification = $request['highest_qualification'];
-    $field->intrested_subject = $courseCategory->name;
-    $field->interested_level = $courseCategory->interested_level;
-    $field->interested_program = $request->interested_program;
-    $field->intrested_university = $university->name;
-    $field->university_id = $university->id;
-    $field->nationality = $request['nationality'];
-    $field->identification_number = $request['libya_identification_number'];
-    $field->passport_number = $request['passport_number'];
-    $field->gender = $request['gender'];
-    $field->dob = $request['dob'];
-    $field->password = $password;
-    $field->source = $request->source;
-    $field->source_path = $request->source_path;
-
-    $field->status = 1;
-    $field->registered = 1;
-    $field->website = site_var;
-    $field->save();
-
-    // Generate QR Code
-    $qrData = json_encode([
-      'id' => $field->id,
-      'name' => $field->name,
-      'email' => $field->email
-    ]);
-    $qrCode = QrCode::format('png')->size(300)->generate($qrData);
-
-    // Path to store the QR code
-    $qrCodeDirectory = storage_path('app/public/qr-codes');
-
-    // Check if the directory exists, and create it if it doesn't
-    if (!is_dir($qrCodeDirectory)) {
-      mkdir($qrCodeDirectory, 0777, true); // Create the directory with proper permissions
-    }
-
-    // Now, you can generate and save the QR code
-    $qrFilePath = $qrCodeDirectory . '/' . $field->id . '-qr.png';
-    file_put_contents($qrFilePath, $qrCode);
-
-    // Prepare the email data
-    $emaildata = ['name' => $field['name']];
-    $dd = [
-      'to' => $field['email'],
-      'to_name' => $field['name'],
-      'subject' => 'Successfully registered on Education Malaysia.',
-    ];
-
-    // Send the email with the QR code as attachment
-    Mail::send(
-      'mails.student-welcome-mail',
-      $emaildata,
-      function ($message) use ($dd, $qrFilePath) {
-        $message->to($dd['to'], $dd['to_name']);
-        $message->subject($dd['subject']);
-        $message->priority(1);
-
-        // Attach the QR Code to the email
-        $message->attach($qrFilePath, [
-          'as' => 'education-fair-qr.png',
-          'mime' => 'image/png',
-        ]);
-      }
-    );
-
-    // Delete the temporary QR code file after sending the email
-    unlink($qrFilePath);
-
-    session()->flash('smsg', 'Thank you for registering! Please bring this QR code to the Education Fair.');
-    session()->put('newId', $field->id);
-    return response()->json(['success' => 'Thank you for registering! Please bring this QR code to the Education Fair.']);
-    //return redirect()->route('thank.you');
   }
   public function thankYou()
   {

@@ -292,15 +292,16 @@
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
-         <a href="https://exportacademy.net/">
-         <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" >
-            <div class="imgflx">
-              <img src="{{ url('/') }}/front/assets/images/training.png" alt="">
+          <a href="https://exportacademy.net/">
+            <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center">
+              <div class="imgflx">
+                <img src="{{ url('/') }}/front/assets/images/training.png" alt="">
+              </div>
+              <h2 class="text-xl font-bold">Training</h2>
+              <p>Learn global trade, boost exports, master compliance, and grow your business with expert-led courses and
+                certifications!"</p>
             </div>
-            <h2 class="text-xl font-bold">Training</h2>
-            <p>Learn global trade, boost exports, master compliance, and grow your business with expert-led courses and certifications!"</p>
-          </div>
-         </a>
+          </a>
         </div>
 
       </div>
@@ -571,20 +572,12 @@
                     </span>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 hide-this" id="programDiv">
+                <div class="col-lg-6 col-md-6 col-sm-12 hide-this" id="manualProgramDiv">
                   <div class="form-group">
-                    <select name="interested_program" class="form-control" id="interested_program">
-                      <option value="">Select Interested Program</option>
-                      @if (old('interested_program') && old('interested_program') != null)
-                        @foreach ($programs as $row)
-                          <option value="{{ $row->course_name }}"
-                            {{ old('interested_program') == $row->course_name ? 'selected' : '' }}>
-                            {{ $row->course_name }}</option>
-                        @endforeach
-                      @endif
-                    </select>
-                    <span class="text-danger redspan" id="interested_program-err">
-                      @error('interested_program')
+                    <input name="interested_program_name" class="form-control" type="text"
+                      placeholder="Enter Program Name" value="{{ old('interested_program_name', '') }}">
+                    <span class="text-danger redspan" id="interested_program_name-err">
+                      @error('interested_program_name')
                         {{ $message }}
                       @enderror
                     </span>
@@ -896,8 +889,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                                                                                                              <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                                                                                                                                      </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
@@ -960,31 +953,29 @@
 
   <script>
     $(document).ready(function() {
-      $('#university').change(function() {
-        var selectedValue = $(this).val();
+      function toggleFields() {
+        var selectedValue = $('#university').val();
 
         if (selectedValue === 'other') {
-          // Hide the course and program fields
-          $('#interested_course').closest('.form-group').hide();
-          $('#interested_program').closest('.form-group').hide();
-
-          // Append text fields if not already added
-
-          if ($('#manual_program').length === 0) {
-            $('<div class="form-group"><input type="text" name="manual_program" id="manual_program" class="form-control" placeholder="Enter Program Name"></div>')
-              .insertAfter($('#university').closest('.form-group'));
-          }
+          $('#categoryDiv').hide();
+          $('#programDiv').hide();
+          $('#manualProgramDiv').show();
         } else {
-          // Show the course and program fields if "Other" is not selected
-          $('#interested_course').closest('.form-group').show();
-          $('#interested_program').closest('.form-group').show();
-
-          // Remove manually entered fields if present
-          $('#manual_university').closest('.form-group').remove();
-          $('#manual_program').closest('.form-group').remove();
+          $('#categoryDiv').show();
+          $('#programDiv').show();
+          $('#manualProgramDiv').hide();
         }
+      }
+
+      // Run on page load
+      toggleFields();
+
+      // Run when university selection changes
+      $('#university').change(function() {
+        toggleFields();
       });
     });
+
 
 
 
