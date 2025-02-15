@@ -213,7 +213,7 @@
 
   <section class="Sureworks">
     <div class="container">
-      <div class="row">
+      <div class="row align-items-center justify-content-center">
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
           <a href="#" data-toggle="modal" data-target="#courseListModal">
             <div class="flex flex-col all-flexx gap-3 items-center text-center h-100 ">
@@ -290,6 +290,17 @@
             <h2 class="text-xl font-bold">Scholarships</h2>
             <p>Exclusive scholarship opportunities for Libyan students sponsored by the Libyan Government.</p>
           </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
+         <a href="https://exportacademy.net/">
+         <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" >
+            <div class="imgflx">
+              <img src="{{ url('/') }}/front/assets/images/training.png" alt="">
+            </div>
+            <h2 class="text-xl font-bold">Training</h2>
+            <p>Learn global trade, boost exports, master compliance, and grow your business with expert-led courses and certifications!"</p>
+          </div>
+         </a>
         </div>
 
       </div>
