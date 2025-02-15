@@ -68,7 +68,7 @@ class LibiaLandingPageFc extends Controller
       if ($university_id == '3148') {
         $intrestedLevels = ['Pre-University' => 'PRE-UNIVERSITY'];
       } else {
-        $intrestedLevels = ['Under-Graduate' => 'UNDER-GRADUATE', 'Post-Graduate' => 'POST-GRADUATE', 'PHD' => 'PHD'];
+        $intrestedLevels = ['Under-Graduate' => 'UNDER-GRADUATE', 'Post-Graduate/Master' => 'POST-GRADUATE', 'PHD' => 'PHD'];
       }
     } else {
       $intrestedLevels = null;
