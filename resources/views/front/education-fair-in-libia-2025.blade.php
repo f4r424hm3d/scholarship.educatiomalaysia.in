@@ -292,7 +292,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
-          <a href="https://exportacademy.net/">
+          <a href="https://exportacademy.net/" target="_blank">
             <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center">
               <div class="imgflx">
                 <img src="{{ url('/') }}/front/assets/images/training.png" alt="">
@@ -627,7 +627,8 @@
                     </span>
                   </div>
                 </div>
-
+              </div>
+              <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
                     <input type="text" placeholder="Captcha: {{ $captcha['text'] }} =" class="form-control"
@@ -646,7 +647,8 @@
                     </span>
                   </div>
                 </div>
-
+              </div>
+              <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="input-field s4 d-flex justify-content-center align-items-center">
                     <button type="submit" class="blue-register mar5 w-50">Register</button>
@@ -889,8 +891,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                                                                                                                                        <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                      </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                            <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                                                                                                                                          </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
