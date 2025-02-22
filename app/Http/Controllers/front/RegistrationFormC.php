@@ -112,7 +112,6 @@ class RegistrationFormC extends Controller
       'c_code' => 'required|numeric',
       'mobile' => 'required|numeric',
       'nationality' => 'required',
-      'libya_identification_number' => 'required',
       'highest_qualification' => 'required',
       'university' => 'required',
       'interested_level' => 'required',
