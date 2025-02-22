@@ -102,7 +102,7 @@
     aria-labelledby="qrCodeModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header border-bottom-0">
           <h5 class="modal-title" id="qrCodeModalLabel"></h5>
           <button type="button" class="close" onclick="hideQrCodeModal()">
             <span aria-hidden="true">&times;</span>
@@ -111,7 +111,7 @@
         <div class="modal-body">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-12 mb-4">
+              <div class="col-md-12 col-sm-12 col-12 ">
                 @if (session()->has('newId') && $lead)
                   <div class="row align-items-center">
 
@@ -145,12 +145,12 @@
 
                     {{-- Download Button --}}
                     <div class="col-lg-12 text-center">
-                      <div class="form-group"><br><br>
-                        <a href="{{ route('download.qr') }}" class="btn btn-sm btn-success">Download QR
+                      <div class="form-group"><br>
+                        <a href="{{ route('download.qr') }}" class="btn  btn-success">Download QR
                           Code</a>
                       </div>
                     </div>
-                    <br>
+                    
 
                   </div>
                 @elseif(session()->has('QR'))
@@ -213,10 +213,10 @@
 
   <section class="Sureworks">
     <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
-          <a href="#" data-toggle="modal" data-target="#courseListModal">
-            <div class="flex flex-col all-flexx gap-3 items-center text-center h-100 ">
+      <div class="row  justify-content-center">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 mb-3 ">
+          
+            <div class="flex flex-col all-flexx gap-3 items-center text-center h-100 " data-target="#courseListModal" data-toggle="modal" >
               <div class="imgflx">
                 <img src="{{ url('/') }}/front/assets/images/courses.png" alt="">
               </div>
@@ -224,10 +224,10 @@
               <p>Discover a diverse range of programs from undergraduate to postgraduate degrees, explore options in
                 medicine, engineering, business, IT, and more.</p>
             </div>
-          </a>
+       
           {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#courseListModal">courses</button> --}}
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 mb-3 ">
           <!-- <a href="{{ url(url()->current() . '/institutions') }}"> -->
           <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" data-toggle="modal"
             data-target=".bd-example-modal-lg">
@@ -281,7 +281,7 @@
           </div>
         </div>
         <!-- -------------------------------  -->
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 mb-3 ">
           <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" data-toggle="modal"
             data-target="#exampleModal">
             <div class="imgflx">
@@ -291,7 +291,7 @@
             <p>Exclusive scholarship opportunities for Libyan students sponsored by the Libyan Government.</p>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4 ">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 mb-3 ">
           <a href="https://exportacademy.net/" target="_blank">
             <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center">
               <div class="imgflx">
