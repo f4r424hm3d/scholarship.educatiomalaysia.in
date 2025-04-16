@@ -56,17 +56,17 @@
     aria-labelledby="qrCodeModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-       
+
         <div class="modal-body modal-ss">
           <div class="container-fluid">
-          <div class="text-end mb-5 allend ">
-           <button type="button" class="close" onclick="hideQrCodeModal()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-           </div>
+            <div class="text-end mb-5 allend ">
+              <button type="button" class="close" onclick="hideQrCodeModal()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
             <div class="row">
               <div class="col-md-12 col-sm-12 col-12 my-4 ">
-          
+
                 @if (session()->has('newId') && $lead)
                   <div class="row align-items-center">
 
@@ -100,10 +100,10 @@
 
                     {{-- Download Button --}}
                     <div class="col-lg-12 text-center">
-                     <br>
-                        <a href="{{ route('download.qr') }}" class="btn btn-success">Download QR
-                          Code</a>
-                     
+                      <br>
+                      <a href="{{ route('download.qr') }}" class="btn btn-success">Download QR
+                        Code</a>
+
                     </div>
 
                   </div>
@@ -124,308 +124,308 @@
       </div>
     </div>
   </div>
-  <section class="registrations-fomrs new-froms"  id="register">
+  <section class="registrations-fomrs new-froms" id="register">
     <div class="container">
-    <div class="row">
-          
-          <div class="col-12 col-sm-12 col-md-12 col-lg-7 mx-auto">
-            <div class="all-forms main-modals">
-              <h2 class="new-regist">Register Now</h2>
-              <form class="s12 f" action="{{ route('registration') }}" method="post">
-                @csrf
-                <input class="mt-0" type="hidden" name="source" value="Education Malaysia - Libia Landing Page">
-                <input class="mt-0" type="hidden" name="source_path" value="{{ url()->current() }}">
-                <input class="mt-0" type="hidden" name="return_path" value="{{ url()->current() }}">
+      <div class="row">
 
-                <div class="row">
-                  <div class="col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <input name="name" class="form-control" type="text" placeholder="Full Name"
-                        pattern="[a-zA-Z'-'\s\u0600-\u06FF]*" value="{{ old('name', '') }}">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-7 mx-auto">
+          <div class="all-forms main-modals">
+            <h2 class="new-regist">Register Now</h2>
+            <form class="s12 f" action="{{ route('registration') }}" method="post">
+              @csrf
+              <input class="mt-0" type="hidden" name="source" value="Education Malaysia - Libia Landing Page">
+              <input class="mt-0" type="hidden" name="source_path" value="{{ url()->current() }}">
+              <input class="mt-0" type="hidden" name="return_path" value="{{ url()->current() }}">
 
-                      <span class="text-danger redspan" id="name-err">
-                        @error('name')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <input name="name" class="form-control" type="text" placeholder="Full Name"
+                      pattern="[a-zA-Z'-'\s\u0600-\u06FF]*" value="{{ old('name', '') }}">
+
+                    <span class="text-danger redspan" id="name-err">
+                      @error('name')
+                        {{ $message }}
+                      @enderror
+                    </span>
                   </div>
+                </div>
 
-                  <div class="col-md-6  col-sm-12">
-                    <div class="form-group">
-                      <input name="email" class="form-control" type="email" placeholder="Personal Email Address"
-                        value="{{ old('email', '') }}">
-                      <span class="text-danger redspan" id="email-err">
-                        @error('email')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
+                <div class="col-md-6  col-sm-12">
+                  <div class="form-group">
+                    <input name="email" class="form-control" type="email" placeholder="Personal Email Address"
+                      value="{{ old('email', '') }}">
+                    <span class="text-danger redspan" id="email-err">
+                      @error('email')
+                        {{ $message }}
+                      @enderror
+                    </span>
                   </div>
+                </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <select name="c_code" id="countryCode" class="form-control">
-                        <option value="218" {{ old('c_code') == 218 ? 'selected' : '' }}>
-                          +218 (State of Libya)
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <select name="c_code" id="countryCode" class="form-control">
+                      <option value="218" {{ old('c_code') == 218 ? 'selected' : '' }}>
+                        +218 (State of Libya)
+                      </option>
+                    </select>
+                    <span class="text-danger redspan" id="c_code-err">
+                      @error('c_code')
+                        {{ $message }}
+                      @enderror
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <input name="mobile" class="form-control mt-0" type="text" pattern="[0-9]+"
+                      placeholder="Phone number" value="{{ old('mobile', '') }}">
+                    <span class="text-danger redspan" id="mobile-err">
+                      @error('mobile')
+                        {{ $message }}
+                      @enderror
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <select name="nationality" class="form-control">
+                      <option value="">Select Nationality</option>
+                      <option value="Libyan" {{ old('nationality') == 'Libyan' ? 'selected' : '' }}>Libyan</option>
+                      <option value="Non-Libyan" {{ old('nationality') == 'Non-Libyan' ? 'selected' : '' }}>
+                        Non-Libyan</option>
+                    </select>
+                    <span class="text-danger redspan" id="nationality-err">
+                      @error('nationality')
+                        {{ $message }}
+                      @enderror
+                    </span>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <input name="libya_identification_number" class="form-control" type="text"
+                      placeholder="Libya National Number" value="{{ old('libya_identification_number', '') }}">
+                    <span class="text-danger redspan" id="libya_identification_number-err">
+                      @error('libya_identification_number')
+                        {{ $message }}
+                      @enderror
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <input name="passport_number" class="form-control" type="text"
+                      placeholder="Libyan Passport Number" value="{{ old('passport_number', '') }}">
+                    <span class="text-danger redspan" id="pasport_number-err">
+                      @error('pasport_number')
+                        {{ $message }}
+                      @enderror
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <select name="highest_qualification" class="form-control">
+                      <option value="">Your Highest Qualification</option>
+                      <option value="PRE-UNIVERSITY"
+                        {{ old('highest_qualification') == 'PRE-UNIVERSITY' ? 'selected' : '' }}>
+                        Pre-University
+                      </option>
+                      <option value="UNDER-GRADUATE"
+                        {{ old('highest_qualification') == 'UNDER-GRADUATE' ? 'selected' : '' }}>
+                        Under-Graduate
+                      </option>
+                      <option value="POST-GRADUATE"
+                        {{ old('highest_qualification') == 'POST-GRADUATE' ? 'selected' : '' }}>
+                        Post-Graduate/Master
+                      </option>
+                      <option value="PHD" {{ old('highest_qualification') == 'PHD' ? 'selected' : '' }}>
+                        PHD
+                      </option>
+                    </select>
+                    <span class="text-danger redspan " id="highest_qualification-err">
+                      @error('highest_qualification')
+                        {{ $message }}
+                      @enderror
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12" id="universityDiv">
+                  <div class="form-group">
+                    <select name="university" class="form-control" id="university">
+                      <option value="">Select Interested University</option>
+                      @foreach ($pageDetail->universities as $row)
+                        <option value="{{ $row->university_id }}"
+                          {{ old('university') == $row->university_id ? 'selected' : '' }}>
+                          {{ $row->university->name }}
                         </option>
-                      </select>
-                      <span class="text-danger redspan" id="c_code-err">
-                        @error('c_code')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
+                      @endforeach
+                      <option value="other" {{ old('university') == 'other' ? 'selected' : '' }}>
+                        Other Universities
+                      </option>
+                    </select>
+                    <span class="text-danger redspan" id="university-err">
+                      @error('university')
+                        {{ $message }}
+                      @enderror
+                    </span>
                   </div>
+                </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <input name="mobile" class="form-control mt-0" type="text" pattern="[0-9]+"
-                        placeholder="Phone number" value="{{ old('mobile', '') }}">
-                      <span class="text-danger redspan" id="mobile-err">
-                        @error('mobile')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <select name="nationality" class="form-control">
-                        <option value="">Select Nationality</option>
-                        <option value="Libyan" {{ old('nationality') == 'Libyan' ? 'selected' : '' }}>Libyan</option>
-                        <option value="Non-Libyan" {{ old('nationality') == 'Non-Libyan' ? 'selected' : '' }}>
-                          Non-Libyan</option>
-                      </select>
-                      <span class="text-danger redspan" id="nationality-err">
-                        @error('nationality')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="form-group">
-                      <input name="libya_identification_number" class="form-control" type="text"
-                        placeholder="Libya National Number" value="{{ old('libya_identification_number', '') }}">
-                      <span class="text-danger redspan" id="libya_identification_number-err">
-                        @error('libya_identification_number')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="form-group">
-                      <input name="passport_number" class="form-control" type="text"
-                        placeholder="Libyan Passport Number" value="{{ old('passport_number', '') }}">
-                      <span class="text-danger redspan" id="pasport_number-err">
-                        @error('pasport_number')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <select name="highest_qualification" class="form-control">
-                        <option value="">Your Highest Qualification</option>
-                        <option value="PRE-UNIVERSITY"
-                          {{ old('highest_qualification') == 'PRE-UNIVERSITY' ? 'selected' : '' }}>
-                          Pre-University
-                        </option>
-                        <option value="UNDER-GRADUATE"
-                          {{ old('highest_qualification') == 'UNDER-GRADUATE' ? 'selected' : '' }}>
-                          Under-Graduate
-                        </option>
-                        <option value="POST-GRADUATE"
-                          {{ old('highest_qualification') == 'POST-GRADUATE' ? 'selected' : '' }}>
-                          Post-Graduate/Master
-                        </option>
-                        <option value="PHD" {{ old('highest_qualification') == 'PHD' ? 'selected' : '' }}>
-                          PHD
-                        </option>
-                      </select>
-                      <span class="text-danger redspan " id="highest_qualification-err">
-                        @error('highest_qualification')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-12" id="universityDiv">
-                    <div class="form-group">
-                      <select name="university" class="form-control" id="university">
-                        <option value="">Select Interested University</option>
-                        @foreach ($pageDetail->universities as $row)
-                          <option value="{{ $row->university_id }}"
-                            {{ old('university') == $row->university_id ? 'selected' : '' }}>
-                            {{ $row->university->name }}
+                <div class="col-lg-6 col-md-6 col-sm-12" id="levelDiv">
+                  <div class="form-group">
+                    <select name="interested_level" id="interested_level" class="form-control">
+                      <option value="">Are you interested in</option>
+                      @if (old('university') && old('university') != null)
+                        @foreach ($intrestedLevels as $key => $value)
+                          <option value="{{ $value }}"
+                            {{ old('interested_level') == $value ? 'selected' : '' }}>
+                            {{ $key }}
                           </option>
                         @endforeach
-                        <option value="other" {{ old('university') == 'other' ? 'selected' : '' }}>
-                          Other Universities
-                        </option>
-                      </select>
-                      <span class="text-danger redspan" id="university-err">
-                        @error('university')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
+                      @endif
+                    </select>
+                    <span class="text-danger redspan" id="interested_level-err">
+                      @error('interested_level')
+                        {{ $message }}
+                      @enderror
+                    </span>
                   </div>
+                </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12" id="levelDiv">
-                    <div class="form-group">
-                      <select name="interested_level" id="interested_level" class="form-control">
-                        <option value="">Are you interested in</option>
-                        @if (old('university') && old('university') != null)
-                          @foreach ($intrestedLevels as $key => $value)
-                            <option value="{{ $value }}"
-                              {{ old('interested_level') == $value ? 'selected' : '' }}>
-                              {{ $key }}
-                            </option>
-                          @endforeach
-                        @endif
-                      </select>
-                      <span class="text-danger redspan" id="interested_level-err">
-                        @error('interested_level')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
+                <div class="col-lg-6 col-md-6 col-sm-12" id="categoryDiv">
+                  <div class="form-group">
+                    <select name="interested_course" class="form-control" id="interested_course">
+                      <option value="">Select Interested Course</option>
+                      @if (old('interested_course') && old('interested_course') != null)
+                        @foreach ($categories as $row)
+                          <option value="{{ $row->id }}"
+                            {{ old('interested_course') == $row->id ? 'selected' : '' }}>
+                            {{ $row->name }}</option>
+                        @endforeach
+                      @endif
+                    </select>
+                    <span class="text-danger redspan" id="interested_course-err">
+                      @error('interested_course')
+                        {{ $message }}
+                      @enderror
+                    </span>
                   </div>
+                </div>
 
-                  <div class="col-lg-6 col-md-6 col-sm-12" id="categoryDiv">
-                    <div class="form-group">
-                      <select name="interested_course" class="form-control" id="interested_course">
-                        <option value="">Select Interested Course</option>
-                        @if (old('interested_course') && old('interested_course') != null)
-                          @foreach ($categories as $row)
-                            <option value="{{ $row->id }}"
-                              {{ old('interested_course') == $row->id ? 'selected' : '' }}>
-                              {{ $row->name }}</option>
-                          @endforeach
-                        @endif
-                      </select>
-                      <span class="text-danger redspan" id="interested_course-err">
-                        @error('interested_course')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
+                <div class="col-lg-6 col-md-6 col-sm-12" id="programDiv">
+                  <div class="form-group">
+                    <select name="interested_program" class="form-control" id="interested_program">
+                      <option value="">Select Interested Program</option>
+                      @if (old('interested_program') && old('interested_program') != null)
+                        @foreach ($programs as $row)
+                          <option value="{{ $row->course_name }}"
+                            {{ old('interested_program') == $row->course_name ? 'selected' : '' }}>
+                            {{ $row->course_name }}</option>
+                        @endforeach
+                      @endif
+                    </select>
+                    <span class="text-danger redspan" id="interested_program-err">
+                      @error('interested_program')
+                        {{ $message }}
+                      @enderror
+                    </span>
                   </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-12" id="programDiv">
-                    <div class="form-group">
-                      <select name="interested_program" class="form-control" id="interested_program">
-                        <option value="">Select Interested Program</option>
-                        @if (old('interested_program') && old('interested_program') != null)
-                          @foreach ($programs as $row)
-                            <option value="{{ $row->course_name }}"
-                              {{ old('interested_program') == $row->course_name ? 'selected' : '' }}>
-                              {{ $row->course_name }}</option>
-                          @endforeach
-                        @endif
-                      </select>
-                      <span class="text-danger redspan" id="interested_program-err">
-                        @error('interested_program')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 hide-this" id="manualProgramDiv">
+                  <div class="form-group">
+                    <input name="interested_program_name" class="form-control" type="text"
+                      placeholder="Enter Program Name" value="{{ old('interested_program_name', '') }}">
+                    <span class="text-danger redspan" id="interested_program_name-err">
+                      @error('interested_program_name')
+                        {{ $message }}
+                      @enderror
+                    </span>
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-12 hide-this" id="manualProgramDiv">
-                    <div class="form-group">
-                      <input name="interested_program_name" class="form-control" type="text"
-                        placeholder="Enter Program Name" value="{{ old('interested_program_name', '') }}">
-                      <span class="text-danger redspan" id="interested_program_name-err">
-                        @error('interested_program_name')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
-                  </div>
+                </div>
 
-                  <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12">
 
-                    <div class="postion-relative">
-                      <label class="gender">Gender</label>
-                      <div class=" form-group">
-                        <div class="d-flex align-items-center justify-content-around addsd">
-                          <div class="form-check mb-0">
-                            <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
-                              value="Male" {{ old('gender') == 'Male' ? 'checked' : '' }}>
-                            <label class="form-check-label" for="exampleRadios1">
-                              male
-                            </label>
-                          </div>
-                          <div class="form-check mb-0 ">
-                            <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
-                              value="Female"{{ old('gender') == 'Female' ? 'checked' : '' }}>
-                            <label class="form-check-label" for="exampleRadios2">
-                              female
-                            </label>
-                          </div>
+                  <div class="postion-relative">
+                    <label class="gender">Gender</label>
+                    <div class=" form-group">
+                      <div class="d-flex align-items-center justify-content-around addsd">
+                        <div class="form-check mb-0">
+                          <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
+                            value="Male" {{ old('gender') == 'Male' ? 'checked' : '' }}>
+                          <label class="form-check-label" for="exampleRadios1">
+                            male
+                          </label>
                         </div>
-                        <span class="text-danger redspan" id="gender-err">
-                          @error('gender')
-                            {{ $message }}
-                          @enderror
-                        </span>
+                        <div class="form-check mb-0 ">
+                          <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
+                            value="Female"{{ old('gender') == 'Female' ? 'checked' : '' }}>
+                          <label class="form-check-label" for="exampleRadios2">
+                            female
+                          </label>
+                        </div>
                       </div>
-
-                    </div>
-
-                  </div>
-                  <div class="col-md-6 col-sm-12">
-                    <div class="form-group dobdd">
-                      <label for="dob">Date of Birth</label>
-                      <input type="date" name="dob" id="dob" placeholder="Date of Birth"
-                        class="form-control" value="{{ old('dob') }}">
-                      <span class="text-danger redspan" id="dob-err">
-                        @error('dob')
+                      <span class="text-danger redspan" id="gender-err">
+                        @error('gender')
                           {{ $message }}
                         @enderror
                       </span>
                     </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <input type="text" placeholder="Captcha: {{ $captcha['text'] }} =" class="form-control"
-                        value="Captcha: {{ $captcha['text'] }} =" disabled readonly>
-                    </div>
+
                   </div>
 
-                  <div class="col-lg-6 col-md-6  col-sm-12">
-                    <div class="form-group">
-                      <input type="text" id="captcha" placeholder="Enter the Captcha Value"
-                        class="form-control" name="captcha_answer">
-                      <span class="text-danger redspan" id="captcha_answer-err">
-                        @error('captcha_answer')
-                          {{ $message }}
-                        @enderror
-                      </span>
-                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group dobdd">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" id="dob" placeholder="Date of Birth"
+                      class="form-control" value="{{ old('dob') }}">
+                    <span class="text-danger redspan" id="dob-err">
+                      @error('dob')
+                        {{ $message }}
+                      @enderror
+                    </span>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="input-field s4 d-flex justify-content-center align-items-center">
-                      <button type="submit" class="blue-register mar5 w-50">Register</button>
-                    </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <input type="text" placeholder="Captcha: {{ $captcha['text'] }} =" class="form-control"
+                      value="Captcha: {{ $captcha['text'] }} =" disabled readonly>
                   </div>
                 </div>
-              </form>
-            </div>
+
+                <div class="col-lg-6 col-md-6  col-sm-12">
+                  <div class="form-group">
+                    <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
+                      name="captcha_answer">
+                    <span class="text-danger redspan" id="captcha_answer-err">
+                      @error('captcha_answer')
+                        {{ $message }}
+                      @enderror
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="input-field s4 d-flex justify-content-center align-items-center">
+                    <button type="submit" class="blue-register mar5 w-50">Register</button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
+      </div>
     </div>
   </section>
 
@@ -633,5 +633,4 @@
       });
     }
   </script>
-  @include('front.js.translate')
 @endsection

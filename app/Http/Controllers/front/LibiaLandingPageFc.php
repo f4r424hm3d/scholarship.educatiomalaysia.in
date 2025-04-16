@@ -159,7 +159,7 @@ class LibiaLandingPageFc extends Controller
   {
     return $request->captcha_answer . ' - ' . session('captcha_answer');
     $rules = [
-      'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
+      // 'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
       'name' => 'required|regex:/^[a-zA-Z\s\x{0600}-\x{06FF}\'-]*$/u',
       'email' => [
         'required',

@@ -892,8 +892,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
@@ -1163,46 +1163,5 @@
       $('#qrCodeModal').addClass('show');
       $('#qrCodeModal').show();
     }
-
-    function printErrorMsg(msg) {
-      $.each(msg, function(key, value) {
-        $("#" + key + "-err").text(value);
-      });
-    }
-
-    $(document).ready(function() {
-      $('#dataForm').on('submit', function(event) {
-        event.preventDefault();
-        $(".errSpan").text('');
-        $.ajax({
-          url: "{{ route('libia.register') }}",
-          method: "POST",
-          data: new FormData(this),
-          contentType: false,
-          cache: false,
-          processData: false,
-          success: function(data) {
-            alert(data);
-            if ($.isEmptyObject(data.error)) {
-              //alert(data.success);
-              if (data.hasOwnProperty('success')) {
-                var h = 'Success';
-                var msg = data.success;
-                var type = 'success';
-                $('#dataForm')[0].reset();
-              }
-            } else {
-              //alert(data.error);
-              printErrorMsg(data.error);
-              var h = 'Failed';
-              var msg = 'Some error occured';
-              var type = 'danger';
-            }
-          }
-        })
-      });
-
-
-    });
   </script>
 @endsection

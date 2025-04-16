@@ -101,6 +101,8 @@ class RegistrationFormC extends Controller
   }
   public function register(Request $request)
   {
+    // return $request->captcha_answer . ' - ' . session('captcha_answer');
+    // die;
     $rules = [
       'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
       'name' => 'required|regex:/^[a-zA-Z\s\x{0600}-\x{06FF}\'-]*$/u',
