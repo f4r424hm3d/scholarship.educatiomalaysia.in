@@ -42,9 +42,9 @@ Route::get('/f/migrate', function () {
 
 /* FRONT ROUTES */
 //Route::get('/', [LibiaLandingPageFc::class, 'index'])->name('libia.page');
-Route::get('/', function () {
-  return redirect()->route('libia.page');
-});
+// Route::get('/', function () {
+//   return redirect()->route('libia.page');
+// });
 
 Route::get('/education-fair-in-libya-2025', [LibiaLandingPageFc::class, 'index'])->name('libia.page');
 Route::post('/libia/register', [LibiaLandingPageFc::class, 'register'])->name('libia.register');

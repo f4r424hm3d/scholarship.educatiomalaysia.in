@@ -25,8 +25,6 @@ class LibiaLandingPageFc extends Controller
   public function index(Request $request)
   {
     $page_slug = 'education-fair-in-libya-2025';
-    $captcha = generateMathQuestion();
-    session(['captcha_answer' => $captcha['answer']]);
 
     $pageDetail = LandingPage::where(['page_slug' => $page_slug])->firstOrFail();
 
@@ -98,6 +96,8 @@ class LibiaLandingPageFc extends Controller
       $lead = Lead::find($id);
     }
 
+    $captcha = generateMathQuestion();
+    session(['captcha_answer' => $captcha['answer']]);
     $data = compact('captcha', 'pageDetail', 'countries', 'phonecodes', 'levels', 'programs', 'curCountry', 'categories', 'result', 'lead', 'intrestedLevels');
     return view('front.education-fair-in-libia-2025')->with($data);
   }
@@ -157,9 +157,9 @@ class LibiaLandingPageFc extends Controller
 
   public function register(Request $request)
   {
-    return $request->captcha_answer . ' - ' . session('captcha_answer');
+    //return 'IA : ' . $request->captcha_answer . ' - NCA : ' . session('captcha_answer') . ' CA : ' . session('captcha_answer');
     $rules = [
-      // 'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
+      'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
       'name' => 'required|regex:/^[a-zA-Z\s\x{0600}-\x{06FF}\'-]*$/u',
       'email' => [
         'required',

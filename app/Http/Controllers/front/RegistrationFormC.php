@@ -23,8 +23,8 @@ class RegistrationFormC extends Controller
   public function index(Request $request)
   {
     $page_slug = 'education-fair-in-libya-2025';
-    $captcha = generateMathQuestion();
-    session(['captcha_answer' => $captcha['answer']]);
+    // $captcha = generateMathQuestion();
+    // session(['captcha_answer' => $captcha['answer']]);
 
     $pageDetail = LandingPage::where(['page_slug' => $page_slug])->firstOrFail();
 

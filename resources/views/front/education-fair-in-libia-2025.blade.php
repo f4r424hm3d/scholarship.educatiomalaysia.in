@@ -638,9 +638,8 @@
 
                 <div class="col-lg-6 col-md-6  col-sm-12">
                   <div class="form-group">
-                    <input type="text" id="captcha"
-                      placeholder="Enter the Captcha Value {{ $captcha['answer'] }} {{ session('captcha_answer') }}"
-                      class="form-control" name="captcha_answer">
+                    <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
+                      name="captcha_answer">
                     <span class="text-danger redspan" id="captcha_answer-err">
                       @error('captcha_answer')
                         {{ $message }}
@@ -892,8 +891,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
