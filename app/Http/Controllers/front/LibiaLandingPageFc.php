@@ -15,12 +15,9 @@ use App\Rules\MathCaptchaValidationRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\Rule;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class LibiaLandingPageFc extends Controller
@@ -160,6 +157,7 @@ class LibiaLandingPageFc extends Controller
 
   public function register(Request $request)
   {
+    return $request->captcha_answer . ' - ' . session('captcha_answer');
     $rules = [
       'captcha_answer' => ['required', 'numeric', new MathCaptchaValidationRule()],
       'name' => 'required|regex:/^[a-zA-Z\s\x{0600}-\x{06FF}\'-]*$/u',

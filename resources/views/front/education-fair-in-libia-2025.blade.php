@@ -150,7 +150,6 @@
                           Code</a>
                       </div>
                     </div>
-                    
 
                   </div>
                 @elseif(session()->has('QR'))
@@ -215,16 +214,17 @@
     <div class="container">
       <div class="row  justify-content-center">
         <div class="col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 mb-3 ">
-          
-            <div class="flex flex-col all-flexx gap-3 items-center text-center h-100 " data-target="#courseListModal" data-toggle="modal" >
-              <div class="imgflx">
-                <img src="{{ url('/') }}/front/assets/images/courses.png" alt="">
-              </div>
-              <h2 class="text-xl font-bold">Courses</h2>
-              <p>Discover a diverse range of programs from undergraduate to postgraduate degrees, explore options in
-                medicine, engineering, business, IT, and more.</p>
+
+          <div class="flex flex-col all-flexx gap-3 items-center text-center h-100 " data-target="#courseListModal"
+            data-toggle="modal">
+            <div class="imgflx">
+              <img src="{{ url('/') }}/front/assets/images/courses.png" alt="">
             </div>
-       
+            <h2 class="text-xl font-bold">Courses</h2>
+            <p>Discover a diverse range of programs from undergraduate to postgraduate degrees, explore options in
+              medicine, engineering, business, IT, and more.</p>
+          </div>
+
           {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#courseListModal">courses</button> --}}
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 mb-3 ">
@@ -638,8 +638,9 @@
 
                 <div class="col-lg-6 col-md-6  col-sm-12">
                   <div class="form-group">
-                    <input type="text" id="captcha" placeholder="Enter the Captcha Value" class="form-control"
-                      name="captcha_answer">
+                    <input type="text" id="captcha"
+                      placeholder="Enter the Captcha Value {{ $captcha['answer'] }} {{ session('captcha_answer') }}"
+                      class="form-control" name="captcha_answer">
                     <span class="text-danger redspan" id="captcha_answer-err">
                       @error('captcha_answer')
                         {{ $message }}
@@ -891,8 +892,8 @@
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
                   <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                                                                                                                                            <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                          </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div> -->
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
@@ -1181,7 +1182,7 @@
           cache: false,
           processData: false,
           success: function(data) {
-            //alert(data);
+            alert(data);
             if ($.isEmptyObject(data.error)) {
               //alert(data.success);
               if (data.hasOwnProperty('success')) {
@@ -1204,5 +1205,4 @@
 
     });
   </script>
-  @include('front.js.translate')
 @endsection
