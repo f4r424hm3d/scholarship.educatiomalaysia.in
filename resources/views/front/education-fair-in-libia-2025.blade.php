@@ -1,6 +1,8 @@
 @php
   use SimpleSoftwareIO\QrCode\Facades\QrCode;
+  use Illuminate\Support\Str;
 @endphp
+
 @extends('front.layouts.main')
 @push('seo_meta_tag')
   @include('front.layouts.static_page_meta_tag')
@@ -70,7 +72,6 @@
             @endphp
             @foreach ($pageDetail->banners as $row)
               <div class="carousel-item {{ $i == '1' ? 'active' : '' }}">
-                <!-- <img class="d-block w-100" src="{{ asset($row->file_path) }}" alt="{{ $row->alt_text }}"> -->
 
                 <video autoplay muted loop>
                   <source src="/front/video/videoflag.mp4" type="video/mp4">
@@ -263,8 +264,13 @@
                       <div class="col-12 col-sm-6 col-md-6 mb-4">
                         <div class="d-flex  align-items-center flex-column istitue-gap">
                           <div class="institues-img">
-                            <img src="{{ asset($row->university->logo_path) }}" class="img-fluid"
-                              alt="{{ $row->university->name }}">
+
+                            @if ($row->university->logo_path !== null)
+                              <img
+                                src="{{ Str::startsWith($row->university->logo_path, 'http') ? $row->university->logo_path : 'https://www.educationmalaysia.in/' . ltrim($row->university->logo_path, '/') }}"
+                                class="img-fluid" alt="{{ $row->university->name }}">
+                            @endif
+
                           </div>
                           <div class="universitynames">
                             <h2>{{ $row->university->name }}</h2>
@@ -890,9 +896,7 @@
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
-                  <!-- <div class="slide">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                <img src="{{ url('/') }}/front/assets/images/britannica-logo.png" alt="">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div> -->
+
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
