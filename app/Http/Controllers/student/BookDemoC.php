@@ -65,7 +65,7 @@ class BookDemoC extends Controller
       'c_code' => $request['c_code'],
       'mobile' => $request['mobile'],
       'preferred_destination' => $request['preferred_destination'],
-      'intrested_subject' => $request['degree_planning_to_study'],
+      'interested_course_category' => $request['degree_planning_to_study'],
       'source' => 'Education Malaysia Book Demo',
     ];
 
@@ -127,7 +127,7 @@ class BookDemoC extends Controller
       }
     );
     if ($chk == false) {
-      $emsg = response()->Fail('Sorry! Please try again latter');
+      $emsg = response('Sorry! Please try again latter');
       session()->flash('emsg', $emsg);
     } else {
       session()->flash('smsg', 'An OTP has been send to your registered email address.');

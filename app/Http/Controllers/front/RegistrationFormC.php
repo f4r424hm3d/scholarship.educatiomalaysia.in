@@ -152,7 +152,7 @@ class RegistrationFormC extends Controller
     $field->c_code = $request['c_code'];
     $field->mobile = $request['mobile'];
     $field->highest_qualification = $request['highest_qualification'];
-    $field->intrested_subject = $courseCategory->name ?? null;
+    $field->interested_course_category = $courseCategory->name ?? null;
     $field->interested_level = $request->interested_level;
     $field->interested_program = $interestedProgram;
     $field->intrested_university = $universityName;
