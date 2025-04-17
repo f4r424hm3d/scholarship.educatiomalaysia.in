@@ -4,6 +4,7 @@
 use App\Http\Controllers\front\HomeFc;
 use App\Http\Controllers\front\LibiaLandingPageFc;
 use App\Http\Controllers\front\RegistrationFormC;
+use App\Http\Controllers\front\ZambiaLandingPageFc;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,10 @@ Route::get('/download-qr', [LibiaLandingPageFc::class, 'downloadQR'])->name('dow
 
 Route::post('/libia/fetch-program', [LibiaLandingPageFc::class, 'getProgramsByUniversity'])->name('libia.fetch.program');
 Route::post('/libia/fetch-courses', [LibiaLandingPageFc::class, 'getCoursesByUniversity'])->name('libia.fetch.courses');
+
+Route::get('/education-fair-in-zambia-2025', [ZambiaLandingPageFc::class, 'index'])->name('zambia.page');
+Route::post('/zambia/register', [ZambiaLandingPageFc::class, 'register'])->name('zambia.register');
+Route::get('zambia/download-qr', [ZambiaLandingPageFc::class, 'downloadQR'])->name('zambia.download.qr');
 
 Route::get('privacy-policy', [HomeFc::class, 'privacyPolicy'])->name('pp');
 Route::get('terms-and-conditions', [HomeFc::class, 'termsConditions'])->name('tc');

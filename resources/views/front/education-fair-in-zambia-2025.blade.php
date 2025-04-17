@@ -25,6 +25,10 @@
   @endif
 
   <style>
+    .hide-this {
+      display: none;
+    }
+
     .contact-forms {
       background-color: rgb(238 202 3);
     }
@@ -66,32 +70,23 @@
         </video>
         <div id="carouselExampleControls">
           <div class="carousel-inner">
+            <div class="carousel-item active">
 
-            @php
-              $i = 1;
-            @endphp
-            @foreach ($pageDetail->banners as $row)
-              <div class="carousel-item {{ $i == '1' ? 'active' : '' }}">
+              <video autoplay muted loop>
+                <source src="/front/video/videoflag.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
 
-                <video autoplay muted loop>
-                  <source src="/front/video/videoflag.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-
-              </div>
-              @php
-                $i++;
-              @endphp
-            @endforeach;
+            </div>
           </div>
 
         </div>
       </div>
       <ul class="malyss">
-        <li>Malaysian Universities Education and Training Fair held in Tripoli, Libya</li>
-        <li>Hosted by Ministry of Higher Education and Scientific Research of Libya</li>
-        <li>Organized by Malaysian Export Academy (MEXA)</li>
-        <li>Supported by National Association of Private Educational Institutions, Malaysia (NAPEI)</li>
+        <li>ZAMBIA, MALAYSIA & INDIA UNIVERSITIES EDUCATION EXHIBITION HELD IN LUSAKA, ZAMBIA</li>
+        <li>ORGANIZED BY : SRIM SOLUTIONS & MALAYSIAN EXPORT ACADEMY , MALAYSIA SKYGOLD EDU CONSULTANCY , ZAMBIA</li>
+        <li>SUPPORTED BY : ZAMBIA HIGH COMMISSION, KUALA LUMPUR, MALAYSIA NATIONAL ASSOCIATIONS OF PRIVATE EDUCATIONAL
+          INSTITUTIONS (NAPEI), MALAYSIA</li>
       </ul>
 
     </div>
@@ -134,8 +129,6 @@
                                       json_encode([
                                           'Title' => 'Malaysian Universities Education & Training Fair 2025',
                                           'Student Name' => $lead->name,
-                                          'Passport Number' => $lead->passport_number,
-                                          'Libya National Id' => $lead->identification_number,
                                       ]),
                                   ),
                           ) }}"
@@ -147,7 +140,7 @@
                     {{-- Download Button --}}
                     <div class="col-lg-12 text-center">
                       <div class="form-group"><br>
-                        <a href="{{ route('download.qr') }}" class="btn  btn-success">Download QR
+                        <a href="{{ route('zambia.download.qr') }}" class="btn  btn-success">Download QR
                           Code</a>
                       </div>
                     </div>
@@ -226,10 +219,8 @@
               medicine, engineering, business, IT, and more.</p>
           </div>
 
-          {{-- <button class="btn btn-primary" data-toggle="modal" data-target="#courseListModal">courses</button> --}}
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 mb-3 ">
-          <!-- <a href="{{ url(url()->current() . '/institutions') }}"> -->
           <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center" data-toggle="modal"
             data-target=".bd-example-modal-lg">
             <div class="imgflx">
@@ -294,20 +285,8 @@
               <img src="{{ url('/') }}/front/assets/images/scholarship.png" alt="">
             </div>
             <h2 class="text-xl font-bold">Scholarships</h2>
-            <p>Exclusive scholarship opportunities for Libyan students sponsored by the Libyan Government.</p>
+            <p>Scholarships & Bursary Opportunities For Zambian Students.</p>
           </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 mb-3 ">
-          <a href="https://exportacademy.net/" target="_blank">
-            <div class="flex flex-col all-flexx gap-3 h-100 items-center text-center">
-              <div class="imgflx">
-                <img src="{{ url('/') }}/front/assets/images/training.png" alt="">
-              </div>
-              <h2 class="text-xl font-bold">Training</h2>
-              <p>Learn global trade, boost exports, master compliance, and grow your business with expert-led courses and
-                certifications!"</p>
-            </div>
-          </a>
         </div>
 
       </div>
@@ -351,28 +330,27 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4">
           <div class="fair-details">
             <h2 class="main-faris">
-              Malaysian Universities Education <span class="aands">&</span> Training Fair 2025 </h2>
+              ZAMBIA, MALAYSIA & INDIA UNIVERSITIES EDUCATION EXHIBITION HELD IN LUSAKA, ZAMBIA</h2>
 
             <ul class="set_uls">
               <li><b><i class="fa fa-map-pin" aria-hidden="true"></i>
-                  Venue</b> Libyan Academy for Postgraduate Studies, Tripoli, Libya</li>
-              <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date</b> 22nd & 23rd February 2025
+                  Venue</b> Protea Tower Hotel, Lusaka Zambia</li>
+              <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date</b> 5th, 6th & 7th June 2025
               </li>
               <li><b><i class="fa fa-clock-o" aria-hidden="true"></i>
-                  Time</b> 9:00 AM – 1:00 PM & 2:00 PM – 6:00 PM</li>
+                  Time</b> 9am to 5pm (5th & 6th June 2025)
+                8.30am to 12.30pm (7th June 2025)
+              </li>
             </ul>
-            <div class="imgsfaird">
-              <img src="../front/assets/images/libya-malaysia.png" class="imgsfairs" alt="">
-            </div>
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 ">
 
           <div class="all-forms main-modals">
             <h2 class="new-regist">Register Now</h2>
-            <form class="s12 f" action="{{ route('libia.register') }}" method="post">
+            <form class="s12 f" action="{{ route('zambia.register') }}" method="post">
               @csrf
-              <input class="mt-0" type="hidden" name="source" value="Education Malaysia - Libia Landing Page">
+              <input class="mt-0" type="hidden" name="source" value="Education Malaysia - Zambia Landing Page">
               <input class="mt-0" type="hidden" name="source_path" value="{{ url()->current() }}">
               <input class="mt-0" type="hidden" name="return_path" value="{{ url()->current() }}">
 
@@ -405,8 +383,8 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <div class="form-group">
                     <select name="c_code" id="countryCode" class="form-control">
-                      <option value="218" {{ old('c_code') == 218 ? 'selected' : '' }}>
-                        +218 (State of Libya)
+                      <option value="260" {{ old('c_code') == 260 ? 'selected' : '' }}>
+                        +260 (Republic of Zambia)
                       </option>
                     </select>
                     <span class="text-danger redspan" id="c_code-err">
@@ -433,35 +411,12 @@
                   <div class="form-group">
                     <select name="nationality" class="form-control">
                       <option value="">Select Nationality</option>
-                      <option value="Libyan" {{ old('nationality') == 'Libyan' ? 'selected' : '' }}>Libyan</option>
-                      <option value="Non-Libyan" {{ old('nationality') == 'Non-Libyan' ? 'selected' : '' }}>
-                        Non-Libyan</option>
+                      <option value="Zambian" {{ old('nationality') == 'Zambian' ? 'selected' : '' }}>Zambian</option>
+                      <option value="Non-Zambian" {{ old('nationality') == 'Non-Zambian' ? 'selected' : '' }}>
+                        Non-Zambian</option>
                     </select>
                     <span class="text-danger redspan" id="nationality-err">
                       @error('nationality')
-                        {{ $message }}
-                      @enderror
-                    </span>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <div class="form-group">
-                    <input name="libya_identification_number" class="form-control" type="text"
-                      placeholder="Libya National Number" value="{{ old('libya_identification_number', '') }}">
-                    <span class="text-danger redspan" id="libya_identification_number-err">
-                      @error('libya_identification_number')
-                        {{ $message }}
-                      @enderror
-                    </span>
-                  </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <div class="form-group">
-                    <input name="passport_number" class="form-control" type="text"
-                      placeholder="Libyan Passport Number" value="{{ old('passport_number', '') }}">
-                    <span class="text-danger redspan" id="pasport_number-err">
-                      @error('pasport_number')
                         {{ $message }}
                       @enderror
                     </span>
@@ -496,88 +451,6 @@
                   </div>
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12" id="universityDiv">
-                  <div class="form-group">
-                    <select name="university" class="form-control" id="university">
-                      <option value="">Select Interested University</option>
-                      @foreach ($pageDetail->universities as $row)
-                        <option value="{{ $row->university_id }}"
-                          {{ old('university') == $row->university_id ? 'selected' : '' }}>
-                          {{ $row->university->name }}
-                        </option>
-                      @endforeach
-                      <option value="other" {{ old('university') == 'other' ? 'selected' : '' }}>
-                        Other Universities
-                      </option>
-                    </select>
-                    <span class="text-danger redspan" id="university-err">
-                      @error('university')
-                        {{ $message }}
-                      @enderror
-                    </span>
-                  </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12" id="levelDiv">
-                  <div class="form-group">
-                    <select name="interested_level" id="interested_level" class="form-control">
-                      <option value="">Are you interested in</option>
-                      @if (old('university') && old('university') != null)
-                        @foreach ($intrestedLevels as $key => $value)
-                          <option value="{{ $value }}"
-                            {{ old('interested_level') == $value ? 'selected' : '' }}>
-                            {{ $key }}
-                          </option>
-                        @endforeach
-                      @endif
-                    </select>
-                    <span class="text-danger redspan" id="interested_level-err">
-                      @error('interested_level')
-                        {{ $message }}
-                      @enderror
-                    </span>
-                  </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12" id="categoryDiv">
-                  <div class="form-group">
-                    <select name="interested_course" class="form-control" id="interested_course">
-                      <option value="">Select Interested Course</option>
-                      @if (old('interested_course') && old('interested_course') != null)
-                        @foreach ($categories as $row)
-                          <option value="{{ $row->id }}"
-                            {{ old('interested_course') == $row->id ? 'selected' : '' }}>
-                            {{ $row->name }}</option>
-                        @endforeach
-                      @endif
-                    </select>
-                    <span class="text-danger redspan" id="interested_course-err">
-                      @error('interested_course')
-                        {{ $message }}
-                      @enderror
-                    </span>
-                  </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12" id="programDiv">
-                  <div class="form-group">
-                    <select name="interested_program" class="form-control" id="interested_program">
-                      <option value="">Select Interested Program</option>
-                      @if (old('interested_program') && old('interested_program') != null)
-                        @foreach ($programs as $row)
-                          <option value="{{ $row->course_name }}"
-                            {{ old('interested_program') == $row->course_name ? 'selected' : '' }}>
-                            {{ $row->course_name }}</option>
-                        @endforeach
-                      @endif
-                    </select>
-                    <span class="text-danger redspan" id="interested_program-err">
-                      @error('interested_program')
-                        {{ $message }}
-                      @enderror
-                    </span>
-                  </div>
-                </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 hide-this" id="manualProgramDiv">
                   <div class="form-group">
                     <input name="interested_program_name" class="form-control" type="text"
@@ -784,21 +657,6 @@
           </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-4 ">
-
-          <div class="fariul">
-            <div class="flspan">
-              <span> <img src="/front/assets/images/Dependents.png " class="img-fluid" alt=""></span>
-
-            </div>
-            <div class="fair-us">
-              <h2>Bring Your Dependents
-              </h2>
-              <p>Postgraduate students can bring their family.</p>
-            </div>
-
-          </div>
-        </div>
       </div>
 
     </div>
@@ -844,8 +702,7 @@
 
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-2 ">
           <div class="all-speci">
-            <h2>What Makes Libya Education
-              Fair Special?</h2>
+            <h2>What Makes Zambia Education Fair Special?</h2>
 
             <ul>
               <li> <i class="fa fa-check-circle-o" aria-hidden="true"></i>
@@ -890,9 +747,6 @@
               <div class="slider">
                 <div class="slide-track">
 
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/libian-logo.jpg" alt="">
-                  </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
@@ -946,7 +800,7 @@
               <li>Malaysian Export Academy Sdn Bhd</li>
               <li><i class="fa fa-envelope"></i>
                 : <a href="mailto:parthiban@exportacademy.net">parthiban@exportacademy.net</a> / <a
-                  href="mailto:thibanshan@gmail.com">thibanshan@gmail.com</a></li>
+                  href="mailto:parthiban.srim@gmail.com">parthiban.srim@gmail.com</a></li>
               <li><i class="fa fa-phone"></i>
                 : <a href="tel:+60122245649">+60 012-2245649</a></li>
             </ul>
@@ -959,33 +813,6 @@
 
   <script>
     $(document).ready(function() {
-      function toggleFields() {
-        var selectedValue = $('#university').val();
-
-        if (selectedValue === 'other') {
-          $('#categoryDiv').hide();
-          $('#programDiv').hide();
-          $('#manualProgramDiv').show();
-        } else {
-          $('#categoryDiv').show();
-          $('#programDiv').show();
-          $('#manualProgramDiv').hide();
-        }
-      }
-
-      // Run on page load
-      toggleFields();
-
-      // Run when university selection changes
-      $('#university').change(function() {
-        toggleFields();
-      });
-    });
-
-
-
-
-    $(document).ready(function() {
       // Wrap the table in a div with class 'table-responsive'
       $('table').before('<div class="table-responsive"></div>');
 
@@ -993,43 +820,8 @@
       $('table').prev('.table-responsive').append($('table'));
     });
   </script>
+
   <script>
-    function showPassword(id) {
-      $("#" + id).attr('type', 'text');
-      $("#" + id + '_icon_show').hide();
-      $("#" + id + '_icon_hide').show();
-    }
-
-    function hidePassword(id) {
-      $("#" + id).attr('type', 'password');
-      $("#" + id + '_icon_show').show();
-      $("#" + id + '_icon_hide').hide();
-    }
-  </script>
-  <script>
-    $(document).ready(function() {
-      $('#university').change(function() {
-        var selectedUniversity = $(this).val();
-        var interestedLevel = $('#interested_level');
-
-        // Clear existing options
-        interestedLevel.html('');
-
-        if (selectedUniversity == '3148') {
-          // If university is 3148, show only Pre-University
-          interestedLevel.append('<option value="">Are you interested in</option>');
-          interestedLevel.append('<option value="PRE-UNIVERSITY">Pre-University</option>');
-        } else {
-          // Otherwise, show other options except Pre-University
-          interestedLevel.append('<option value="">Are you interested in</option>');
-          interestedLevel.append('<option value="UNDER-GRADUATE">Under-Graduate</option>');
-          interestedLevel.append('<option value="POST-GRADUATE">Post-Graduate/Master</option>');
-          interestedLevel.append('<option value="PHD">PHD</option>');
-        }
-      });
-    });
-
-
     $(document).ready(function() {
       function showError(field, message) {
         $('#' + field + '-err').text(message);
@@ -1038,102 +830,6 @@
       function clearError(field) {
         $('#' + field + '-err').text('');
       }
-
-      // Reset fields when university changes
-      $('#university').change(function() {
-        $('#interested_level').val('');
-        $('#interested_course').html('<option value="">Select Interested Course</option>');
-        $('#interested_program').html('<option value="">Select Interested Program</option>');
-      });
-
-      $('#interested_level').focus(function() {
-        if (!$('#university').val()) {
-          showError('interested_level', 'Please select a university first.');
-          $(this).blur();
-        } else {
-          clearError('interested_level');
-        }
-      });
-
-      $('#interested_course').focus(function() {
-        if (!$('#interested_level').val()) {
-          showError('interested_course', 'Please select an interested level first.');
-          $(this).blur();
-        } else {
-          clearError('interested_course');
-        }
-      });
-
-      $('#interested_program').focus(function() {
-        if (!$('#interested_course').val()) {
-          showError('interested_program', 'Please select an interested course first.');
-          $(this).blur();
-        } else {
-          clearError('interested_program');
-        }
-      });
-
-      // Fetch courses based on interested_level
-      $('#interested_level').change(function() {
-        var universityId = $('#university').val();
-        var level = $(this).val();
-
-        if (!universityId) {
-          showError('interested_level', 'Please select a university first.');
-          return;
-        }
-
-        $.ajax({
-          url: "{{ route('libia.fetch.courses') }}",
-          type: 'POST',
-          headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          data: {
-            level: level,
-            university_id: universityId,
-          },
-          success: function(response) {
-            $('#interested_course').html(response);
-            clearError('interested_level');
-          },
-          error: function() {
-            alert('An error occurred while fetching courses.');
-          },
-        });
-      });
-
-      // Fetch programs based on interested_course
-      $('#interested_course').change(function() {
-        var universityId = $('#university').val();
-        var level = $('#interested_level').val();
-        var courseCategoryId = $(this).val();
-
-        if (!level) {
-          showError('interested_course', 'Please select an interested level first.');
-          return;
-        }
-
-        $.ajax({
-          url: "{{ route('libia.fetch.program') }}",
-          type: 'POST',
-          headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          data: {
-            university_id: universityId,
-            level: level,
-            course_category_id: courseCategoryId
-          },
-          success: function(response) {
-            $('#interested_program').html(response);
-            clearError('interested_course');
-          },
-          error: function() {
-            alert('An error occurred while fetching programs.');
-          },
-        });
-      });
     });
 
 
@@ -1149,10 +845,10 @@
         }, 500);
 
         // Set the value of the university dropdown to the selected university ID
-        $('#university').val(universityId);
+        $('#ef_university').val(universityId);
 
         // Trigger change event to ensure any dependent functionality updates
-        $('#university').trigger('change');
+        $('#ef_university').trigger('change');
       });
     });
   </script>
