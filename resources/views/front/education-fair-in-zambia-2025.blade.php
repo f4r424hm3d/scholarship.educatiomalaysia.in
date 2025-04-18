@@ -754,12 +754,19 @@
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
-                  <div class="slide">
+                  <!-- <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/napei.png" alt="">
                   </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/education_11.jpeg" alt="">
+                  </div> -->
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/skygold.png" alt="">
                   </div>
+                  <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/srim-logo.png" alt="">
+                  </div>
+                 
 
                 </div>
               </div>
