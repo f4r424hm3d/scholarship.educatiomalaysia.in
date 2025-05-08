@@ -68,15 +68,10 @@ class ZambiaLandingPageFc extends Controller
     } else {
       $intrestedLevels = null;
     }
-    if (old('interested_course') && old('interested_course') != null) {
-      $university_id = old('university');
-      $level = old('interested_level');
-      $categories = CourseCategory::whereHas('programs', function ($query) use ($university_id, $level) {
-        $query->where('university_id', $university_id)->where('status', 1)->where('level', $level);
-      })->get();
-    } else {
-      $categories = null;
-    }
+
+    $categories = CourseCategory::whereHas('programs', function ($query) {
+      $query->where('status', 1);
+    })->get();
 
     if (old('interested_program') && old('interested_program') != null) {
       $university_id = old('university');
@@ -119,6 +114,7 @@ class ZambiaLandingPageFc extends Controller
       'highest_qualification' => 'required',
       'gender' => 'required',
       'dob' => 'required',
+      'interested_course' => 'required',
     ];
 
 
@@ -131,12 +127,15 @@ class ZambiaLandingPageFc extends Controller
     $translator = new GoogleTranslate('en'); // Translate to English
     $name = $translator->translate($request->input('name'));
 
+    $courseCategory = CourseCategory::find($request->interested_course);
+
     $field = new Lead();
     $field->name = $name;
     $field->email = $request['email'];
     $field->c_code = $request['c_code'];
     $field->mobile = $request['mobile'];
     $field->highest_qualification = $request['highest_qualification'];
+    $field->interested_course_category = $courseCategory->name ?? null;
     $field->nationality = $request['nationality'];
     $field->gender = $request['gender'];
     $field->dob = $request['dob'];

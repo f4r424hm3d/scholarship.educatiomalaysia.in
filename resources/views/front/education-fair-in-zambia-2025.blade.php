@@ -84,10 +84,11 @@
       </div>
       <ul class="malyss">
         <li>ZAMBIA, MALAYSIA & INDIA UNIVERSITIES EDUCATION EXHIBITION HELD IN LUSAKA, ZAMBIA</li>
-        <li>ORGANIZED BY : <span class="solutionss" >SRIM SOLUTIONS & MALAYSIAN EXPORT ACADEMY</span></li>
-        <span class="solutionss" > MALAYSIA SKYGOLD EDU CONSULTANCY , ZAMBIA</span>
-        <li>SUPPORTED BY : <span class="solutionss" >ZAMBIA HIGH COMMISSION, KUALA LUMPUR, MALAYSIA</span></li>
-        <span class="solutionss  d-block" >NATIONAL ASSOCIATIONS OF PRIVATE EDUCATIONAL INSTITUTIONS (NAPEI), MALAYSIA</span></li>
+        <li>ORGANIZED BY : <span class="solutionss">SRIM SOLUTIONS & MALAYSIAN EXPORT ACADEMY</span></li>
+        <span class="solutionss"> MALAYSIA SKYGOLD EDU CONSULTANCY , ZAMBIA</span>
+        <li>SUPPORTED BY : <span class="solutionss">ZAMBIA HIGH COMMISSION, KUALA LUMPUR, MALAYSIA</span></li>
+        <span class="solutionss  d-block">NATIONAL ASSOCIATIONS OF PRIVATE EDUCATIONAL INSTITUTIONS (NAPEI),
+          MALAYSIA</span></li>
       </ul>
 
     </div>
@@ -451,6 +452,23 @@
                     </span>
                   </div>
                 </div>
+                <div class="col-lg-6 col-md-6 col-sm-12" id="categoryDiv">
+                  <div class="form-group">
+                    <select name="interested_course" class="form-control" id="interested_course">
+                      <option value="">Select Interested Course</option>
+                      @foreach ($categories as $row)
+                        <option value="{{ $row->id }}"
+                          {{ old('interested_course') == $row->id ? 'selected' : '' }}>
+                          {{ $row->name }}</option>
+                      @endforeach
+                    </select>
+                    <span class="text-danger redspan" id="interested_course-err">
+                      @error('interested_course')
+                        {{ $message }}
+                      @enderror
+                    </span>
+                  </div>
+                </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12 hide-this" id="manualProgramDiv">
                   <div class="form-group">
@@ -748,22 +766,19 @@
             <div class="allsponser">
               <div class="slider">
                 <div class="slide-track">
-                <div class="slide">
+                  <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/srim-logo.png" alt="">
                   </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
 
-                 
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/skygold.png" alt="">
                   </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
-                  
-                 
 
                 </div>
               </div>
@@ -787,10 +802,11 @@
             <ul>
               <li><strong>Director</strong></li>
               <li>Srim Solutions Sdn Bhd</li>
-               <li><i class="fa fa-envelope"></i>
-              <!--  : <a href="mailto:malathi@exportacademy.net">malathi@exportacademy.net</a> / -->
-                <a href="mailto:malathi@srim.my">malathi@srim.my</a></li>
-              <li><i class="fa fa-phone"></i> 
+              <li><i class="fa fa-envelope"></i>
+                <!--  : <a href="mailto:malathi@exportacademy.net">malathi@exportacademy.net</a> / -->
+                <a href="mailto:malathi@srim.my">malathi@srim.my</a>
+              </li>
+              <li><i class="fa fa-phone"></i>
                 : <a href="tel:+60122631251">+60 012-2631251</a></li>
             </ul>
 
@@ -802,10 +818,11 @@
             <ul>
               <li><strong>Project Manager</strong></li>
               <li>Srim Solutions Sdn Bhd </li>
-              <!-- <li><i class="fa fa-envelope"></i> 
-                : <a href="mailto:parthiban@exportacademy.net">parthiban@exportacademy.net</a> / -->
-              <li><i class="fa fa-envelope"></i> 
-              <a href="mailto:parthiban.srim@gmail.com">parthiban.srim@gmail.com</a></li>
+              <!-- <li><i class="fa fa-envelope"></i>
+                            : <a href="mailto:parthiban@exportacademy.net">parthiban@exportacademy.net</a> / -->
+              <li><i class="fa fa-envelope"></i>
+                <a href="mailto:parthiban.srim@gmail.com">parthiban.srim@gmail.com</a>
+              </li>
               <li><i class="fa fa-phone"></i>
                 : <a href="tel:+60122245649">+60 012-2245649</a></li>
             </ul>
@@ -819,7 +836,8 @@
             <ul>
               <li><strong>Director</strong></li>
               <li>Skybold Edu Consultancy</li>
-              <li><i class="fa fa-envelope"></i>:  <a href="mailto:parthiban.srim@gmail.com">pridesinkala@gmail.com</a></li>
+              <li><i class="fa fa-envelope"></i>: <a href="mailto:parthiban.srim@gmail.com">pridesinkala@gmail.com</a>
+              </li>
               <li><i class="fa fa-phone"></i>
                 : <a href="tel:+60122245649">00260971868086</a></li>
             </ul>
