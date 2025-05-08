@@ -73,7 +73,7 @@
             <div class="carousel-item active">
 
               <video autoplay muted loop>
-                <source src="/front/video/videoflag.mp4" type="video/mp4">
+                <source src="/front/video/videoflag-4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
 
@@ -84,9 +84,10 @@
       </div>
       <ul class="malyss">
         <li>ZAMBIA, MALAYSIA & INDIA UNIVERSITIES EDUCATION EXHIBITION HELD IN LUSAKA, ZAMBIA</li>
-        <li>ORGANIZED BY : SRIM SOLUTIONS & MALAYSIAN EXPORT ACADEMY , MALAYSIA SKYGOLD EDU CONSULTANCY , ZAMBIA</li>
-        <li>SUPPORTED BY : ZAMBIA HIGH COMMISSION, KUALA LUMPUR, MALAYSIA NATIONAL ASSOCIATIONS OF PRIVATE EDUCATIONAL
-          INSTITUTIONS (NAPEI), MALAYSIA</li>
+        <li>ORGANIZED BY : <span class="solutionss" >SRIM SOLUTIONS & MALAYSIAN EXPORT ACADEMY</span></li>
+        <span class="solutionss" > MALAYSIA SKYGOLD EDU CONSULTANCY , ZAMBIA</span>
+        <li>SUPPORTED BY : <span class="solutionss" >ZAMBIA HIGH COMMISSION, KUALA LUMPUR, MALAYSIA</span></li>
+        <span class="solutionss  d-block" >NATIONAL ASSOCIATIONS OF PRIVATE EDUCATIONAL INSTITUTIONS (NAPEI), MALAYSIA</span></li>
       </ul>
 
     </div>
@@ -334,7 +335,7 @@
 
             <ul class="set_uls">
               <li><b><i class="fa fa-map-pin" aria-hidden="true"></i>
-                  Venue</b> Protea Tower Hotel, Lusaka Zambia</li>
+                  Venue</b> MULUNGUSHI INTERNATIONAL CONFERENCE CENTRE, LUSAKA</li>
               <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date</b> 5th, 6th & 7th June 2025
               </li>
               <li><b><i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -727,7 +728,8 @@
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-2">
           <div class="allimags">
-            <img src="/front/assets/images/libya.jpeg" class="imdd" alt="">
+            <!-- <img src="/front/assets/images/libya.jpeg" class="imdd" alt=""> -->
+            <img src="/front/assets/images/zambia-student.png" class="imdd" alt="">
           </div>
         </div>
 
@@ -746,26 +748,21 @@
             <div class="allsponser">
               <div class="slider">
                 <div class="slide-track">
-
+                <div class="slide">
+                    <img src="{{ url('/') }}/front/assets/images/srim-logo.png" alt="">
+                  </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
 
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
-                  </div>
-                  <!-- <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/napei.png" alt="">
-                  </div>
-                  <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/education_11.jpeg" alt="">
-                  </div> -->
+                 
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/skygold.png" alt="">
                   </div>
                   <div class="slide">
-                    <img src="{{ url('/') }}/front/assets/images/srim-logo.png" alt="">
+                    <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
+                  
                  
 
                 </div>
@@ -784,32 +781,47 @@
     <div class="container">
       <h2 class="text-center mb-4 text-white font-bold py-3">PLEASE CONTACT</h2>
       <div class="row" style="text-align: center">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 mb-4 ">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 mb-4 ">
           <div class="contact-froms">
             <h2>Ms. Malathi</h2>
             <ul>
-              <li><strong>Project Manager</strong></li>
-              <li>Malaysian Export Academy Sdn Bhd</li>
-              <li><i class="fa fa-envelope"></i>
-                : <a href="mailto:malathi@exportacademy.net">malathi@exportacademy.net</a> / <a
-                  href="mailto:malathi@srim.my">malathi@srim.my</a></li>
-              <li><i class="fa fa-phone"></i>
+              <li><strong>Director</strong></li>
+              <li>Srim Solutions Sdn Bhd</li>
+               <li><i class="fa fa-envelope"></i>
+              <!--  : <a href="mailto:malathi@exportacademy.net">malathi@exportacademy.net</a> / -->
+                <a href="mailto:malathi@srim.my">malathi@srim.my</a></li>
+              <li><i class="fa fa-phone"></i> 
                 : <a href="tel:+60122631251">+60 012-2631251</a></li>
             </ul>
 
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6  mb-4">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4  mb-4">
           <div class="contact-froms">
             <h2>Mr. Parthiban</h2>
             <ul>
               <li><strong>Project Manager</strong></li>
-              <li>Malaysian Export Academy Sdn Bhd</li>
-              <li><i class="fa fa-envelope"></i>
-                : <a href="mailto:parthiban@exportacademy.net">parthiban@exportacademy.net</a> / <a
-                  href="mailto:parthiban.srim@gmail.com">parthiban.srim@gmail.com</a></li>
+              <li>Srim Solutions Sdn Bhd </li>
+              <!-- <li><i class="fa fa-envelope"></i> 
+                : <a href="mailto:parthiban@exportacademy.net">parthiban@exportacademy.net</a> / -->
+              <li><i class="fa fa-envelope"></i> 
+              <a href="mailto:parthiban.srim@gmail.com">parthiban.srim@gmail.com</a></li>
               <li><i class="fa fa-phone"></i>
                 : <a href="tel:+60122245649">+60 012-2245649</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4  mb-4">
+          <div class="contact-froms">
+            <h2>Mr. Pride Sinkala
+            </h2>
+            <ul>
+              <li><strong>Director</strong></li>
+              <li>Skybold Edu Consultancy</li>
+              <li><i class="fa fa-envelope"></i>:  <a href="mailto:parthiban.srim@gmail.com">pridesinkala@gmail.com</a></li>
+              <li><i class="fa fa-phone"></i>
+                : <a href="tel:+60122245649">00260971868086</a></li>
             </ul>
 
           </div>
