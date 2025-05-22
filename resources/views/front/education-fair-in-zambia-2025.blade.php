@@ -65,7 +65,7 @@
 
         <!-- class="carousel slide" data-ride="carousel"   -->
         <video autoplay muted loop class="mb-2">
-          <source src="/front/video/videoslider.mp4" type="video/mp4">
+          <source src="/front/video/video-slider-3.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div id="carouselExampleControls">
@@ -73,7 +73,7 @@
             <div class="carousel-item active">
 
               <video autoplay muted loop>
-                <source src="/front/video/videoflag-4.mp4" type="video/mp4">
+                <source src="/front/video/videoflag-5.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
 
@@ -83,13 +83,68 @@
         </div>
       </div>
       <ul class="malyss">
-        <li>ZAMBIA, MALAYSIA & INDIA UNIVERSITIES EDUCATION EXHIBITION HELD IN LUSAKA, ZAMBIA</li>
-        <li>ORGANIZED BY : <span class="solutionss">SRIM SOLUTIONS & MALAYSIAN EXPORT ACADEMY</span></li>
-        <span class="solutionss"> MALAYSIA SKYGOLD EDU CONSULTANCY , ZAMBIA</span>
-        <li>SUPPORTED BY : <span class="solutionss">ZAMBIA HIGH COMMISSION, KUALA LUMPUR, MALAYSIA</span></li>
+        <li>ZAMBIA & MALAYSIA UNIVERSITIES EDUCATION EXHIBITION HELD IN LUSAKA, ZAMBIA</li>
+        <li>ORGANIZED BY : <span class="solutionss">SRIM SOLUTIONS & MALAYSIAN EXPORT ACADEMY, MALAYSIA</span>
+        <span class="solutionss d-block">  SKYGOLD EDU CONSULTANCY, ZAMBIA</span>
+      </li>
+        
+        <li>SUPPORTED BY : <span class="solutionss">ZAMBIA HIGH COMMISSION, KUALA LUMPUR, MALAYSIA</span>
         <span class="solutionss  d-block">NATIONAL ASSOCIATIONS OF PRIVATE EDUCATIONAL INSTITUTIONS (NAPEI),
           MALAYSIA</span></li>
       </ul>
+
+      <!-- <section class="supported">
+     <div class="container px-0">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
+          <div class="all-orgainizations">
+            <h2>ORGANIZED BY</h2>
+            <p>SRIM SOLUTIONS & MALAYSIAN EXPORT ACADEMY, MALAYSIA</p>
+            <p>SKYGOLD EDU CONSULTANCY, ZAMBIA</p>
+            <div class="all-setd">
+          <div class="d-flex justify-content-center gapsupport">
+           
+              <div class="img-organization">
+              <img src="{{ url('/') }}/front/assets/images/srim-logo.png" alt="">
+              </div>
+           
+           
+              <div class="img-organization skygold">
+              <img src="{{ url('/') }}/front/assets/images/skygold.png" alt="">
+              </div>
+            
+          </div>
+          </div>
+          </div>
+          
+        
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
+          <div class="all-Suported">
+          <h2>SUPPORTED BY</h2>
+            <p>ZAMBIA HIGH COMMISSION, KUALA LUMPUR, MALAYSIA</p>
+            <p>NATIONAL ASSOCIATIONS OF PRIVATE EDUCATIONAL INSTITUTIONS (NAPEI), MALAYSIA</p>
+
+           <div class="all-setd">
+           <div class="d-flex justify-content-center gapsupport">
+            
+              <div class="img-organization">
+              <img src="{{ url('/') }}/front/assets/images/napei.png" alt="">
+              </div>
+            
+           
+              <div class="img-organization zambias">
+              <img src="{{ url('/') }}/front/assets/images/zambia.png" alt="">
+              </div>
+           
+          </div>
+           </div>
+          </div>
+         
+        </div>
+      </div>
+     </div>    
+    </section> -->
 
     </div>
 
@@ -332,16 +387,18 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4">
           <div class="fair-details">
             <h2 class="main-faris">
-              ZAMBIA, MALAYSIA & INDIA UNIVERSITIES EDUCATION EXHIBITION HELD IN LUSAKA, ZAMBIA</h2>
+              ZAMBIA & MALAYSIA UNIVERSITIES EDUCATION EXHIBITION HELD IN LUSAKA, ZAMBIA</h2>
 
             <ul class="set_uls">
               <li><b><i class="fa fa-map-pin" aria-hidden="true"></i>
-                  Venue</b> MULUNGUSHI INTERNATIONAL CONFERENCE CENTRE, LUSAKA</li>
-              <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date</b> 5th, 6th & 7th June 2025
+                  Venue</b>  PROTEA HOTEL Lusaka  Tower
+                  <!-- Venue</b> MULUNGUSHI INTERNATIONAL CONFERENCE CENTRE, LUSAKA -->
+                </li>
+              <li><b><i class="fa fa-calendar" aria-hidden="true"></i>Date</b> 5th and 6th June 2025
               </li>
               <li><b><i class="fa fa-clock-o" aria-hidden="true"></i>
                   Time</b> 9am to 5pm (5th & 6th June 2025)
-                8.30am to 12.30pm (7th June 2025)
+                <!-- 8.30am to 12.30pm (7th June 2025) -->
               </li>
             </ul>
           </div>
@@ -357,7 +414,7 @@
               <input class="mt-0" type="hidden" name="return_path" value="{{ url()->current() }}">
 
               <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-12 col-sm-12">
                   <div class="form-group">
                     <input name="name" class="form-control" type="text" placeholder="Full Name"
                       pattern="[a-zA-Z'-'\s\u0600-\u06FF]*" value="{{ old('name', '') }}">
@@ -772,13 +829,16 @@
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/export-logo.png" alt="">
                   </div>
-
+<div class="slide napei-logo">
+                    <img src="{{ url('/') }}/front/assets/images/napei.png" alt="">
+                  </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/skygold.png" alt="">
                   </div>
                   <div class="slide">
                     <img src="{{ url('/') }}/front/assets/images/malaysialogo.png" alt="">
                   </div>
+                  
 
                 </div>
               </div>
@@ -839,7 +899,7 @@
               <li><i class="fa fa-envelope"></i>: <a href="mailto:parthiban.srim@gmail.com">pridesinkala@gmail.com</a>
               </li>
               <li><i class="fa fa-phone"></i>
-                : <a href="tel:+60122245649">00260971868086</a></li>
+                : <a href="tel:+260971868086">+260 971868086</a></li>
             </ul>
 
           </div>

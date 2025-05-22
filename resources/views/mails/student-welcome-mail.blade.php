@@ -16,7 +16,9 @@
             <td valign="top" align="center" class="masthead" style="padding:20px 0;background:#03618c;color:white;">
               <h1 style="font-size:32px;margin:0 auto;max-width:90%;line-height:1.25;">
                 <a href="{{ url('/') }}" target="_blank" rel="noopener noreferrer"
-                  style="text-decoration:none;color:#ffffff;">Malaysian Universities Education & Training Fair 2025</a>
+                  style="text-decoration:none;color:#ffffff;">
+                  ZAMBIA & MALAYSIA UNIVERSITIES EDUCATION EXHIBITION 2025
+                </a>
                 <p style="margin-bottom:0;line-height:12px;font-weight:normal;margin-top:15px;font-size:18px;"></p>
               </h1>
             </td>
@@ -25,12 +27,12 @@
             <td valign="top" class="content" style="background:white;padding:20px 35px 10px 35px;">
               <h3>Dear <?php echo $name; ?>, </h3>
 
-              <h4>Thank you for registering for the Malaysian Universities Education & Training Fair 2025!</h4>
+              <h4>Thank you for registering for the ZAMBIA & MALAYSIA UNIVERSITIES EDUCATION EXHIBITION 2025!</h4>
 
               <ul>
-                <li>📍 Venue : Libyan Academy for Postgraduate Studies, Tripoli, Libya</li>
-                <li>📅 Date : 22nd & 23rd February 2025</li>
-                <li>⏰ Time : 9:30 AM – 1:00 PM & 4:00 PM – 8:00 PM</li>
+                <li>📍 Venue : PROTEA HOTEL Lusaka Tower</li>
+                <li>📅 Date : 5th and 6th June 2025</li>
+                <li>⏰ Time : 9am to 5pm (5th & 6th June 2025)</li>
               </ul>
 
               <h5>
