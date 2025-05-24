@@ -647,7 +647,7 @@
             </div>
             <div class="fair-us">
               <h2>Exclusive Scholarships</h2>
-              <p>Learn about scholarships for Libyan students.</p>
+              <p>Learn about scholarships for Zambian Students.</p>
             </div>
 
           </div>
