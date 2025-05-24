@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\AsignedLead;
 use App\Models\Country;
 use App\Models\CourseCategory;
 use App\Models\LandingPage;
@@ -147,7 +148,7 @@ class ZambiaLandingPageFc extends Controller
     $field->registered = 1;
     $field->website = site_var;
     $field->save();
-
+    AsignedLead::autoAssign($field->id);
     // Generate QR Code
     $qrData = json_encode([
       'Title' => 'Malaysian Universities Education & Training Fair 2025',
